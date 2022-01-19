@@ -8,6 +8,7 @@ TagManager:
   - Opciones
   - Opciones2
   - Sonidos
+  - PanelBrillo
   layers:
   - Default
   - TransparentFX
