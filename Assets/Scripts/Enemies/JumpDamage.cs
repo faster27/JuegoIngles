@@ -65,7 +65,21 @@ public class JumpDamage : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         string level =scene.name;
 
-        if( level=="NivelBoss"  ){
+        if( level=="NivelBossMundo1"  ){
+
+            IsDead=true;
+
+
+        }
+
+         if( level=="NivelBossMundo2"  ){
+
+            IsDead=true;
+
+
+        }
+
+         if( level=="NivelBossMundo3"  ){
 
             IsDead=true;
 
