@@ -18,7 +18,7 @@ public class FruitManager : MonoBehaviour
     private void Start(){
 
         totalFruitsInLevel=transform.childCount;
-
+        TodasLasFrutasCogidas=false;
 
 
     }
@@ -36,8 +36,10 @@ public class FruitManager : MonoBehaviour
         if(transform.childCount==0){
 
 
-            Debug.Log("No quedan frutas,Victoria");
+       
             TodasLasFrutasCogidas=true;
+
+            
             
            
         }
