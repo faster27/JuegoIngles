@@ -28,12 +28,12 @@ public class OpenDoor : MonoBehaviour
         string level =scene.name;
 
         if(Collision.gameObject.CompareTag("Player") && FruitManager.TodasLasFrutasCogidas==true && 
-            level!="NivelBossMundo1" && level!="NivelBossMundo2" && level!="NivelBossMundo3" 
-            && JumpDamage.IsDead==false){
+            !level.Contains("Boss") && JumpDamage.IsDead==false && KeyCollected.IsKeyCollected==true){
 
             text.gameObject.SetActive(true);
             InDoor=true;
             FruitManager.TodasLasFrutasCogidas=false;
+            KeyCollected.IsKeyCollected=false;
 
 
         }else if(Collision.gameObject.CompareTag("Player") && FruitManager.TodasLasFrutasCogidas==true && JumpDamage.IsDead==true){
@@ -84,6 +84,7 @@ public class OpenDoor : MonoBehaviour
         Scene scene2 = SceneManager.GetActiveScene();
         level2 =scene2.name;
 
+        
 
     }
 
@@ -98,7 +99,7 @@ public class OpenDoor : MonoBehaviour
             PuertaImagen.SetActive(false);
         }
 
-        if(FruitManager.TodasLasFrutasCogidas==true && JumpDamage.IsDead==false && !level2.Contains("Boss")){
+        if(FruitManager.TodasLasFrutasCogidas==true && JumpDamage.IsDead==false && !level2.Contains("Boss") && KeyCollected.IsKeyCollected==true){
 
 
             PuertaImagen.SetActive(false);
