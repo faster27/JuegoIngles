@@ -1566,7 +1566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1710721217}
-  levelName: 
+  levelName: Nivel1Mundo2
   transition: {fileID: 511694452}
   PuertaImagen: {fileID: 0}
 --- !u!61 &430120078
@@ -11286,7 +11286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1818133848
 MonoBehaviour:
   m_ObjectHideFlags: 0

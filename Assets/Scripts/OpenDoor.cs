@@ -33,7 +33,7 @@ public class OpenDoor : MonoBehaviour
             text.gameObject.SetActive(true);
             InDoor=true;
             FruitManager.TodasLasFrutasCogidas=false;
-            KeyCollected.IsKeyCollected=false;
+            
 
 
         }else if(Collision.gameObject.CompareTag("Player") && FruitManager.TodasLasFrutasCogidas==true && JumpDamage.IsDead==true){
@@ -109,6 +109,7 @@ public class OpenDoor : MonoBehaviour
 
             transition.SetActive(true);
             FruitManager.TodasLasFrutasCogidas=false;
+            KeyCollected.IsKeyCollected=false;
             Invoke("ChangeScene",1);
             
 

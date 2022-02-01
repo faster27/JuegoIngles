@@ -24,4 +24,11 @@ public class KeyCollected : MonoBehaviour
         }
 
     }
+
+
+    private void Preguntas(){
+
+
+        
+    }
 }

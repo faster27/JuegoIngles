@@ -17,6 +17,8 @@ public class TextoEscenaIntro : MonoBehaviour
     string fraseConvertida;
     string frase2Convertida;
 
+    public float VelocidadTexto=0.1f;
+
     public GameObject PanelAnimation;
 
     public AudioSource clip;
@@ -32,6 +34,17 @@ public class TextoEscenaIntro : MonoBehaviour
         StartCoroutine(Reloj());
     }
 
+    void Update(){
+
+        
+        if(Input.GetKey("e")){
+
+           VelocidadTexto=0.01f;
+            
+
+        }
+    }
+
 
     
 
@@ -43,7 +56,7 @@ public class TextoEscenaIntro : MonoBehaviour
         foreach (char caracter in fraseConvertida)
         {
             texto.text = texto.text + caracter;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(VelocidadTexto);
         }
 
         yield return new WaitForSeconds(3f);
@@ -52,7 +65,7 @@ public class TextoEscenaIntro : MonoBehaviour
         foreach (char caracter in frase2)
         {
             texto.text = texto.text + caracter;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(VelocidadTexto);
         }
         clip.Stop();
         yield return new WaitForSeconds(3f);
