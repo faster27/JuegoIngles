@@ -83,6 +83,9 @@ public class OpenDoor : MonoBehaviour
 
         Scene scene2 = SceneManager.GetActiveScene();
         level2 =scene2.name;
+        FruitManager.TodasLasFrutasCogidas=false;
+
+        Debug.Log(FruitManager.TodasLasFrutasCogidas);
 
         
 
@@ -103,6 +106,7 @@ public class OpenDoor : MonoBehaviour
 
 
             PuertaImagen.SetActive(false);
+           
         }
 
         if(InDoor && Input.GetKey("e")){
@@ -110,6 +114,7 @@ public class OpenDoor : MonoBehaviour
             transition.SetActive(true);
             FruitManager.TodasLasFrutasCogidas=false;
             KeyCollected.IsKeyCollected=false;
+            JumpDamage.IsDead=false;
             Invoke("ChangeScene",1);
             
 

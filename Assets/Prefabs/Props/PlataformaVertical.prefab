@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 1480305242284171852}
   - component: {fileID: 1480305242284171855}
   - component: {fileID: 1480305242284171854}
+  - component: {fileID: 7731855808427513978}
   m_Layer: 0
   m_Name: Plataforma
   m_TagString: Ground
@@ -351,3 +352,23 @@ MonoBehaviour:
   - {fileID: 1480305242170361976}
   - {fileID: 1480305241790430039}
   StartWaitTime: 1
+--- !u!95 &7731855808427513978
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480305242284171840}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d2f16f54ec63044f82e871169b23ef9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

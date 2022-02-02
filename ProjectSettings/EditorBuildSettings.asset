@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mundo2/Nivel3Mundo2.unity
     guid: 41821ec6172843240883c315b9dac07d
+  - enabled: 1
+    path: Assets/Scenes/Mundo2/Nivel4Mundo2.unity
+    guid: e47dc8d52af0ca442927088c8aca7a8c
   m_configObjects: {}
