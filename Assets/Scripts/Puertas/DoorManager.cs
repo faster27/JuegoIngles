@@ -34,17 +34,23 @@ public class DoorManager : MonoBehaviour
 
             Puerta1.gameObject.SetActive(false);
             Puerta1Imagen.SetActive(false);
+
             Puerta2Imagen.SetActive(false);
-            Puerta3.gameObject.SetActive(false);
+            Puerta2.gameObject.SetActive(true);
+
+            
         }
 
         if (PuertaMundo3==true)
         {
-            Puerta3Imagen.SetActive(false);
-            Puerta2Imagen.SetActive(true);
-
+            Puerta1Imagen.SetActive(false);
             Puerta1.gameObject.SetActive(false);
+            
+            Puerta2Imagen.SetActive(true);
             Puerta2.gameObject.SetActive(false);
+            
+            Puerta3Imagen.SetActive(false);
+            Puerta3.gameObject.SetActive(true);
         }
 
 

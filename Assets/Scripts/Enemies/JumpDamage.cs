@@ -42,6 +42,7 @@ public class JumpDamage : MonoBehaviour
 
         Lifes--;
         animator.Play("Hit");
+       
         
 
 
