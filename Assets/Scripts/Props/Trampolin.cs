@@ -8,6 +8,8 @@ public class Trampolin : MonoBehaviour
 
   public float JumpForce =2f;
 
+  public AudioSource Salto;
+
   private void OnCollisionEnter2D(Collision2D collision)
   {
 
@@ -15,6 +17,7 @@ public class Trampolin : MonoBehaviour
       {
 
         collision.gameObject.GetComponent<Rigidbody2D>().velocity=(Vector2.up*JumpForce);
+        Salto.Play();
         animator.Play("JumpAnimation");
 
       }
