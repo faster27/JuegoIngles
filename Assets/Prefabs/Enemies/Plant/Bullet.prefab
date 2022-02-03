@@ -128,5 +128,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
-  LifeTime: 2
+  LifeTime: 1.8
   left: 1

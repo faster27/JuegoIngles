@@ -121,7 +121,7 @@ public class OpenDoor : MonoBehaviour
             FruitManager.TodasLasFrutasCogidas=false;
             KeyCollected.IsKeyCollected=false;
             JumpDamage.IsDead=false;
-            Invoke("ChangeScene",1);
+            Invoke("ChangeScene",4);
             
 
         }
