@@ -780,17 +780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &283228041 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3407618155643105658, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
-  m_PrefabInstance: {fileID: 283228039}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &328112726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3847,7 +3836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6731e7e37f746446bb506d0f43df1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliderVolumen: {fileID: 2040649686}
+  sliderVolumen: {fileID: 583490020}
   Sonidos: []
 --- !u!1001 &486427372
 PrefabInstance:
@@ -4096,6 +4085,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4773168005303542748, guid: 5bba83d658697974992f908f0e14c438, type: 3}
   m_PrefabInstance: {fileID: 1946588046}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &583490020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4883126725513206481, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 283228039}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &601191553
 GameObject:
   m_ObjectHideFlags: 0
@@ -4154,6 +4154,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &732622806 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7588241873584026755, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 283228039}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &734591134
 GameObject:
   m_ObjectHideFlags: 0
@@ -5733,7 +5744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7a88619638fd9498bfef0747b647e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SliderBrillo: {fileID: 283228041}
+  SliderBrillo: {fileID: 732622806}
   SliderValue: 0
   PanelBrillo: {fileID: 283228040}
   PanelesBrillo: []
@@ -6717,17 +6728,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2040649686 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5657852147407620430, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
-  m_PrefabInstance: {fileID: 283228039}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2069719576
 PrefabInstance:
   m_ObjectHideFlags: 0
