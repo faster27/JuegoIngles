@@ -7236,10 +7236,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frog
       objectReference: {fileID: 0}
-    - target: {fileID: 5054142521907438966, guid: b19d22ad3f110a843b461c8120b02f4e, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5054142521907438969, guid: b19d22ad3f110a843b461c8120b02f4e, type: 3}
       propertyPath: m_RootOrder
       value: 5
