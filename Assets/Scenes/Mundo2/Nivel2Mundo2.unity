@@ -1265,6 +1265,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &426276613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161344821141204081, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 740913374}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &426276614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5000509566482910834, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 740913374}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &426276615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6840282622239811608, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 740913374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &427564296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19455,6 +19470,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5054142521907438973, guid: b19d22ad3f110a843b461c8120b02f4e, type: 3}
+      propertyPath: Corazones.Array.data[0]
+      value: 
+      objectReference: {fileID: 426276615}
+    - target: {fileID: 5054142521907438973, guid: b19d22ad3f110a843b461c8120b02f4e, type: 3}
+      propertyPath: Corazones.Array.data[1]
+      value: 
+      objectReference: {fileID: 426276614}
+    - target: {fileID: 5054142521907438973, guid: b19d22ad3f110a843b461c8120b02f4e, type: 3}
+      propertyPath: Corazones.Array.data[2]
+      value: 
+      objectReference: {fileID: 426276613}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b19d22ad3f110a843b461c8120b02f4e, type: 3}
 --- !u!1 &1240502267
