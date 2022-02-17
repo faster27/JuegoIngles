@@ -635,6 +635,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 285388760, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 568675542}
+    - target: {fileID: 285388760, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IsCorrect
+      objectReference: {fileID: 0}
+    - target: {fileID: 390298811, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 568675542}
+    - target: {fileID: 390298811, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IsCorrect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1373645199, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 568675542}
+    - target: {fileID: 1373645199, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IsCorrect
+      objectReference: {fileID: 0}
     - target: {fileID: 174737194295698694, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -4080,6 +4104,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18c8224c1ed23544a22dd8d7532996d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &568675542 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 990802215, guid: b8d1be187c7d58d49ba0330be3812022, type: 3}
+  m_PrefabInstance: {fileID: 808333675}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96e8323407ea45469752f86dc628d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &578200890 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4773168005303542748, guid: 5bba83d658697974992f908f0e14c438, type: 3}
@@ -4154,6 +4189,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &668912022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1490366514, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 283228039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &732622806 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7588241873584026755, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
@@ -4410,6 +4450,10 @@ PrefabInstance:
       propertyPath: Key
       value: 
       objectReference: {fileID: 876309400}
+    - target: {fileID: 990802215, guid: b8d1be187c7d58d49ba0330be3812022, type: 3}
+      propertyPath: PanelPreguntas
+      value: 
+      objectReference: {fileID: 668912022}
     - target: {fileID: 8885210984936086567, guid: b8d1be187c7d58d49ba0330be3812022, type: 3}
       propertyPath: m_Name
       value: Key
