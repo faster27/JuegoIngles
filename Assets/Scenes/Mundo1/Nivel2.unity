@@ -612,6 +612,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &152462706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6840282622239811608, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 283228039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &174116298 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1503728126005219626, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
@@ -5174,6 +5179,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5054142521907438973, guid: b19d22ad3f110a843b461c8120b02f4e, type: 3}
+      propertyPath: Corazones.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5054142521907438973, guid: b19d22ad3f110a843b461c8120b02f4e, type: 3}
+      propertyPath: Corazones.Array.data[0]
+      value: 
+      objectReference: {fileID: 152462706}
+    - target: {fileID: 5054142521907438973, guid: b19d22ad3f110a843b461c8120b02f4e, type: 3}
+      propertyPath: Corazones.Array.data[1]
+      value: 
+      objectReference: {fileID: 2012082165}
+    - target: {fileID: 5054142521907438973, guid: b19d22ad3f110a843b461c8120b02f4e, type: 3}
+      propertyPath: Corazones.Array.data[2]
+      value: 
+      objectReference: {fileID: 2097260301}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b19d22ad3f110a843b461c8120b02f4e, type: 3}
 --- !u!1 &1040109007
@@ -6146,7 +6167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1701585072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6206,7 +6227,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 11
   m_TargetDisplay: 0
 --- !u!224 &1701585075
 RectTransform:
@@ -6683,6 +6704,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2012082165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5000509566482910834, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 283228039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2029942730 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8807301591702743326, guid: b9666d147f9b012428a3e9a8fb6272bc, type: 3}
@@ -6833,6 +6859,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
   m_PrefabInstance: {fileID: 486427372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2097260301 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1161344821141204081, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 283228039}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2122667325
 PrefabInstance:

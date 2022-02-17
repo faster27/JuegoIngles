@@ -261,3 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5054142521907438967}
+  Corazones:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

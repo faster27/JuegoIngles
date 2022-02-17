@@ -16,11 +16,13 @@ public class JumpDamage : MonoBehaviour
 
     public float JumpForce=2.5f;
 
-    public int Lifes=2;
+    public int Lifes;
 
     public static bool IsDead=false;
 
     public AudioSource clip;
+
+    public GameObject[] Corazones;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -51,14 +53,44 @@ public class JumpDamage : MonoBehaviour
 
     public void CheckLife(){
 
-        if(Lifes==0){
-
+        if(Lifes<1)
+        {
+            Destroy(Corazones[0].gameObject);
             destroyParticle.SetActive(true);
             spriteRenderer.enabled=false;
             Invoke("EnemyDied",0.2f);
 
+        }
+        else if(Lifes<2)
+        {
+            Destroy(Corazones[1].gameObject);
+           
+           
 
         }
+        else if(Lifes<3)
+        {
+
+            Destroy(Corazones[2].gameObject);
+         
+            
+        }
+         else if(Lifes<4)
+        {
+
+            Destroy(Corazones[3].gameObject);
+          
+            
+        }
+         else if(Lifes<5)
+        {
+
+            Destroy(Corazones[4].gameObject);
+       
+            
+        }
+
+        
     }
 
     public void EnemyDied(){
