@@ -8,7 +8,7 @@ public class EnemySpike : MonoBehaviour
 
         if(Collision.transform.CompareTag("Player")){
 
-            Debug.Log("Player Damage");
+            
             Collision.transform.GetComponent<PlayerRespawn>().PlayerDamaged();
 
 
