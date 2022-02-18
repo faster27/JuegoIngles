@@ -14,9 +14,12 @@ public class JumpDamage : MonoBehaviour
 
     public GameObject destroyParticle;
 
+
     public float JumpForce=2.5f;
 
     public int Lifes;
+
+    string level;
 
     public static bool IsDead=false;
 
@@ -34,9 +37,19 @@ public class JumpDamage : MonoBehaviour
             
             LosseLifeAndHit();
             CheckLife();
+              
+            
 
 
         }
+
+    }
+
+     void Start()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        level =scene.name;
+
 
     }
 
@@ -53,11 +66,65 @@ public class JumpDamage : MonoBehaviour
 
     public void CheckLife(){
 
+        if(level=="JefeFinal"){
+
+            CheckLifeJefeFinal();
+
+        }else{
+
+            if(Lifes<1)
+            {
+                Destroy(Corazones[0].gameObject);
+                destroyParticle.SetActive(true);
+                spriteRenderer.enabled=false;
+                Invoke("EnemyDied",0.2f);
+
+            }
+            else if(Lifes<2)
+            {
+                Destroy(Corazones[1].gameObject);
+            
+            
+
+            }
+            else if(Lifes<3)
+            {
+
+                Destroy(Corazones[2].gameObject);
+            
+                
+            }
+            else if(Lifes<4)
+            {
+
+                Destroy(Corazones[3].gameObject);
+            
+                
+            }
+            else if(Lifes<5)
+            {
+
+                Destroy(Corazones[4].gameObject);
+        
+                
+            }
+
+        }
+
+       
+
+        
+    }
+
+
+    public void CheckLifeJefeFinal(){
+
         if(Lifes<1)
         {
             Destroy(Corazones[0].gameObject);
             destroyParticle.SetActive(true);
             spriteRenderer.enabled=false;
+           
             Invoke("EnemyDied",0.2f);
 
         }
@@ -88,7 +155,26 @@ public class JumpDamage : MonoBehaviour
             Destroy(Corazones[4].gameObject);
        
             
+        }else if(Lifes<6)
+        {
+
+            Destroy(Corazones[5].gameObject);
+       
+            
+        }else if(Lifes<7)
+        {
+
+            Destroy(Corazones[6].gameObject);
+       
+            
+        }else if(Lifes<8)
+        {
+
+            Destroy(Corazones[7].gameObject);
+       
+            
         }
+    
 
         
     }
