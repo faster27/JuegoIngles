@@ -3156,7 +3156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1710721217}
-  levelName: JefeFinal
+  levelName: AntesDelJefe
   transition: {fileID: 793191013}
   PuertaImagen: {fileID: 0}
 --- !u!61 &1098942869
@@ -3669,7 +3669,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1705831412}
         m_TargetAssemblyTypeName: ControlVolumen, Assembly-CSharp
         m_MethodName: GuardarVolumen
         m_Mode: 1
@@ -8727,7 +8727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1818133848
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,7 +25,10 @@ public class JumpDamage : MonoBehaviour
 
     public AudioSource clip;
 
-    public GameObject[] Corazones;
+    
+
+ 
+   
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -49,6 +52,9 @@ public class JumpDamage : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         level =scene.name;
+       
+
+    
 
 
     }
@@ -66,50 +72,14 @@ public class JumpDamage : MonoBehaviour
 
     public void CheckLife(){
 
-        if(level=="JefeFinal"){
+            if(Lifes==0){
 
-            CheckLifeJefeFinal();
-
-        }else{
-
-            if(Lifes<1)
-            {
-                Destroy(Corazones[0].gameObject);
                 destroyParticle.SetActive(true);
                 spriteRenderer.enabled=false;
-                Invoke("EnemyDied",0.2f);
+                Destroy(gameObject);
 
             }
-            else if(Lifes<2)
-            {
-                Destroy(Corazones[1].gameObject);
-            
-            
-
-            }
-            else if(Lifes<3)
-            {
-
-                Destroy(Corazones[2].gameObject);
-            
-                
-            }
-            else if(Lifes<4)
-            {
-
-                Destroy(Corazones[3].gameObject);
-            
-                
-            }
-            else if(Lifes<5)
-            {
-
-                Destroy(Corazones[4].gameObject);
-        
-                
-            }
-
-        }
+               
 
        
 
@@ -117,103 +87,7 @@ public class JumpDamage : MonoBehaviour
     }
 
 
-    public void CheckLifeJefeFinal(){
+   
 
-        if(Lifes<1)
-        {
-            Destroy(Corazones[0].gameObject);
-            destroyParticle.SetActive(true);
-            spriteRenderer.enabled=false;
-           
-            Invoke("EnemyDied",0.2f);
-            
-
-        }
-        else if(Lifes<2)
-        {
-            Destroy(Corazones[1].gameObject);
-           
-           
-
-        }
-        else if(Lifes<3)
-        {
-
-            Destroy(Corazones[2].gameObject);
-         
-            
-        }
-         else if(Lifes<4)
-        {
-
-            Destroy(Corazones[3].gameObject);
-          
-            
-        }
-         else if(Lifes<5)
-        {
-
-            Destroy(Corazones[4].gameObject);
-       
-            
-        }else if(Lifes<6)
-        {
-
-            Destroy(Corazones[5].gameObject);
-       
-            
-        }else if(Lifes<7)
-        {
-
-            Destroy(Corazones[6].gameObject);
-       
-            
-        }else if(Lifes<8)
-        {
-
-            Destroy(Corazones[7].gameObject);
-       
-            
-        }
     
-
-        
-    }
-
-    public void EnemyDied(){
-
-        Scene scene = SceneManager.GetActiveScene();
-        string level =scene.name;
-
-        if( level=="NivelBossMundo1"  ){
-
-            IsDead=true;
-
-
-        }
-
-         if( level=="NivelBossMundo2"  ){
-
-            IsDead=true;
-
-
-        }
-
-         if( level=="NivelBossMundo3"  ){
-
-            IsDead=true;
-
-
-        }
-
-         if( level=="JefeFinal"  ){
-
-            IsDead=true;
-
-
-        }
-
-        
-        Destroy(gameObject);
-    }
 }
