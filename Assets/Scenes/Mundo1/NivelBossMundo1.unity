@@ -998,7 +998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &524624530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2410,6 +2410,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4883126725513206481, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1472630531}
+    - target: {fileID: 4883126725513206481, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GuardarVolumen
+      objectReference: {fileID: 0}
     - target: {fileID: 5747532324604352024, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: transition
       value: 
@@ -2421,6 +2429,14 @@ PrefabInstance:
     - target: {fileID: 6023688844153679352, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588241873584026755, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1050723113}
+    - target: {fileID: 7588241873584026755, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GuardarBrillo
       objectReference: {fileID: 0}
     - target: {fileID: 9196230700531343988, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7035,8 +7051,8 @@ GameObject:
   - component: {fileID: 1983617753}
   - component: {fileID: 1983617752}
   - component: {fileID: 1983617756}
-  - component: {fileID: 1983617755}
   - component: {fileID: 1983617757}
+  - component: {fileID: 1983617758}
   m_Layer: 0
   m_Name: RhinoScripts
   m_TagString: Untagged
@@ -7152,31 +7168,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1983617755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983617750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f9c373fb946e1943b121955b96c78a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1983617753}
-  collider2D: {fileID: 1983617756}
-  spriteRenderer: {fileID: 1983617754}
-  destroyParticle: {fileID: 958902996}
-  JumpForce: 2.5
-  Lifes: 5
-  clip: {fileID: 1983617757}
-  Corazones:
-  - {fileID: 60763674}
-  - {fileID: 161253718}
-  - {fileID: 634347759}
-  - {fileID: 1636183305}
-  - {fileID: 326319936}
 --- !u!61 &1983617756
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7299,6 +7290,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1983617758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983617750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd375517132a02540b4bcd5644d233bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1983617753}
+  collider2D: {fileID: 1983617756}
+  spriteRenderer: {fileID: 1983617754}
+  destroyParticle: {fileID: 958902996}
+  JumpForce: 2.5
+  Lifes: 5
+  clip: {fileID: 1983617757}
+  Corazones:
+  - {fileID: 60763674}
+  - {fileID: 161253718}
+  - {fileID: 634347759}
+  - {fileID: 1636183305}
+  - {fileID: 326319936}
 --- !u!1 &2121284286
 GameObject:
   m_ObjectHideFlags: 0
