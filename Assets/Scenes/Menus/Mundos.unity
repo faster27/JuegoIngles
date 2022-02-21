@@ -3156,7 +3156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1710721217}
-  levelName: 
+  levelName: JefeFinal
   transition: {fileID: 793191013}
   PuertaImagen: {fileID: 0}
 --- !u!61 &1098942869
@@ -8727,7 +8727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1818133848
 MonoBehaviour:
   m_ObjectHideFlags: 0
