@@ -126,6 +126,7 @@ public class JumpDamage : MonoBehaviour
             spriteRenderer.enabled=false;
            
             Invoke("EnemyDied",0.2f);
+            
 
         }
         else if(Lifes<2)
@@ -199,6 +200,13 @@ public class JumpDamage : MonoBehaviour
         }
 
          if( level=="NivelBossMundo3"  ){
+
+            IsDead=true;
+
+
+        }
+
+         if( level=="JefeFinal"  ){
 
             IsDead=true;
 
