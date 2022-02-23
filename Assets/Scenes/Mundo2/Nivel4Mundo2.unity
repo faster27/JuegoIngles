@@ -17212,7 +17212,6 @@ MonoBehaviour:
   JumpForce: 2.5
   Lifes: 2
   clip: {fileID: 690503168}
-  Corazones: []
 --- !u!61 &690503170
 BoxCollider2D:
   m_ObjectHideFlags: 0
