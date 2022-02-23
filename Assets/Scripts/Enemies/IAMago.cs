@@ -20,6 +20,8 @@ public class IAMago : MonoBehaviour
 
     private Vector2 ActualPos;
 
+    public GameObject BulletSpawnPoint;
+
 
     void Start()
     {
@@ -82,11 +84,15 @@ public class IAMago : MonoBehaviour
 
             spriteRenderer.flipX=false;
             animator.SetBool("Idle",false);
+            BulletFire.left=false;
+         
 
         }
         else if (transform.position.x<ActualPos.x){
             spriteRenderer.flipX=true;
             animator.SetBool("Idle",false);
+            BulletFire.left=true;
+        
 
 
         }
