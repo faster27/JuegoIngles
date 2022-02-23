@@ -11,9 +11,22 @@ public class DamageObject : MonoBehaviour
 
             
             Collision.transform.GetComponent<PlayerRespawn>().PlayerDamaged();
+            Destroy(GameObject.FindWithTag("Bullet"));
 
 
         }
+
+        if(Collision.transform.CompareTag("Ground")){
+
+            
+         
+            Destroy(GameObject.FindWithTag("Bullet"));
+
+
+        }
+        
+
+        
 
 
 
