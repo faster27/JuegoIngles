@@ -22,16 +22,25 @@ public class IAMago : MonoBehaviour
 
     public GameObject BulletSpawnPoint;
 
+    private Vector3 PosIzq;
+    
+    private Vector3 PosDer;
+
+    private float y;
+
 
     void Start()
     {
         WaitTime=StartWaitTime;
+        PosIzq=new Vector3(-0.4f,0.03f,0f);
+        PosDer=new Vector3(0.4f,0.03f,0f);
 
 
     }
 
     void Update()
     {
+       
         StartCoroutine(CheckEnemyMoving());
 
         transform.position=Vector2.MoveTowards(transform.position, MovesSpots[i].transform.position,Speed*Time.deltaTime);
@@ -74,33 +83,33 @@ public class IAMago : MonoBehaviour
     IEnumerator CheckEnemyMoving()
     {
 
+        Debug.Log(BulletSpawnPoint.transform.localPosition);
         ActualPos=transform.position;
 
         yield return new WaitForSeconds(0.5f);
 
 
-        if ( transform.position.x>ActualPos.x)
+        if ( transform.position.x>=ActualPos.x)
         {
 
             spriteRenderer.flipX=false;
             animator.SetBool("Idle",false);
             BulletFire.left=false;
+
+            BulletSpawnPoint.transform.localPosition=PosDer;
+            
          
 
         }
-        else if (transform.position.x<ActualPos.x){
+        else if (transform.position.x<=ActualPos.x){
             spriteRenderer.flipX=true;
             animator.SetBool("Idle",false);
             BulletFire.left=true;
-        
-
-
-        }
-        else if(transform.position.x==ActualPos.x){
-
-            animator.SetBool("Idle",true);
+            
+            BulletSpawnPoint.transform.localPosition=PosIzq;
 
         }
+       
 
 
     }
