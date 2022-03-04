@@ -17,11 +17,11 @@ public class TextoEscenaIntro : MonoBehaviour
     
     //Historia antes de pelear con el jefe final
 
-    string frase3="Guerrero has pasado pruebas que ningun otro ser viviente ha podido superar y has llegado hasta aqui, \n pero aun falta la prueba mas importante, derrotar al hechicero supremo, \n el cual tiene secuestrada a tu princesa y a tu pueblo sin poder hablar ingles \n juntos lo derrotaremos AU AU AU";
+    string frase3="Guerrero has pasado pruebas que ningún otro ser viviente ha podido superar y has llegado hasta aquí, \n pero aún falta la prueba más importante, derrotar al hechicero supremo, \n el cual tiene secuestrada a tu princesa y a tu pueblo sin poder hablar inglés \n juntos lo derrotaremos AU AU AU";
     
     //Historia despues de la pelea con el jefe
 
-    string frase4="Felicitaciones guerrero, lo has logrado, has liberado a tu princesa \n y le has devuelto a tu pueblo el poder de hablar ingles \n ve y disfruta tu victoria con tu gente";
+    string frase4="Felicitaciones guerrero, lo has logrado, has liberado a tu princesa \n y le has devuelto a tu pueblo el poder de hablar inglés \n ve y disfruta tu victoria con tu gente";
     
     
     
