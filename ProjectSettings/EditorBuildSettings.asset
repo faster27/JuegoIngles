@@ -42,6 +42,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Mundo2/NivelBossMundo2.unity
     guid: b7404addca2d00446b04da93d7fefab5
   - enabled: 1
+    path: Assets/Scenes/Mundo3/Nivel1Mundo3.unity
+    guid: 67f44623491c2b54c9081f7f4c59825a
+  - enabled: 1
+    path: Assets/Scenes/Mundo3/Nivel2Mundo3.unity
+    guid: 19410b2eacffab04f968a11324a9c75f
+  - enabled: 1
     path: Assets/Scenes/JefeFinal/JefeFinal.unity
     guid: 1d822f4f5a3560140aa55cd010fb8271
   - enabled: 1
