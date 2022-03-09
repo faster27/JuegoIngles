@@ -83,7 +83,7 @@ public class IAMago : MonoBehaviour
     IEnumerator CheckEnemyMoving()
     {
 
-        Debug.Log(BulletSpawnPoint.transform.localPosition);
+       
         ActualPos=transform.position;
 
         yield return new WaitForSeconds(0.5f);

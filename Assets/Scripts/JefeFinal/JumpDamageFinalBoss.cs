@@ -14,10 +14,11 @@ public class JumpDamageFinalBoss : MonoBehaviour
 
     public GameObject destroyParticle;
 
+    public GameObject PanelPreguntas;
 
     public float JumpForce=2.5f;
 
-    public int Lifes;
+    public  int Lifes;
 
     string level;
 
@@ -25,7 +26,7 @@ public class JumpDamageFinalBoss : MonoBehaviour
 
     public AudioSource clip;
 
-    public GameObject[] Corazones;
+    public  GameObject[] Corazones;
 
     public ControlJefeFinal controJefe; 
 
@@ -78,7 +79,8 @@ public class JumpDamageFinalBoss : MonoBehaviour
 
         if(Lifes<1)
         {
-            Destroy(Corazones[0].gameObject);
+            Corazones[0].gameObject.SetActive(false);
+            
             destroyParticle.SetActive(true);
             spriteRenderer.enabled=false;
            
@@ -90,47 +92,62 @@ public class JumpDamageFinalBoss : MonoBehaviour
         }
         else if(Lifes<2)
         {
-            Destroy(Corazones[1].gameObject);
+             Corazones[1].gameObject.SetActive(false);
            
-           
+
 
         }
         else if(Lifes<3)
         {
 
-            Destroy(Corazones[2].gameObject);
-         
+           Corazones[2].gameObject.SetActive(false);
+           
             
         }
          else if(Lifes<4)
         {
+            Debug.Log("quedan 3 corazones");
+            Time.timeScale=0;
+            PanelPreguntas.SetActive(true);
+            Corazones[3].gameObject.SetActive(false);
 
-            Destroy(Corazones[3].gameObject);
+            
           
             
         }
          else if(Lifes<5)
         {
 
-            Destroy(Corazones[4].gameObject);
+          Corazones[4].gameObject.SetActive(false);
        
             
         }else if(Lifes<6)
         {
 
-            Destroy(Corazones[5].gameObject);
-       
+           Corazones[5].gameObject.SetActive(false);
+            
             
         }else if(Lifes<7)
         {
+            Debug.Log("quedan 6 corazones");
+            Time.timeScale=0;
+            Corazones[6].gameObject.SetActive(false);
+            PanelPreguntas.SetActive(true);
+            
 
-            Destroy(Corazones[6].gameObject);
+            
        
             
         }else if(Lifes<8)
         {
 
-            Destroy(Corazones[7].gameObject);
+            Corazones[7].gameObject.SetActive(false);
+       
+            
+        }else if(Lifes<9)
+        {
+
+            Corazones[8].gameObject.SetActive(false);
        
             
         }
@@ -156,4 +173,45 @@ public class JumpDamageFinalBoss : MonoBehaviour
         
         Destroy(gameObject);
     }
+
+
+    public  void IsCorrect(string respuesta)
+    {
+
+       if(respuesta!="verdad"){
+
+            PanelPreguntas.SetActive(false);
+            Time.timeScale=1;
+
+            if(Lifes==6)
+            {
+
+                Corazones[6].gameObject.SetActive(true);
+                Corazones[7].gameObject.SetActive(true);
+                Corazones[8].gameObject.SetActive(true);
+
+                Lifes=9;
+
+            }else if(Lifes==3)
+            {
+                Corazones[3].gameObject.SetActive(true);
+                Corazones[4].gameObject.SetActive(true);
+                Corazones[5].gameObject.SetActive(true);
+
+                Lifes=6;
+
+            }
+  
+
+       }
+
+       PanelPreguntas.SetActive(false);
+            Time.timeScale=1;
+       
+        
+
+      
+    }
+
+    
 }
