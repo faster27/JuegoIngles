@@ -394,6 +394,10 @@ MonoBehaviour:
   levelName: Mundos
   transition: {fileID: 1956761514}
   PuertaImagen: {fileID: 168005592}
+  PanelPreguntasPuerta: {fileID: 1994951255}
+  Panel2Btn1: {fileID: 1854500203}
+  Panel2Btn2: {fileID: 1128788179}
+  Panel2Btn3: {fileID: 441443918}
 --- !u!61 &186534111
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -993,6 +997,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &441443918 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 397909146, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 639338829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &472968364
 GameObject:
   m_ObjectHideFlags: 0
@@ -5696,6 +5711,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5564d87b937b2354d986d5f74f9da73a, type: 3}
+--- !u!114 &1128788179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 13618889, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 639338829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1267006452
 GameObject:
   m_ObjectHideFlags: 0
@@ -7160,6 +7186,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1854500203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 448941877, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 639338829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1876743437 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1503728126005219626, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
@@ -7545,6 +7582,11 @@ MonoBehaviour:
   - {fileID: 634347759}
   - {fileID: 1636183305}
   - {fileID: 326319936}
+--- !u!1 &1994951255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1961138279, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 639338829}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2121284286
 GameObject:
   m_ObjectHideFlags: 0

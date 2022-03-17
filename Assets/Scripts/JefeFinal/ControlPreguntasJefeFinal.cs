@@ -31,6 +31,9 @@ public class ControlPreguntasJefeFinal : MonoBehaviour
         FinalBoss = new JumpDamageFinalBoss();
 
         FinalBoss=FindObjectOfType<JumpDamageFinalBoss>();
+
+
+        //Aqui es donde al iniciar el panel se traen las preguntas de la BD y se setean 
 	}
     
     private void ObtenerRespuesta(int Buton)

@@ -178,7 +178,7 @@ public class JumpDamageFinalBoss : MonoBehaviour
     public  void IsCorrect(string respuesta)
     {
 
-       if(respuesta!="verdad"){
+       if(respuesta!="hla"){
 
             PanelPreguntas.SetActive(false);
             Time.timeScale=1;
