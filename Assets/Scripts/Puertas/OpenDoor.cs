@@ -51,7 +51,7 @@ public class OpenDoor : MonoBehaviour
         }else if(Collision.gameObject.CompareTag("Player") && FruitManager.TodasLasFrutasCogidas==true && JumpDamage.IsDead==true){
 
             text.gameObject.SetActive(true);
-            PuertaImagen.SetActive(false);
+            PuertaImagen.SetActive(true);
             
             InDoor=true;
             FruitManager.TodasLasFrutasCogidas=false;
@@ -67,6 +67,13 @@ public class OpenDoor : MonoBehaviour
                 DoorManager.PuertaMundo1=false;
                 DoorManager.PuertaMundo2=false;
                 DoorManager.PuertaMundo3=true;
+            }
+
+             if(level=="JefeFinal"){
+
+                DoorManager.PuertaMundo1=true;
+                DoorManager.PuertaMundo2=false;
+                DoorManager.PuertaMundo3=false;
             }
             
             

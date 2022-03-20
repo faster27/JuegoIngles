@@ -5,10 +5,11 @@ using UnityEngine;
 public class ControlJefeFinal : MonoBehaviour
 {
 
-    public  GameObject Jaula;
-    public  GameObject AnimacionPuerta;
+  
+   
     public  AudioSource Musica;
     public  AudioClip Celebracion;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +26,8 @@ public class ControlJefeFinal : MonoBehaviour
 
     public void CambiarAudioClip()
     {
-        Jaula.SetActive(false);
-        AnimacionPuerta.SetActive(true);
+        
+      
         Musica.Stop();
         Musica.clip=Celebracion;
         Musica.loop=false;

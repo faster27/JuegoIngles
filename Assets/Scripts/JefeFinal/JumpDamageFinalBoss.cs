@@ -30,6 +30,9 @@ public class JumpDamageFinalBoss : MonoBehaviour
 
     public ControlJefeFinal controJefe; 
 
+    public Animator Jaula;
+
+
    
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -79,6 +82,7 @@ public class JumpDamageFinalBoss : MonoBehaviour
 
         if(Lifes<1)
         {
+            
             Corazones[0].gameObject.SetActive(false);
             
             destroyParticle.SetActive(true);
@@ -87,6 +91,11 @@ public class JumpDamageFinalBoss : MonoBehaviour
             Invoke("EnemyDied",0.2f);
 
             controJefe.CambiarAudioClip();
+            Jaula.Play("AnimacionJaula");
+
+            
+
+            
             
 
         }
@@ -178,7 +187,7 @@ public class JumpDamageFinalBoss : MonoBehaviour
     public  void IsCorrect(string respuesta)
     {
 
-       if(respuesta!="hla"){
+       if(respuesta!=respuesta){
 
             PanelPreguntas.SetActive(false);
             Time.timeScale=1;

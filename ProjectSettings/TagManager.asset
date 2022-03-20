@@ -10,6 +10,7 @@ TagManager:
   - Sonidos
   - PanelBrillo
   - Bullet
+  - Princesa
   layers:
   - Default
   - TransparentFX
