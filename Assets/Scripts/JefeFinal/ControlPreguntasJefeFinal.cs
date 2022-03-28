@@ -15,6 +15,8 @@ public class ControlPreguntasJefeFinal : MonoBehaviour
     public static bool AnswerIsCorrect=false;
 
     public JumpDamageFinalBoss FinalBoss; 
+
+    public JumpDamageBossAbeja FinalBossAbeja; 
     
 
     void Start () {
@@ -28,13 +30,19 @@ public class ControlPreguntasJefeFinal : MonoBehaviour
 		Btn33.onClick.AddListener(() => ObtenerRespuesta(3));
 
 
-        FinalBoss = new JumpDamageFinalBoss();
+        //FinalBossAbeja=new JumpDamageBossAbeja();
 
-        FinalBoss=FindObjectOfType<JumpDamageFinalBoss>();
+        //FinalBoss = new JumpDamageFinalBoss();
+
+        
+       
+        
 
 
         //Aqui es donde al iniciar el panel se traen las preguntas de la BD y se setean 
 	}
+
+   
     
     private void ObtenerRespuesta(int Buton)
     {
