@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+using TMPro;
 
 public class JumpDamageFinalBoss : MonoBehaviour
 {
@@ -31,6 +33,10 @@ public class JumpDamageFinalBoss : MonoBehaviour
     public ControlJefeFinal controJefe; 
 
     public Animator Jaula;
+
+    //Referencia a los textos de pregunta y respuesta del panel
+
+    public TextMeshProUGUI TextoPregunta;
 
 
    
@@ -118,6 +124,7 @@ public class JumpDamageFinalBoss : MonoBehaviour
             Debug.Log("quedan 3 corazones");
             Time.timeScale=0;
             PanelPreguntas.SetActive(true);
+            TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
             Corazones[3].gameObject.SetActive(false);
 
             
@@ -142,6 +149,7 @@ public class JumpDamageFinalBoss : MonoBehaviour
             Time.timeScale=0;
             Corazones[6].gameObject.SetActive(false);
             PanelPreguntas.SetActive(true);
+            TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
             
 
             

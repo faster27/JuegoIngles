@@ -27,6 +27,8 @@ public class OpenDoor : MonoBehaviour
     public Button Panel2Btn1;
     public Button Panel2Btn2;
     public Button Panel2Btn3;
+
+    public TextMeshProUGUI TextoPregunta;
    
 
 
@@ -46,6 +48,8 @@ public class OpenDoor : MonoBehaviour
             InDoor=true;
 
             //Aqui se debe llamar la funcion la cual tare las preguntas de la bD par setear los botones
+
+             TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
 
 
         }else if(Collision.gameObject.CompareTag("Player") && FruitManager.TodasLasFrutasCogidas==true && JumpDamage.IsDead==true){

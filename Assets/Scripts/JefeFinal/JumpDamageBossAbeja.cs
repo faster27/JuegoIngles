@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+using TMPro;
 
 public class JumpDamageBossAbeja : MonoBehaviour
 {
@@ -25,7 +27,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
     public static bool IsDead=false;
 
     public AudioSource clip;
-    public AudioSource SonidoExplosion;
+    
 
     public  GameObject[] Corazones;
 
@@ -34,6 +36,10 @@ public class JumpDamageBossAbeja : MonoBehaviour
   
 
     public GameObject Hechicero;
+
+    //Referencia a los textos de pregunta y respuesta del panel
+
+    public TextMeshProUGUI TextoPregunta;
 
 
    
@@ -127,6 +133,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
             Debug.Log("quedan 3 corazones");
             Time.timeScale=0;
             PanelPreguntas.SetActive(true);
+             TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
             Corazones[3].gameObject.SetActive(false);
 
             
@@ -151,6 +158,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
             Time.timeScale=0;
             Corazones[6].gameObject.SetActive(false);
             PanelPreguntas.SetActive(true);
+            TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
             
 
             
@@ -176,7 +184,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
 
     public void AnimacionExplosion(){
 
-        SonidoExplosion.Play();  
+        
         Explosion.SetActive(true);
         
         Invoke("Mago",0.05f);

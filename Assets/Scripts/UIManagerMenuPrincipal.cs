@@ -4,15 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
-
-
-public class UIManager : MonoBehaviour
+public class UIManagerMenuPrincipal : MonoBehaviour
 {
-    public GameObject TransicionCambioEscena;
+     public GameObject TransicionCambioEscena;
     public AudioSource clip;
     public GameObject optionsPanel;
    
-    public GameObject PanelAnimacion;
+   
 
     private string level;
 
@@ -23,32 +21,13 @@ public class UIManager : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         level =scene.name;
 
-        Invoke("PanelEncuesta",2.5f);
+    
        
         
         
     }
 
-    public void PanelEncuesta()
-    {
-        if(!level.Contains("Boss") && !level.Contains("Mundos") ){
-
-            Time.timeScale=0;
-
-            PanelAnimacion.SetActive(false);
-
-         
-        }
-
-    }
-
     
-
-    public void ActivarJuego()
-    {
-        Time.timeScale=1;
-
-    }
 
     public void OptionsPanel()
     {
@@ -65,19 +44,6 @@ public class UIManager : MonoBehaviour
 
     }
 
-
-    public void OtherOptions()
-    {
-
-    }
-
-    public void MenuPrincipal()
-    {
-        Time.timeScale=1;
-        SceneManager.LoadScene("Mundos");
-        
-
-    }
 
     public void SalirDelJuego()
     {
@@ -120,5 +86,4 @@ public class UIManager : MonoBehaviour
         Invoke("ChangeSceneIntro",4);
 
     }
-
 }

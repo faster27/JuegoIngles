@@ -21,6 +21,12 @@ public class KeyCollected : MonoBehaviour
 
     public GameObject PanelPreguntasPuerta;
 
+
+
+    //Referencia a los textos de pregunta y respuesta del panel
+
+    public TextMeshProUGUI TextoPregunta;
+
    void Start () {
 		Button Btn11 = Btn1.GetComponent<Button>();
 		Btn11.onClick.AddListener(() => ObtenerRespuesta(1));
@@ -33,7 +39,8 @@ public class KeyCollected : MonoBehaviour
 
         //Aqui se debe traer las preguntas cando se coja la llave
         
-        
+       
+      
 
 	}
 
@@ -43,7 +50,14 @@ public class KeyCollected : MonoBehaviour
 
         if(Collision.CompareTag("Player")){
 
+             
+
             PanelPreguntas.gameObject.SetActive(true);
+           
+
+            TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
+
+            
         
             Time.timeScale=0;
 
