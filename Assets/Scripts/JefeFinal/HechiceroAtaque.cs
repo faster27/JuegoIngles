@@ -14,6 +14,8 @@ public class HechiceroAtaque : MonoBehaviour
 
    public Transform LaunchSpawnPoint;
 
+   public AudioSource SonidoFireBall;
+
    private void Start()
    {
 
@@ -45,7 +47,7 @@ public class HechiceroAtaque : MonoBehaviour
    {
 
       GameObject newBullet;
-
+      SonidoFireBall.Play();
       newBullet=Instantiate(BulletPrefab,LaunchSpawnPoint.position,LaunchSpawnPoint.rotation);
 
 
