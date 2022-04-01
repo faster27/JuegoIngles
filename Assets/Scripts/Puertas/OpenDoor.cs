@@ -16,6 +16,8 @@ public class OpenDoor : MonoBehaviour
     private bool InDoor=false;
     string level2;
 
+    int SenalPuerta=0;
+
     public GameObject transition;
 
     public GameObject PuertaImagen;
@@ -38,7 +40,7 @@ public class OpenDoor : MonoBehaviour
         string level =scene.name;
 
         if(Collision.gameObject.CompareTag("Player") && FruitManager.TodasLasFrutasCogidas==true && 
-            !level.Contains("Boss") && JumpDamage.IsDead==false && KeyCollected.IsKeyCollected==true){
+            !level.Contains("Boss") && JumpDamage.IsDead==false && KeyCollected.IsKeyCollected==true && SenalPuerta==0){
 
             PuertaImagen.SetActive(false);
             text.gameObject.SetActive(true);
@@ -46,13 +48,27 @@ public class OpenDoor : MonoBehaviour
             FruitManager.TodasLasFrutasCogidas=false;
             Time.timeScale=0;
             InDoor=true;
+            SenalPuerta=1;
 
             //Aqui se debe llamar la funcion la cual tare las preguntas de la bD par setear los botones
 
              TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
 
 
-        }else if(Collision.gameObject.CompareTag("Player") && FruitManager.TodasLasFrutasCogidas==true && JumpDamage.IsDead==true){
+        }else if(Collision.gameObject.CompareTag("Player") && FruitManager.TodasLasFrutasCogidas==true && 
+            !level.Contains("Boss") && JumpDamage.IsDead==false && KeyCollected.IsKeyCollected==true && SenalPuerta!=0){
+                
+                text.gameObject.SetActive(true);
+                FruitManager.TodasLasFrutasCogidas=false;
+                InDoor=true;
+
+
+
+        }
+        
+        
+        
+        else if(Collision.gameObject.CompareTag("Player") && FruitManager.TodasLasFrutasCogidas==true && JumpDamage.IsDead==true){
 
             text.gameObject.SetActive(true);
             PuertaImagen.SetActive(true);
