@@ -3161,7 +3161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1710721217}
-  levelName: JefeFinal
+  levelName: Nivel1Mundo3
   transition: {fileID: 793191013}
   PuertaImagen: {fileID: 89935221}
   PanelPreguntasPuerta: {fileID: 2010374843}

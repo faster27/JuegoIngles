@@ -74,4 +74,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mundo3/NivelBossMundo3.unity
     guid: 7846b92bf34bb6d40b115bf8ab1c978e
+  - enabled: 1
+    path: Assets/Scenes/Historia/AntesDelMundo3.unity
+    guid: ba7715de86b1a08439bf9b7caaff313a
   m_configObjects: {}

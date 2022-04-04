@@ -55,7 +55,9 @@ public class OpenDoor : MonoBehaviour
              TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
 
 
-        }else if(Collision.gameObject.CompareTag("Player") && FruitManager.TodasLasFrutasCogidas==true && 
+        }
+        
+        else if(Collision.gameObject.CompareTag("Player") && FruitManager.TodasLasFrutasCogidas==true && 
             !level.Contains("Boss") && JumpDamage.IsDead==false && KeyCollected.IsKeyCollected==true && SenalPuerta!=0){
                 
                 text.gameObject.SetActive(true);
@@ -99,10 +101,10 @@ public class OpenDoor : MonoBehaviour
                 DoorManager.PuertaMundo1=false;
                 DoorManager.PuertaMundo2=false;
                 DoorManager.PuertaMundo3=true;
+                }
+            
+            
             }
-            
-            
-        }
 
         
 
@@ -114,12 +116,15 @@ public class OpenDoor : MonoBehaviour
              
 
 
-        }
+         }
 
          
 
 
-    }
+        }
+
+
+    }    
 
     void OnTriggerExit2D(Collider2D Collision){
 
@@ -188,3 +193,5 @@ public class OpenDoor : MonoBehaviour
 
 
 }
+
+
