@@ -169,6 +169,7 @@ MonoBehaviour:
   destroyParticle: {fileID: 2283149136137331302}
   JumpForce: 2.5
   Lifes: 2
+  clip: {fileID: 0}
 --- !u!1 &2283149136029350008
 GameObject:
   m_ObjectHideFlags: 0

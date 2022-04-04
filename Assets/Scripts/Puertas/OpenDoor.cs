@@ -94,6 +94,11 @@ public class OpenDoor : MonoBehaviour
                 DoorManager.PuertaMundo1=true;
                 DoorManager.PuertaMundo2=false;
                 DoorManager.PuertaMundo3=false;
+             if(level=="NivelBossMundo3"){
+
+                DoorManager.PuertaMundo1=false;
+                DoorManager.PuertaMundo2=false;
+                DoorManager.PuertaMundo3=true;
             }
             
             
