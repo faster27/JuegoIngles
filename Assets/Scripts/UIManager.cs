@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
 
     private string level;
 
+    public string SgteEscena;
+
 
 
     void Start()
@@ -23,7 +25,7 @@ public class UIManager : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         level =scene.name;
 
-        Invoke("PanelEncuesta",2.5f);
+        //Invoke("PanelEncuesta",2.5f);
        
         
         
@@ -105,6 +107,12 @@ public class UIManager : MonoBehaviour
     void ChangeScene(){
         
         SceneManager.LoadScene("Mundos");
+
+    }
+
+    public void PasarALaEscena(){
+        
+        SceneManager.LoadScene(SgteEscena);
 
     }
 
