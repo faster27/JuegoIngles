@@ -106,8 +106,10 @@ public class OpenDoor : MonoBehaviour
             
             }
 
-        
+        }    
 
+        
+              
         if( level=="Mundos" && Collision.gameObject.CompareTag("Player") ){
 
 
@@ -116,16 +118,19 @@ public class OpenDoor : MonoBehaviour
              
 
 
-         }
+        }
 
          
 
 
-        }
+    }
 
 
-    }    
+        
 
+
+    
+    
     void OnTriggerExit2D(Collider2D Collision){
 
         text.gameObject.SetActive(false);

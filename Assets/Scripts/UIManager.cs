@@ -16,7 +16,11 @@ public class UIManager : MonoBehaviour
 
     private string level;
 
-    public string SgteEscena;
+   // public string SgteEscena;
+
+    public GameObject Personaje;
+
+    public GameObject Camara;
 
 
 
@@ -25,7 +29,18 @@ public class UIManager : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         level =scene.name;
 
-        //Invoke("PanelEncuesta",2.5f);
+
+        if ( (level.Contains("Nivel")  || level.Contains("Jefe")) && !level.Contains("Boss") )
+        {
+
+             Personaje.SetActive(false);
+
+            
+
+
+        }
+
+       
        
         
         
@@ -68,9 +83,16 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void OtherOptions()
+    public void ActivarPersonaje()
     {
+            Personaje.SetActive(true);
 
+             if(level=="Nivel2Mundo2" || level=="Nivel4Mundo2" || level=="Nivel2Mundo3" || level=="Nivel3Mundo3"
+                || level=="Nivel4Mundo3"){
+
+                Camara.SetActive(false);
+
+             }
     }
 
     public void MenuPrincipal()
@@ -110,11 +132,11 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void PasarALaEscena(){
+   // public void PasarALaEscena(){
         
-        SceneManager.LoadScene(SgteEscena);
+    //    SceneManager.LoadScene(SgteEscena);
 
-    }
+   // }
 
     void ChangeSceneIntro(){
         

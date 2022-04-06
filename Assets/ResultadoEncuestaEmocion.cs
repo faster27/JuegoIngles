@@ -12,40 +12,7 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
     //Aqui se realiza todo el proceso para obener la emcoion con la cual se realizara las preguntas 
     //al momento de coger la llave y abrir la puerta
 
-    public TMP_Dropdown DropDown1;
-    public TMP_Dropdown DropDown2;
-    public TMP_Dropdown DropDown3;
-    public TMP_Dropdown DropDown4;
-    public TMP_Dropdown DropDown5;
-    public TMP_Dropdown DropDown6;
-    public TMP_Dropdown DropDown7;
-    public TMP_Dropdown DropDown8;
-    public TMP_Dropdown DropDown9;
-    public TMP_Dropdown DropDown10;
-    public TMP_Dropdown DropDown11;
-    public TMP_Dropdown DropDown12;
-    public TMP_Dropdown DropDown13;
-    public TMP_Dropdown DropDown14;
-    public TMP_Dropdown DropDown15;
-    public TMP_Dropdown DropDown16;
-
-    int Valor1=0;
-    int Valor2=0;
-    int Valor3=0;
-    int Valor4=0;
-    int Valor5=0;
-    int Valor6=0;
-    int Valor7=0;
-    int Valor8=0;
-    int Valor9=0;
-    int Valor10=0;
-    int Valor11=0;
-    int Valor12=0;
-    int Valor13=0;
-    int Valor14=0;
-    int Valor15=0;
-    int Valor16=0;
-
+  
     float ValorAlegria=0;
     float ValorTristeza=0;
     float ValorMiedo=0;
@@ -54,63 +21,150 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
     public static string EmocionResultante;
     string ResultadoEmocion;
 
-    
+    public GameObject[] Toggles1;
+    public GameObject[] Toggles2;
+    public GameObject[] Toggles3;
+    public GameObject[] Toggles4;
+   
 
+    
+    public void CalcularPuntuacionAlegria(){
+           
+            Toggles1=GameObject.FindGameObjectsWithTag("Alegria");
+            Toggles2=GameObject.FindGameObjectsWithTag("Optimista");
+            Toggles3=GameObject.FindGameObjectsWithTag("Jovial");
+            Toggles4=GameObject.FindGameObjectsWithTag("Contento");
+
+        ValorAlegria=SacarPuntuacion(Toggles1,Toggles2,Toggles3,Toggles4);
 
        
-    public void ObtenerEmocion()
-    {
-        Valor1=DropDown1.value;
-        Valor2=DropDown2.value; 
-        Valor3=DropDown3.value; 
-        Valor4=DropDown4.value; 
-        Valor5=DropDown5.value; 
-        Valor6=DropDown6.value; 
-        Valor7=DropDown7.value; 
-        Valor8=DropDown8.value;  
-        Valor9=DropDown9.value; 
-        Valor10=DropDown10.value; 
-        Valor11=DropDown11.value; 
-        Valor12=DropDown12.value; 
-        Valor13=DropDown13.value; 
-        Valor14=DropDown14.value; 
-        Valor15=DropDown15.value; 
-        Valor16=DropDown16.value; 
+            
+    }
 
-        ValorAlegria=SacarPuntuacion(Valor3,Valor6,Valor12,Valor15);
-        ValorTristeza=SacarPuntuacion(Valor4,Valor7,Valor10,Valor16);
-        ValorMiedo=SacarPuntuacion(Valor1,Valor5,Valor9,Valor13);
-        ValorIra=SacarPuntuacion(Valor2,Valor8,Valor11,Valor14);
+    public void CalcularPuntuacionTristeza(){
+           
+            Toggles1=GameObject.FindGameObjectsWithTag("Melancolico");
+            Toggles2=GameObject.FindGameObjectsWithTag("Alicaido");
+            Toggles3=GameObject.FindGameObjectsWithTag("Apagado");
+            Toggles4=GameObject.FindGameObjectsWithTag("Triste");
 
-        EmocionResultante=ElegirMayor(ValorAlegria,ValorTristeza,ValorMiedo,ValorIra);
+        ValorTristeza=SacarPuntuacion(Toggles1,Toggles2,Toggles3,Toggles4);
 
+       
+            
+    }
 
-        Debug.Log("La emoción resultante es: " + EmocionResultante);
-     
+      public void CalcularPuntuacionIra(){
+           
+            Toggles1=GameObject.FindGameObjectsWithTag("Irritado");
+            Toggles2=GameObject.FindGameObjectsWithTag("Enojado");
+            Toggles3=GameObject.FindGameObjectsWithTag("Molesto");
+            Toggles4=GameObject.FindGameObjectsWithTag("Enfadado");
+
+        ValorIra=SacarPuntuacion(Toggles1,Toggles2,Toggles3,Toggles4);
+
         
+            
     }
 
-    public float SacarPuntuacion(int valor1, int valor2, int valor3, int valor4)
-    {
-        float Resultado=0;
-        float Division=4.0f;
+    public void CalcularPuntuacionMiedo(){
+           
+            Toggles1=GameObject.FindGameObjectsWithTag("Nervioso");
+            Toggles2=GameObject.FindGameObjectsWithTag("Tenso");
+            Toggles3=GameObject.FindGameObjectsWithTag("Ansioso");
+            Toggles4=GameObject.FindGameObjectsWithTag("Intranquilo");
 
-        Resultado=(valor1+valor2+valor3+valor4)/Division;
+        ValorMiedo=SacarPuntuacion(Toggles1,Toggles2,Toggles3,Toggles4);
 
-        return Resultado;
+       
+            
     }
 
-    public string ElegirMayor(float Alegria,float Tristeza, float Miedo, float Ira)
+    public float SacarPuntuacion(GameObject[] Toggles1, GameObject[] Toggles2, GameObject[] Toggles3,  GameObject[] Toggles4   ){
+
+        float ValorResultado=0f;
+        
+        foreach(GameObject Toggle in Toggles1)
+        {
+            
+            Toggle m_Toggle = Toggle.GetComponent<Toggle>();
+            if(m_Toggle.isOn){
+
+               int index = System.Array.IndexOf(Toggles1, Toggle);
+               
+                ValorResultado=ValorResultado+index;
+
+            }
+
+        }
+
+        foreach(GameObject Toggle in Toggles2)
+        {
+            
+            Toggle m_Toggle = Toggle.GetComponent<Toggle>();
+            if(m_Toggle.isOn){
+
+               int index = System.Array.IndexOf(Toggles2, Toggle);
+               
+                ValorResultado=ValorResultado+index;
+
+            }
+
+        }
+
+        foreach(GameObject Toggle in Toggles3)
+        {
+            
+            Toggle m_Toggle = Toggle.GetComponent<Toggle>();
+            if(m_Toggle.isOn){
+
+               int index = System.Array.IndexOf(Toggles3, Toggle);
+               
+                ValorResultado=ValorResultado+index;
+
+            }
+
+        }
+
+        foreach(GameObject Toggle in Toggles4)
+        {
+            
+            Toggle m_Toggle = Toggle.GetComponent<Toggle>();
+            if(m_Toggle.isOn){
+
+               int index = System.Array.IndexOf(Toggles4, Toggle);
+               
+                ValorResultado=ValorResultado+index;
+
+            }
+
+        }
+
+        
+
+        ValorResultado=ValorResultado/4.0f;
+
+        Debug.Log(ValorResultado);
+
+        return ValorResultado;
+
+
+
+    }
+    
+
+       
+    public void ElegirMayor()
     {
         
         float ValorMayor;
         int Posicion;
         List<float> Lista = new List<float>();
 
-        Lista.Add(Alegria);
-        Lista.Add(Tristeza);
-        Lista.Add(Miedo);
-        Lista.Add(Ira);
+        Lista.Add(ValorAlegria);
+        Lista.Add(ValorTristeza);
+        Lista.Add(ValorMiedo);
+        Lista.Add(ValorIra);
 
         ValorMayor=Lista.Max();
 
@@ -138,10 +192,9 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
             ResultadoEmocion="Ira";
         }
 
-        
+        Debug.Log("La emocion ganadora es: " + ResultadoEmocion);
 
-
-        return ResultadoEmocion;
+        EmocionResultante=ResultadoEmocion;
 
     }
 }

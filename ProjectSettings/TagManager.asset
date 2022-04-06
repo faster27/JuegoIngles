@@ -11,6 +11,22 @@ TagManager:
   - PanelBrillo
   - Bullet
   - Princesa
+  - Alegria
+  - Optimista
+  - Jovial
+  - Contento
+  - Melancolico
+  - Alicaido
+  - Apagado
+  - Triste
+  - Irritado
+  - Enojado
+  - Molesto
+  - Enfadado
+  - Nervioso
+  - Tenso
+  - Ansioso
+  - Intranquilo
   layers:
   - Default
   - TransparentFX
