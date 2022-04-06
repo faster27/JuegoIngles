@@ -38,6 +38,8 @@ public class JumpDamageFinalBoss : MonoBehaviour
 
     public TextMeshProUGUI TextoPregunta;
 
+    private Rigidbody2D rb;
+
 
    
 
@@ -46,8 +48,16 @@ public class JumpDamageFinalBoss : MonoBehaviour
 
         if(collision.transform.CompareTag("Player")){
 
-            clip.Play();
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity=(Vector2.up*JumpForce);
+           clip.Play();
+            rb=collision.gameObject.GetComponent<Rigidbody2D>();
+
+            Vector2 posicion=new Vector2();
+
+            posicion.x=Random.Range(-3.754858f,3.1045f);
+
+            posicion.y=-0.2f;
+
+            collision.transform.position=posicion;
             
             LosseLifeAndHit();
             CheckLifeJefeFinal();

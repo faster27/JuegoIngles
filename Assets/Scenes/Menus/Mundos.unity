@@ -3161,7 +3161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1710721217}
-  levelName: JefeFinal
+  levelName: AntesDelMundo3
   transition: {fileID: 793191013}
   PuertaImagen: {fileID: 89935221}
   PanelPreguntasPuerta: {fileID: 2010374843}
@@ -3448,7 +3448,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &1298243655
 RectTransform:
@@ -3493,6 +3493,8 @@ MonoBehaviour:
   clip: {fileID: 1298243657}
   optionsPanel: {fileID: 1789927791}
   PanelAnimacion: {fileID: 0}
+  Personaje: {fileID: 0}
+  Camara: {fileID: 0}
 --- !u!82 &1298243657
 AudioSource:
   m_ObjectHideFlags: 0

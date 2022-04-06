@@ -15,6 +15,11 @@ public class TextoEscenaIntro : MonoBehaviour
     string frase2="A la princesa deberán salvar si su idioma quieren recuperar,\n y para ello deberán enviar a su mejor guerrero, quien los retos deberá superar.";
 
     
+    //Historia antes del mundo 3
+
+    string frase5="Guerrero has tenido un largo viaje hasta aquí, \n las canciones hablan de que has atravesado selvas, pantanos e incluso desiertos para rescatar a la princesa,\n estás a un solo paso de hacerlo, pero primero debes entrar al castillo y llegar hasta la torre.\n Dentro encontrarás criaturas nunca antes vistas, pero toda tu aldea te apoya,\n las derrotaras con tu sabiduría  y traerás gloria y felicidad a tu pueblo, adelante";
+    
+    
     //Historia antes de pelear con el jefe final
 
     string frase3="Guerrero has pasado pruebas que ningún otro ser viviente ha podido superar y has llegado hasta aquí, \n pero aún falta la prueba más importante, derrotar al hechicero supremo, \n el cual tiene secuestrada a tu princesa y a tu pueblo sin poder hablar inglés \n juntos lo derrotaremos AU AU AU";
@@ -31,6 +36,7 @@ public class TextoEscenaIntro : MonoBehaviour
     string frase2Convertida;
     string frase3Convertida;
     string frase4Convertida;
+    string frase5Convertida;
 
     public float VelocidadTexto=0.1f;
 
@@ -52,6 +58,7 @@ public class TextoEscenaIntro : MonoBehaviour
         frase2Convertida=ConvertirFrase(frase2);
         frase3Convertida=ConvertirFrase(frase3);
         frase4Convertida=ConvertirFrase(frase4);
+        frase5Convertida=ConvertirFrase(frase5);
         StartCoroutine(Reloj());
     }
 
@@ -124,6 +131,20 @@ public class TextoEscenaIntro : MonoBehaviour
 
         }
 
+         if(level=="AntesDelMundo3"){
+
+            foreach (char caracter in frase5Convertida)
+            {
+                texto.text = texto.text + caracter;
+                yield return new WaitForSeconds(VelocidadTexto);
+            }
+            clip.Stop();
+            yield return new WaitForSeconds(3f);
+            PanelAnimation.SetActive(true);
+            Invoke("ChangeScene",4);
+
+        }
+
        
 
 
@@ -162,6 +183,13 @@ public class TextoEscenaIntro : MonoBehaviour
         {
 
             SceneManager.LoadScene("MenuInicial");
+
+        }
+
+        if(level=="AntesDelMundo3")
+        {
+
+            SceneManager.LoadScene("Nivel1Mundo3");
 
         }
 

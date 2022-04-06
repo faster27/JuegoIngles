@@ -9,7 +9,7 @@ public class AtaqueAbeja : MonoBehaviour
 
     public float DistanciaRayCast=0.5f;
 
-    public float TiempoAtaque=1f;
+    public float TiempoAtaque=1.5f;
 
     private float ConteoActual;
 
@@ -40,11 +40,12 @@ public class AtaqueAbeja : MonoBehaviour
         RaycastHit2D hit2D=Physics2D.Raycast(transform.position,Vector2.down,DistanciaRayCast);
 
         if(hit2D.collider!=null)
-        {
-
+        {   
+            
+            
             if(hit2D.collider.CompareTag("Player") )
             {
-
+                
                 if(ConteoActual<0)
                 {
                     Invoke("DisparoBala",0.5f);

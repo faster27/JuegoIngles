@@ -11,7 +11,7 @@ public class KeyCollected : MonoBehaviour
     public GameObject PanelPreguntas;
     public static bool IsKeyCollected=false;
 
-
+ 
     public Button Btn1;
     public Button Btn2;
     public Button Btn3;
