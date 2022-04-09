@@ -1688,7 +1688,7 @@ RectTransform:
   m_GameObject: {fileID: 533065640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.555, y: 0.555, z: 0.555}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1247806459}
@@ -1696,8 +1696,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 218.33661, y: 107.69354}
-  m_SizeDelta: {x: 1970.5271, y: 999.7933}
+  m_AnchoredPosition: {x: 0.000061035, y: 0.0025024}
+  m_SizeDelta: {x: -0.00012207, y: -0.0049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &551057750 stripped
 Transform:
@@ -4963,7 +4963,9 @@ MonoBehaviour:
   Panel2Btn1: {fileID: 869489132}
   Panel2Btn2: {fileID: 869489131}
   Panel2Btn3: {fileID: 869489130}
+  BtnJugar: {fileID: 0}
   TextoPregunta: {fileID: 869489129}
+  TextoRespuesta: {fileID: 0}
 --- !u!61 &1538791378
 BoxCollider2D:
   m_ObjectHideFlags: 0

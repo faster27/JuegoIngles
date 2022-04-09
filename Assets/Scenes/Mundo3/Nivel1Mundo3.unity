@@ -11371,11 +11371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 376.7886
+      value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 226.0732
+      value: -0.0005188
       objectReference: {fileID: 0}
     - target: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11407,11 +11407,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -28.2591
+      value: -0.0010070801
       objectReference: {fileID: 0}
     - target: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 18.8394
+      value: -0.00024414
       objectReference: {fileID: 0}
     - target: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14615,7 +14615,7 @@ RectTransform:
   m_GameObject: {fileID: 1973376772}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.555, y: 0.555, z: 0.555}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2027452028}
@@ -14623,8 +14623,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.0545654, y: 62.605896}
-  m_SizeDelta: {x: 2931.8708, y: 1702.1042}
+  m_AnchoredPosition: {x: -0.005004883, y: 0.0025024}
+  m_SizeDelta: {x: 0.01, y: 0.005127}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1980765781 stripped
 Transform:
@@ -15759,7 +15759,9 @@ MonoBehaviour:
   Panel2Btn1: {fileID: 1054819615}
   Panel2Btn2: {fileID: 1431144465}
   Panel2Btn3: {fileID: 1650700462}
+  BtnJugar: {fileID: 0}
   TextoPregunta: {fileID: 2104077227}
+  TextoRespuesta: {fileID: 0}
 --- !u!61 &2144845821
 BoxCollider2D:
   m_ObjectHideFlags: 0

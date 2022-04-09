@@ -46,6 +46,17 @@ public class UIManager : MonoBehaviour
         
     }
 
+    void Update(){
+
+        if(Input.GetKey(KeyCode.Escape) )
+        {  
+
+           //OptionsPanel();
+
+        }
+
+    }
+
     public void PanelEncuesta()
     {
         if(!level.Contains("Boss") && !level.Contains("Mundos") ){
