@@ -223,3 +223,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 990802214}
   Key: {fileID: 0}
+  PanelPreguntas: {fileID: 0}
+  Btn1: {fileID: 0}
+  Btn2: {fileID: 0}
+  Btn3: {fileID: 0}
+  BtnSgtePregunta: {fileID: 0}
+  Llave: {fileID: 8885210984936086567}
+  TextoPregunta: {fileID: 0}
+  TextoRespuesta: {fileID: 0}
