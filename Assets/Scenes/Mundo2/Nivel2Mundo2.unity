@@ -18152,7 +18152,9 @@ MonoBehaviour:
   Panel2Btn1: {fileID: 963432587}
   Panel2Btn2: {fileID: 963432586}
   Panel2Btn3: {fileID: 963432585}
+  BtnJugar: {fileID: 0}
   TextoPregunta: {fileID: 1193874194}
+  TextoRespuesta: {fileID: 0}
 --- !u!61 &855038089
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19103,11 +19105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 30.9969
+      value: 0.00012207
       objectReference: {fileID: 0}
     - target: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 26.1026
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19139,11 +19141,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 15.498413
+      value: 0.000030518
       objectReference: {fileID: 0}
     - target: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 13.0513
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -20078,7 +20080,7 @@ RectTransform:
   m_GameObject: {fileID: 1242464754}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7953705, y: 0.7953705, z: 0.7953705}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2046412438}
@@ -20086,8 +20088,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 68.2406, y: 44.405884}
-  m_SizeDelta: {x: 2511.4136, y: 1227.8572}
+  m_AnchoredPosition: {x: 0.010009766, y: 0}
+  m_SizeDelta: {x: -0.0199, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1312741451 stripped
 Transform:
