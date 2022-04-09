@@ -16,18 +16,22 @@ public class KeyCollected : MonoBehaviour
     public Button Btn2;
     public Button Btn3;
 
+    public Button BtnSgtePregunta;
+
     public GameObject Llave;
 
+    private ControlPreguntas ControlPreguntas; 
 
-    public GameObject PanelPreguntasPuerta;
+    int ContadorPreguntas=0;
 
 
 
     //Referencia a los textos de pregunta y respuesta del panel
 
     public TextMeshProUGUI TextoPregunta;
+    public TextMeshProUGUI TextoRespuesta;
 
-   void Start () {
+    void Start () {
 		Button Btn11 = Btn1.GetComponent<Button>();
 		Btn11.onClick.AddListener(() => ObtenerRespuesta(1));
 
@@ -37,9 +41,13 @@ public class KeyCollected : MonoBehaviour
         Button Btn33 = Btn3.GetComponent<Button>();
 		Btn33.onClick.AddListener(() => ObtenerRespuesta(3));
 
+        ControlPreguntas = new ControlPreguntas();
+
+        ControlPreguntas=FindObjectOfType<ControlPreguntas>();
+
         //Aqui se debe traer las preguntas cando se coja la llave
         
-       
+        
       
 
 	}
@@ -50,43 +58,60 @@ public class KeyCollected : MonoBehaviour
 
         if(Collision.CompareTag("Player")){
 
-             
-
             PanelPreguntas.gameObject.SetActive(true);
-           
 
-            TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
-
-            
+            SetearTextoPregunta_Botones();       
         
             Time.timeScale=0;
-
-            
-            //Aqui se debe llamar la funcion la cual tare las preguntas de la bD par setear los botones
 
         }
 
     }
 
-    public void IsCorrect(string respuesta)
+    public void SetearTextoPregunta_Botones(){
+
+        Btn1.interactable=true;
+        Btn2.interactable=true;
+        Btn3.interactable=true; 
+
+        TextoRespuesta.SetText(""); 
+
+       // string Pregunta= TraerPregunta(ResultadoEncuestaEmocion.EmocionResultante);
+
+       //string Respuestas[]=TraerRepuestas();
+
+        TextoPregunta.SetText(ControlPreguntas.TraerPregunta(ResultadoEncuestaEmocion.EmocionResultante));
+       
+        string[] respuestas=ControlPreguntas.TraerRespuestas(ResultadoEncuestaEmocion.EmocionResultante);
+
+        
+       
+        Btn1.GetComponentInChildren<TextMeshProUGUI>().text=respuestas[0];
+        Btn2.GetComponentInChildren<TextMeshProUGUI>().text=respuestas[1];
+        Btn3.GetComponentInChildren<TextMeshProUGUI>().text=respuestas[2];
+
+
+    }
+
+    public void IsCorrect(string respuestaDeJugador)
     {
         
         //Aqui se debera verificar que lo que seleeciono el jugador es la respuesta correcta 
 
+        string RespuestaCorrecta= ControlPreguntas.RespuestaCorrectaPregunta;
 
-        PanelPreguntas.gameObject.SetActive(false);
-        PanelPreguntasPuerta.gameObject.SetActive(false);
-        Time.timeScale=1;
 
-        IsKeyCollected=true;
+        Debug.Log("respuesta Jugador: " + respuestaDeJugador);   
+        Debug.Log("respuesta Correcta: " + RespuestaCorrecta);           
         
-            
-        Key.gameObject.SetActive(true);
-        clip.Play();
-        GetComponent<BoxCollider2D>().enabled=false;
-        GetComponent<SpriteRenderer>().enabled=false;
-
         
+
+            Btn1.interactable=false;
+            Btn2.interactable=false;
+            Btn3.interactable=false;  
+
+            TextoRespuesta.SetText("La respuesta correcta es: " + RespuestaCorrecta);
+            BtnSgtePregunta.interactable=true;        
     }
 
     public void ObtenerRespuesta(int Buton)
@@ -128,12 +153,41 @@ public class KeyCollected : MonoBehaviour
         
     }
 
-    public void SiguientePregunta(){
+    public void SgtePregunta()
+    {
+        ContadorPreguntas+=1;
+        BtnSgtePregunta.interactable=false;
 
-        Debug.Log("ahola");
+        if(ContadorPreguntas==2){
 
-        //Aqui s deben tarer la demas preguntas para setear los botones y hacer el cambio de pregunta
+            BtnSgtePregunta.GetComponentInChildren<TextMeshProUGUI>().text="Jugar";
+        }
+
+        if(ContadorPreguntas<3){
+
+            SetearTextoPregunta_Botones();
+
+        }else{
+
+            PanelPreguntas.gameObject.SetActive(false);
+            Time.timeScale=1;
+
+            IsKeyCollected=true;
+        
+            
+            Key.gameObject.SetActive(true);
+            clip.Play();
+            GetComponent<BoxCollider2D>().enabled=false;
+            GetComponent<SpriteRenderer>().enabled=false;
+
+        }
+
+        
+
+
     }
+
+   
 
     
 }

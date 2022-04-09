@@ -29,16 +29,69 @@ public class OpenDoor : MonoBehaviour
     public Button Panel2Btn1;
     public Button Panel2Btn2;
     public Button Panel2Btn3;
+    public Button BtnJugar;
+    
 
     public TextMeshProUGUI TextoPregunta;
-   
+    public TextMeshProUGUI TextoRespuesta;
 
+    private ControlPreguntas ControlPreguntas; 
+
+    int ContadorPreguntas=0;
+   
+    void Start(){
+
+        ColeccionLlave = new KeyCollected();
+
+        ColeccionLlave=FindObjectOfType<KeyCollected>();
+
+        Scene scene2 = SceneManager.GetActiveScene();
+        level2 =scene2.name;
+
+        FruitManager.TodasLasFrutasCogidas=false;
+
+        Button Panel2Btn11 = Panel2Btn1.GetComponent<Button>();
+		Panel2Btn11.onClick.AddListener(() =>ObtenerRespuesta(1));
+
+        Button Panel2Btn22 = Panel2Btn2.GetComponent<Button>();
+		Panel2Btn22.onClick.AddListener(() => ObtenerRespuesta(2));
+
+        Button Panel2Btn33 = Panel2Btn3.GetComponent<Button>();
+		Panel2Btn33.onClick.AddListener(() => ObtenerRespuesta(3));
+
+        ControlPreguntas = new ControlPreguntas();
+
+        ControlPreguntas=FindObjectOfType<ControlPreguntas>();
+       
+
+    }
+
+    public void Update(){
+
+        if(FruitManager.TodasLasFrutasCogidas==true && JumpDamage.IsDead==true && level2.Contains("Boss")){
+
+
+            PuertaImagen.SetActive(false);
+        }
+
+        if(InDoor && Input.GetKey("e")){
+
+            transition.SetActive(true);
+            FruitManager.TodasLasFrutasCogidas=false;
+            KeyCollected.IsKeyCollected=false;
+            JumpDamage.IsDead=false;
+            Invoke("ChangeScene",4);
+            
+
+        }
+
+    }
 
     void OnTriggerEnter2D(Collider2D Collision){
 
         Scene scene = SceneManager.GetActiveScene();
         string level =scene.name;
-
+        
         if(Collision.gameObject.CompareTag("Player") && FruitManager.TodasLasFrutasCogidas==true && 
             !level.Contains("Boss") && JumpDamage.IsDead==false && KeyCollected.IsKeyCollected==true && SenalPuerta==0){
 
@@ -52,7 +105,7 @@ public class OpenDoor : MonoBehaviour
 
             //Aqui se debe llamar la funcion la cual tare las preguntas de la bD par setear los botones
 
-             TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
+            SetearTextoPregunta_Botones();
 
 
         }
@@ -125,68 +178,103 @@ public class OpenDoor : MonoBehaviour
 
     }
 
+    public void SetearTextoPregunta_Botones(){
+
+       // string Pregunta= TraerPregunta(ResultadoEncuestaEmocion.EmocionResultante);
+
+       //string Respuestas[]=TraerRepuestas();
+
+        TextoPregunta.SetText(ControlPreguntas.TraerPregunta(ResultadoEncuestaEmocion.EmocionResultante));
+
+       
+        string[] respuestas=ControlPreguntas.TraerRespuestas(ResultadoEncuestaEmocion.EmocionResultante);
+
+        
+       
+        Panel2Btn1.GetComponentInChildren<TextMeshProUGUI>().text=respuestas[0];
+        Panel2Btn2.GetComponentInChildren<TextMeshProUGUI>().text=respuestas[1];
+        Panel2Btn3.GetComponentInChildren<TextMeshProUGUI>().text=respuestas[2];
+
+
+    }
+
+     public void IsCorrect(string respuestaDeJugador)
+    {
+        
+        //Aqui se debera verificar que lo que seleeciono el jugador es la respuesta correcta 
+
+        string RespuestaCorrecta= ControlPreguntas.RespuestaCorrectaPregunta;
+
+
+        Debug.Log("respuesta Jugador: " + respuestaDeJugador);   
+        Debug.Log("respuesta Correcta: " + RespuestaCorrecta);           
+        
+        
+
+        Panel2Btn1.interactable=false;
+        Panel2Btn2.interactable=false;
+        Panel2Btn3.interactable=false;  
+
+        TextoRespuesta.SetText("La respuesta correcta es: " + RespuestaCorrecta);
+
+        BtnJugar.interactable=true;
+                
+    }
+
+    public void ObtenerRespuesta(int Buton)
+    {
+
+        if(Buton==1){
+            string respuesta= Panel2Btn1.GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
+            Debug.Log(respuesta);
+            IsCorrect(respuesta);
+
+           
+
+        }
+
+         if(Buton==2){
+            string respuesta= Panel2Btn2.GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
+            Debug.Log(respuesta);
+            IsCorrect(respuesta);
+
+        }
+
+         if(Buton==3){
+            string respuesta= Panel2Btn3.GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
+            Debug.Log(respuesta);
+            IsCorrect(respuesta);
+
+        }
 
         
 
+     
+
+        
+        
+    }
+
+    public void SeguirJugar()
+    {
+
+        PanelPreguntasPuerta.gameObject.SetActive(false);
+        Time.timeScale=1;
+
+
+    }
 
     
-    
+
+           
     void OnTriggerExit2D(Collider2D Collision){
 
         text.gameObject.SetActive(false);
         InDoor=false;
-        
-
-        
+                
     }
 
-    void Start(){
-
-        ColeccionLlave = new KeyCollected();
-
-        ColeccionLlave=FindObjectOfType<KeyCollected>();
-        Scene scene2 = SceneManager.GetActiveScene();
-        level2 =scene2.name;
-        FruitManager.TodasLasFrutasCogidas=false;
-
-        Button Panel2Btn11 = Panel2Btn1.GetComponent<Button>();
-		Panel2Btn11.onClick.AddListener(() =>ColeccionLlave.ObtenerRespuesta(1));
-
-        Button Panel2Btn22 = Panel2Btn2.GetComponent<Button>();
-		Panel2Btn22.onClick.AddListener(() => ColeccionLlave.ObtenerRespuesta(2));
-
-        Button Panel2Btn33 = Panel2Btn3.GetComponent<Button>();
-		Panel2Btn33.onClick.AddListener(() => ColeccionLlave.ObtenerRespuesta(3));
        
-
-        
-
-
-    }
-
-   
-
-    public void Update(){
-
-        if(FruitManager.TodasLasFrutasCogidas==true && JumpDamage.IsDead==true && level2.Contains("Boss")){
-
-
-            PuertaImagen.SetActive(false);
-        }
-
-        if(InDoor && Input.GetKey("e")){
-
-            transition.SetActive(true);
-            FruitManager.TodasLasFrutasCogidas=false;
-            KeyCollected.IsKeyCollected=false;
-            JumpDamage.IsDead=false;
-            Invoke("ChangeScene",4);
-            
-
-        }
-
-    }
-
     void ChangeScene(){
 
         SceneManager.LoadScene(levelName);
