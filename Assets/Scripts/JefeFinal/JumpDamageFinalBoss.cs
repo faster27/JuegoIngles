@@ -27,6 +27,7 @@ public class JumpDamageFinalBoss : MonoBehaviour
     public static bool IsDead=false;
 
     public AudioSource clip;
+     public AudioSource Teleport;
 
     public  GameObject[] Corazones;
 
@@ -42,6 +43,9 @@ public class JumpDamageFinalBoss : MonoBehaviour
 
     private ControlPreguntasJefeFinal ControlPreguntas; 
 
+    public GameObject TeleportAnimation;
+    public GameObject Rana;
+
 
    
 
@@ -50,16 +54,19 @@ public class JumpDamageFinalBoss : MonoBehaviour
 
         if(collision.transform.CompareTag("Player")){
 
-           clip.Play();
+            clip.Play();
+            Teleport.Play();
+
+
+            //Aqui se le da una nueva coordenada aleatoria al jugador para generar el efecto de teletransporte
             rb=collision.gameObject.GetComponent<Rigidbody2D>();
-
             Vector2 posicion=new Vector2();
-
+            Rana.SetActive(false);
+            TeleportAnimation.SetActive(true);
             posicion.x=Random.Range(-3.754858f,3.1045f);
-
             posicion.y=-0.2f;
-
             collision.transform.position=posicion;
+            Rana.SetActive(true);
             
             LosseLifeAndHit();
             CheckLifeJefeFinal();

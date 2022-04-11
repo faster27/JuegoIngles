@@ -27,6 +27,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
     public static bool IsDead=false;
 
     public AudioSource clip;
+    public AudioSource Teleport;
     
 
     public  GameObject[] Corazones;
@@ -45,6 +46,9 @@ public class JumpDamageBossAbeja : MonoBehaviour
 
     private ControlPreguntasJefeFinal ControlPreguntas; 
 
+    public GameObject TeleportAnimation;
+    public GameObject Rana;
+
    
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -53,14 +57,18 @@ public class JumpDamageBossAbeja : MonoBehaviour
         if(collision.transform.CompareTag("Player")){
 
             clip.Play();
+            Teleport.Play();
 
 
             //Aqui se leda una nueva coordenada aleatoria al jugador para generar el efecto de teletransporte
             rb=collision.gameObject.GetComponent<Rigidbody2D>();
             Vector2 posicion=new Vector2();
+            Rana.SetActive(false);
+            TeleportAnimation.SetActive(true);
             posicion.x=Random.Range(-3.754858f,3.1045f);
             posicion.y=-0.2f;
             collision.transform.position=posicion;
+            Rana.SetActive(true);
             
             LosseLifeAndHit();
             CheckLifeJefeFinal();
