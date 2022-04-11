@@ -37,7 +37,6 @@ public class OpenDoor : MonoBehaviour
 
     private ControlPreguntas ControlPreguntas; 
 
-    int ContadorPreguntas=0;
    
     void Start(){
 

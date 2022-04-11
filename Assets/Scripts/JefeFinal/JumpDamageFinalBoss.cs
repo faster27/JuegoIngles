@@ -27,6 +27,7 @@ public class JumpDamageFinalBoss : MonoBehaviour
     public static bool IsDead=false;
 
     public AudioSource clip;
+     public AudioSource Teleport;
 
     public  GameObject[] Corazones;
 
@@ -40,6 +41,11 @@ public class JumpDamageFinalBoss : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private ControlPreguntasJefeFinal ControlPreguntas; 
+
+    public GameObject TeleportAnimation;
+    public GameObject Rana;
+
 
    
 
@@ -48,16 +54,19 @@ public class JumpDamageFinalBoss : MonoBehaviour
 
         if(collision.transform.CompareTag("Player")){
 
-           clip.Play();
+            clip.Play();
+            Teleport.Play();
+
+
+            //Aqui se le da una nueva coordenada aleatoria al jugador para generar el efecto de teletransporte
             rb=collision.gameObject.GetComponent<Rigidbody2D>();
-
             Vector2 posicion=new Vector2();
-
+            Rana.SetActive(false);
+            TeleportAnimation.SetActive(true);
             posicion.x=Random.Range(-3.754858f,3.1045f);
-
             posicion.y=-0.2f;
-
             collision.transform.position=posicion;
+            Rana.SetActive(true);
             
             LosseLifeAndHit();
             CheckLifeJefeFinal();
@@ -76,6 +85,10 @@ public class JumpDamageFinalBoss : MonoBehaviour
         controJefe = new ControlJefeFinal();
 
         controJefe=FindObjectOfType<ControlJefeFinal>();
+
+        ControlPreguntas = new ControlPreguntasJefeFinal();
+
+        ControlPreguntas=FindObjectOfType<ControlPreguntasJefeFinal>();
 
       
 
@@ -134,7 +147,9 @@ public class JumpDamageFinalBoss : MonoBehaviour
             Debug.Log("quedan 3 corazones");
             Time.timeScale=0;
             PanelPreguntas.SetActive(true);
-            TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
+
+            ControlPreguntas.SetearTextoPregunta_Botones();
+            //TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
             Corazones[3].gameObject.SetActive(false);
 
             
@@ -157,9 +172,12 @@ public class JumpDamageFinalBoss : MonoBehaviour
         {
             Debug.Log("quedan 6 corazones");
             Time.timeScale=0;
-            Corazones[6].gameObject.SetActive(false);
+
             PanelPreguntas.SetActive(true);
-            TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
+            ControlPreguntas.SetearTextoPregunta_Botones();
+            Corazones[6].gameObject.SetActive(false);
+            
+            //TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
             
 
             
@@ -202,13 +220,10 @@ public class JumpDamageFinalBoss : MonoBehaviour
     }
 
 
-    public  void IsCorrect(string respuesta)
+    public  void RegenerarCorazones()
     {
 
-       if(respuesta!=respuesta){
-
-            PanelPreguntas.SetActive(false);
-            Time.timeScale=1;
+     
 
             if(Lifes==6)
             {
@@ -228,15 +243,6 @@ public class JumpDamageFinalBoss : MonoBehaviour
                 Lifes=6;
 
             }
-  
-
-       }
-
-       PanelPreguntas.SetActive(false);
-            Time.timeScale=1;
-       
-        
-
       
     }
 
