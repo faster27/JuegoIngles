@@ -40,6 +40,8 @@ public class JumpDamageFinalBoss : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private ControlPreguntasJefeFinal ControlPreguntas; 
+
 
    
 
@@ -76,6 +78,10 @@ public class JumpDamageFinalBoss : MonoBehaviour
         controJefe = new ControlJefeFinal();
 
         controJefe=FindObjectOfType<ControlJefeFinal>();
+
+        ControlPreguntas = new ControlPreguntasJefeFinal();
+
+        ControlPreguntas=FindObjectOfType<ControlPreguntasJefeFinal>();
 
       
 
@@ -134,7 +140,9 @@ public class JumpDamageFinalBoss : MonoBehaviour
             Debug.Log("quedan 3 corazones");
             Time.timeScale=0;
             PanelPreguntas.SetActive(true);
-            TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
+
+            ControlPreguntas.SetearTextoPregunta_Botones();
+            //TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
             Corazones[3].gameObject.SetActive(false);
 
             
@@ -157,9 +165,12 @@ public class JumpDamageFinalBoss : MonoBehaviour
         {
             Debug.Log("quedan 6 corazones");
             Time.timeScale=0;
-            Corazones[6].gameObject.SetActive(false);
+
             PanelPreguntas.SetActive(true);
-            TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
+            ControlPreguntas.SetearTextoPregunta_Botones();
+            Corazones[6].gameObject.SetActive(false);
+            
+            //TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
             
 
             
@@ -202,13 +213,10 @@ public class JumpDamageFinalBoss : MonoBehaviour
     }
 
 
-    public  void IsCorrect(string respuesta)
+    public  void RegenerarCorazones()
     {
 
-       if(respuesta!=respuesta){
-
-            PanelPreguntas.SetActive(false);
-            Time.timeScale=1;
+     
 
             if(Lifes==6)
             {
@@ -228,15 +236,6 @@ public class JumpDamageFinalBoss : MonoBehaviour
                 Lifes=6;
 
             }
-  
-
-       }
-
-       PanelPreguntas.SetActive(false);
-            Time.timeScale=1;
-       
-        
-
       
     }
 

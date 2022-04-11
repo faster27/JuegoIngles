@@ -43,6 +43,8 @@ public class JumpDamageBossAbeja : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private ControlPreguntasJefeFinal ControlPreguntas; 
+
    
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -51,14 +53,13 @@ public class JumpDamageBossAbeja : MonoBehaviour
         if(collision.transform.CompareTag("Player")){
 
             clip.Play();
+
+
+            //Aqui se leda una nueva coordenada aleatoria al jugador para generar el efecto de teletransporte
             rb=collision.gameObject.GetComponent<Rigidbody2D>();
-
             Vector2 posicion=new Vector2();
-
             posicion.x=Random.Range(-3.754858f,3.1045f);
-
             posicion.y=-0.2f;
-
             collision.transform.position=posicion;
             
             LosseLifeAndHit();
@@ -70,17 +71,16 @@ public class JumpDamageBossAbeja : MonoBehaviour
         }
 
     }
+    
 
      void Start()
     {
         Scene scene = SceneManager.GetActiveScene();
         level =scene.name;
-        
 
-     
+        ControlPreguntas = new ControlPreguntasJefeFinal();
 
-      
-
+        ControlPreguntas=FindObjectOfType<ControlPreguntasJefeFinal>();
 
     }
 
@@ -88,13 +88,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
 
         Lifes--;
         animator.Play("Hit");
-       
-        
-
-
-
     }
-
 
     public void CheckLifeJefeFinal(){
 
@@ -113,14 +107,6 @@ public class JumpDamageBossAbeja : MonoBehaviour
            
 
             gameObject.SetActive(false);
-
-           
-
-           
-        
-         
-           
-          
 
         }
         else if(Lifes<2)
@@ -142,7 +128,11 @@ public class JumpDamageBossAbeja : MonoBehaviour
             Debug.Log("quedan 3 corazones");
             Time.timeScale=0;
             PanelPreguntas.SetActive(true);
-             TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
+
+            ControlPreguntas.SetearTextoPregunta_Botones();
+
+           // TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
+            
             Corazones[3].gameObject.SetActive(false);
 
             
@@ -167,8 +157,8 @@ public class JumpDamageBossAbeja : MonoBehaviour
             Time.timeScale=0;
             Corazones[6].gameObject.SetActive(false);
             PanelPreguntas.SetActive(true);
-            TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
-            
+            //TextoPregunta.SetText("Emoción Resultado encuesta " + ResultadoEncuestaEmocion.EmocionResultante);
+            ControlPreguntas.SetearTextoPregunta_Botones();
 
             
        
@@ -208,19 +198,9 @@ public class JumpDamageBossAbeja : MonoBehaviour
 
     }
 
-    
-    
-
-    
-
-    public  void IsCorrect(string respuesta)
+    public  void RegenerarCorazones()
     {
-
-       if(respuesta!=respuesta){
-
-            PanelPreguntas.SetActive(false);
-            Time.timeScale=1;
-
+   
             if(Lifes==6)
             {
 
@@ -238,16 +218,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
 
                 Lifes=6;
 
-            }
-  
-
-       }
-
-       PanelPreguntas.SetActive(false);
-            Time.timeScale=1;
-       
-        
-
+            } 
       
     }
 

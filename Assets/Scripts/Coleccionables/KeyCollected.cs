@@ -98,6 +98,8 @@ public class KeyCollected : MonoBehaviour
         
         //Aqui se debera verificar que lo que seleeciono el jugador es la respuesta correcta 
 
+        //Falta comprar si la respuesta del jugador es correcta
+
         string RespuestaCorrecta= ControlPreguntas.RespuestaCorrectaPregunta;
 
 
@@ -112,6 +114,7 @@ public class KeyCollected : MonoBehaviour
 
             TextoRespuesta.SetText("La respuesta correcta es: " + RespuestaCorrecta);
             BtnSgtePregunta.interactable=true;        
+
     }
 
     public void ObtenerRespuesta(int Buton)
@@ -139,17 +142,6 @@ public class KeyCollected : MonoBehaviour
             IsCorrect(respuesta);
 
         }
-
-         if(Buton==4){
-            
-            Debug.Log("hola");
-            
-
-        }
-
-     
-
-        
         
     }
 

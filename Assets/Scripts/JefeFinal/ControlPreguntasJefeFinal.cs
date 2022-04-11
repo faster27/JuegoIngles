@@ -12,11 +12,18 @@ public class ControlPreguntasJefeFinal : MonoBehaviour
     public Button Btn2;
     public Button Btn3;
 
+    public Button BtnJugar;
+
     public static bool AnswerIsCorrect=false;
 
-    public JumpDamageFinalBoss FinalBoss; 
+    public JumpDamageFinalBoss FinalBossMago; 
 
     public JumpDamageBossAbeja FinalBossAbeja; 
+
+    private ControlPreguntas ControlPreguntas; 
+
+    public TextMeshProUGUI TextoPregunta;
+    public TextMeshProUGUI TextoRespuesta;
     
 
     void Start () {
@@ -29,18 +36,62 @@ public class ControlPreguntasJefeFinal : MonoBehaviour
         Button Btn33 = Btn3.GetComponent<Button>();
 		Btn33.onClick.AddListener(() => ObtenerRespuesta(3));
 
+        ControlPreguntas = new ControlPreguntas();
 
-        //FinalBossAbeja=new JumpDamageBossAbeja();
+        ControlPreguntas=FindObjectOfType<ControlPreguntas>();
 
-        //FinalBoss = new JumpDamageFinalBoss();
-
-        
-       
-        
-
-
-        //Aqui es donde al iniciar el panel se traen las preguntas de la BD y se setean 
 	}
+
+    public void SetearTextoPregunta_Botones(){
+
+        Btn1.interactable=true;
+        Btn2.interactable=true;
+        Btn3.interactable=true; 
+
+        TextoRespuesta.SetText(""); 
+
+       // string Pregunta= TraerPregunta(ResultadoEncuestaEmocion.EmocionResultante);
+
+       //string Respuestas[]=TraerRepuestas();
+
+        TextoPregunta.SetText(ControlPreguntas.TraerPregunta(ResultadoEncuestaEmocion.EmocionResultante));
+       
+        string[] respuestas=ControlPreguntas.TraerRespuestas(ResultadoEncuestaEmocion.EmocionResultante);
+
+        
+        BtnJugar.GetComponentInChildren<TextMeshProUGUI>().text="Jugar";
+        Btn1.GetComponentInChildren<TextMeshProUGUI>().text=respuestas[0];
+        Btn2.GetComponentInChildren<TextMeshProUGUI>().text=respuestas[1];
+        Btn3.GetComponentInChildren<TextMeshProUGUI>().text=respuestas[2];
+
+
+
+    }
+
+    public void IsCorrect(string respuestaDeJugador)
+    {
+        
+        //Aqui se debera verificar que lo que seleeciono el jugador es la respuesta correcta 
+
+        //Falta comprar si la respuesta del jugador es correcta
+
+        string RespuestaCorrecta= ControlPreguntas.RespuestaCorrectaPregunta;
+
+        if(respuestaDeJugador!=RespuestaCorrecta){
+
+            FinalBossAbeja.RegenerarCorazones();
+            FinalBossMago.RegenerarCorazones();
+
+        }
+        
+            Btn1.interactable=false;
+            Btn2.interactable=false;
+            Btn3.interactable=false;  
+
+            TextoRespuesta.SetText("La respuesta correcta es: " + RespuestaCorrecta);
+            BtnJugar.interactable=true;        
+
+    }
 
    
     
@@ -50,7 +101,7 @@ public class ControlPreguntasJefeFinal : MonoBehaviour
         if(Buton==1){
             string respuesta= Btn1.GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
             Debug.Log(respuesta);
-            FinalBoss.IsCorrect(respuesta);
+            IsCorrect(respuesta);
 
            
 
@@ -59,20 +110,27 @@ public class ControlPreguntasJefeFinal : MonoBehaviour
          if(Buton==2){
             string respuesta= Btn2.GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
             Debug.Log(respuesta);
-            FinalBoss.IsCorrect(respuesta);
+            IsCorrect(respuesta);
 
         }
 
          if(Buton==3){
             string respuesta= Btn3.GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
             Debug.Log(respuesta);
-            FinalBoss.IsCorrect(respuesta);
+            IsCorrect(respuesta);
 
         }
      
 
         
         
+    }
+
+    public void Jugar()
+    {
+        PanelPreguntas.gameObject.SetActive(false);
+        Time.timeScale=1;
+
     }
 
    
