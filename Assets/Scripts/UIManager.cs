@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject Camara;
 
+    public GameObject PanelTotal;
+   
 
 
     void Start()
@@ -48,10 +50,10 @@ public class UIManager : MonoBehaviour
 
     void Update(){
 
-        if(Input.GetKey(KeyCode.Escape) )
+        if(Input.GetKey(KeyCode.Escape ) && !PanelTotal.activeSelf)
         {  
 
-           //OptionsPanel();
+           OptionsPanel();
 
         }
 
@@ -108,6 +110,9 @@ public class UIManager : MonoBehaviour
 
     public void MenuPrincipal()
     {
+       
+        
+        
         Time.timeScale=1;
         SceneManager.LoadScene("Mundos");
         
