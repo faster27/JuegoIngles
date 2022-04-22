@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4823977195610115265}
   - component: {fileID: 990802214}
   - component: {fileID: 990802215}
+  - component: {fileID: 1600283210}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8885210984936086567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.092, y: -0.2499, z: 0}
-  m_LocalScale: {x: 0.25169417, y: 0.27923837, z: 0.4078}
+  m_LocalScale: {x: 0.2516942, y: 0.2792384, z: 0.4078}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -231,3 +232,23 @@ MonoBehaviour:
   Llave: {fileID: 8885210984936086567}
   TextoPregunta: {fileID: 0}
   TextoRespuesta: {fileID: 0}
+--- !u!95 &1600283210
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8885210984936086567}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df88a981abbba0b43a5eda8b655e7e63, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

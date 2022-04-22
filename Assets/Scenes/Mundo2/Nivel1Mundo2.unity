@@ -10422,6 +10422,7 @@ Transform:
   - {fileID: 1711706636}
   - {fileID: 788664514}
   - {fileID: 1710301256}
+  - {fileID: 2005980409}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11693,6 +11694,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100230616}
     - target: {fileID: 990802215, guid: b8d1be187c7d58d49ba0330be3812022, type: 3}
+      propertyPath: TextoRespuesta
+      value: 
+      objectReference: {fileID: 1525433588}
+    - target: {fileID: 990802215, guid: b8d1be187c7d58d49ba0330be3812022, type: 3}
+      propertyPath: BtnSgtePregunta
+      value: 
+      objectReference: {fileID: 1525433591}
+    - target: {fileID: 990802215, guid: b8d1be187c7d58d49ba0330be3812022, type: 3}
       propertyPath: PanelPreguntasPuerta
       value: 
       objectReference: {fileID: 647558888}
@@ -12325,6 +12334,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1525433588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6946738714171056630, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2100230613}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1525433589 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 590570047, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2100230613}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1525433590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 933577852, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2100230613}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1525433591 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 829848251, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2100230613}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1532939679
 GameObject:
   m_ObjectHideFlags: 0
@@ -13308,6 +13361,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8807301591702743326, guid: b9666d147f9b012428a3e9a8fb6272bc, type: 3}
   m_PrefabInstance: {fileID: 1923244712}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2005980408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2005980409}
+  - component: {fileID: 2005980410}
+  m_Layer: 0
+  m_Name: ControladorPreguntas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2005980409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005980408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 536330456}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2005980410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005980408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58440c348f0473a44ab8a36a2a502e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2027452024
 GameObject:
   m_ObjectHideFlags: 0
@@ -13500,6 +13597,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: IsCorrect
       objectReference: {fileID: 0}
+    - target: {fileID: 590570047, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2144845820}
+    - target: {fileID: 590570047, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SeguirJugar
+      objectReference: {fileID: 0}
     - target: {fileID: 615554839, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
       value: 6
@@ -13555,6 +13660,14 @@ PrefabInstance:
     - target: {fileID: 615554839, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
       value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 829848251, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1326154897}
+    - target: {fileID: 829848251, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SgtePregunta
       objectReference: {fileID: 0}
     - target: {fileID: 1130432224, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_IsActive
@@ -13984,9 +14097,9 @@ MonoBehaviour:
   Panel2Btn1: {fileID: 647558887}
   Panel2Btn2: {fileID: 647558886}
   Panel2Btn3: {fileID: 647558885}
-  BtnJugar: {fileID: 0}
+  BtnJugar: {fileID: 1525433589}
   TextoPregunta: {fileID: 105353573}
-  TextoRespuesta: {fileID: 0}
+  TextoRespuesta: {fileID: 1525433590}
 --- !u!61 &2144845821
 BoxCollider2D:
   m_ObjectHideFlags: 0
