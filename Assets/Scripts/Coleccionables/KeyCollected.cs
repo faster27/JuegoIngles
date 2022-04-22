@@ -43,17 +43,10 @@ public class KeyCollected : MonoBehaviour
 
         ControlPreguntas = new ControlPreguntas();
 
-        ControlPreguntas=FindObjectOfType<ControlPreguntas>();
-
-        //Aqui se debe traer las preguntas cando se coja la llave
-        
-        
-      
+        ControlPreguntas=FindObjectOfType<ControlPreguntas>();     
 
 	}
 
-    
-    
     private void OnTriggerEnter2D(Collider2D Collision) {
 
         if(Collision.CompareTag("Player")){

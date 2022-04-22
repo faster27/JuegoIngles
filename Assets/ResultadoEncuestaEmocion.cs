@@ -6,6 +6,7 @@ using TMPro;
 using System.Linq;
 
 
+
 public class ResultadoEncuestaEmocion : MonoBehaviour
 {
 
@@ -25,6 +26,9 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
     public GameObject[] Toggles2;
     public GameObject[] Toggles3;
     public GameObject[] Toggles4;
+
+    List<float> EmocionNumerica = new List<float>();
+    List<string> EmocionNombre = new List<string>();
    
 
     
@@ -140,61 +144,175 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
 
         }
 
-        
-
         ValorResultado=ValorResultado/4.0f;
 
-        Debug.Log(ValorResultado);
-
         return ValorResultado;
-
-
-
     }
-    
-
-       
+     
     public void ElegirMayor()
-    {
-        
+    {   
         float ValorMayor;
         int Posicion;
         List<float> Lista = new List<float>();
+        List<string> ListaNombres = new List<string>();
 
         Lista.Add(ValorAlegria);
         Lista.Add(ValorTristeza);
         Lista.Add(ValorMiedo);
         Lista.Add(ValorIra);
 
-        ValorMayor=Lista.Max();
+        ListaNombres.Add("Alegria");
+        ListaNombres.Add("Tristeza");
+        ListaNombres.Add("Miedo");
+        ListaNombres.Add("Ira");
 
-        //Me saca el index de la primera aparicion del valor mayor
+        bool Repeticion= HayRepetidos(Lista);
+
+        if(Repeticion){
+
+            //Se entra en este if si el array que contiene los valores numericos de las emociones
+            //viene con al menos dos valores iguales
+            
+            MezclarListas(Lista,ListaNombres);
+
+            ValorMayor=EmocionNumerica.Max();
+
+            Posicion=EmocionNumerica.IndexOf(ValorMayor);
+
+            //Las emociones se dividen en Alta y Baja para asi despues encontrar la dificultad
+            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,EmocionNombre, Posicion);
+
+            Debug.Log("La emocion ganadora es: " + EmocionResultante);
+
+        }else{
+            
+            //Si el array no tiene iguales lo que hace es sacar el numero mayor
+            //y clasificar en emocion alta o baja 
+
+            ValorMayor=Lista.Max();
+
+            Posicion=Lista.IndexOf(ValorMayor);
+
+            ResultadoEmocion=ClasificarEmocionAlta_Baja(ValorMayor,ListaNombres, Posicion);
+                
+            Debug.Log("La emocion ganadora es: " + ResultadoEmocion);
+
+            EmocionResultante=ResultadoEmocion;
+            
+        }
+    }
+
+    public string ClasificarEmocionAlta_Baja(float ValorMayor, List<string> EmocionNombre, int Posicion){
+
+       Debug.Log("ValorMayor: " + ValorMayor + ", "+ "Emocion: " + EmocionNombre[Posicion]);
+       
+       
+        if(EmocionNombre[Posicion]== "Alegria"){
+
+            if(ValorMayor<=5.1f){
+
+                EmocionResultante="Alegria-Baja";
+
+            }else{
+
+                EmocionResultante="Alegria-Alta";
+
+            }
+        }
+
+        if(EmocionNombre[Posicion]== "Tristeza"){
+
+            if(ValorMayor<=5.1f){
+
+                EmocionResultante="Tristeza-Baja";
+
+            }else{
+
+                EmocionResultante="Tristeza-Alta";
+
+            }
+        }
+
+        if(EmocionNombre[Posicion]== "Ira"){
+
+            if(ValorMayor<=5.1f){
+
+                EmocionResultante="Ira-Baja";
+
+            }else{
+
+                EmocionResultante="Ira-Alta";
+
+            }
+        }
+
+          if(EmocionNombre[Posicion]== "Miedo"){
+
+            if(ValorMayor<=5.1f){
+
+                EmocionResultante="Miedo-Baja";
+
+            }else{
+
+                EmocionResultante="Miedo-Alta";
+
+            }
+        }
+
+        return EmocionResultante;
+    }
+
+
+    public bool HayRepetidos(List<float> lista){
+
+        bool EstaRepetido=false;
+
+        // Creas la nueva
+        List<float> listaNueva = new List<float>();
+
+        for (int i = 0; i < lista.Count; i++)
+        {
+            if (!(listaNueva.Contains(lista[i])))
+            {
+                listaNueva.Add(lista[i]);
+            }else{
+
+                EstaRepetido=true;
+
+            }
+        }
+
+        return EstaRepetido;
+
+    }
+
+
+    public void MezclarListas(List<float> ListaNumeros, List<string> ListaNombres){
+
+        int n = ListaNumeros.Count;
+        int ValorRandom;
+        float TempNumerico;
+        string TempNombre;
+
+        for( int i=0; i <n; i++){
+
+            ValorRandom=Random.Range(0,n);
+
+            TempNumerico= ListaNumeros[ValorRandom];
+            TempNombre=ListaNombres[ValorRandom];
+
+            ListaNumeros[ValorRandom]=ListaNumeros[i];
+            ListaNombres[ValorRandom]=ListaNombres[i];
+
+            ListaNumeros[i]= TempNumerico;
+            ListaNombres[i]=TempNombre;
+
+        }
+
+        EmocionNumerica=ListaNumeros;
+        EmocionNombre=ListaNombres;
+
         
-        Posicion=Lista.IndexOf(ValorMayor);
-
-        if(Posicion==0){
-
-            ResultadoEmocion="Alegria";
-        }
-
-         if(Posicion==1){
-
-            ResultadoEmocion="Tristeza";
-        }
-
-         if(Posicion==2){
-
-            ResultadoEmocion="Miedo";
-        }
-
-         if(Posicion==3){
-
-            ResultadoEmocion="Ira";
-        }
-
-        Debug.Log("La emocion ganadora es: " + ResultadoEmocion);
-
-        EmocionResultante=ResultadoEmocion;
 
     }
 }

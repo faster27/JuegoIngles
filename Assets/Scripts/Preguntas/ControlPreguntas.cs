@@ -23,25 +23,25 @@ public class ControlPreguntas : MonoBehaviour
        
         PosicionPregunta= Random.Range(0,9);
 
-        if(emocion=="Alegria"){
+        if(emocion=="Alegria-Alta" || emocion=="Alegria-Baja"){
 
             Pregunta=PreguntasFaciles[PosicionPregunta];
 
         }
 
-        if(emocion=="Tristeza"){
+        if(emocion=="Tristeza-Alta" || emocion=="Tristeza-Baja"){
 
             Pregunta=PreguntasFaciles[PosicionPregunta];
 
         }
 
-        if(emocion=="Ira"){
+        if(emocion=="Ira-Alta" || emocion=="Ira-Baja"){
 
             Pregunta=PreguntasFaciles[PosicionPregunta];
 
         }
 
-        if(emocion=="Miedo"){
+        if(emocion=="Miedo-Alta" || emocion=="Miedo-Baja"){
 
             Pregunta=PreguntasFaciles[PosicionPregunta];
 
@@ -57,7 +57,10 @@ public class ControlPreguntas : MonoBehaviour
 
         string[] respuestas=new string[3];
 
-        if(emocion=="Alegria"){
+        if(emocion=="Alegria-Alta" || emocion=="Alegria-Baja" || 
+            emocion=="Tristeza-Alta" || emocion=="Tristeza-Baja" ||
+            emocion=="Miedo-Alta" || emocion=="Miedo-Baja" || 
+            emocion=="Ira-Alta" || emocion=="Ira-Baja"){
 
             string RespuestaCorrecta=RespuestasPreguntasFaciles[PosicionPregunta];
 
