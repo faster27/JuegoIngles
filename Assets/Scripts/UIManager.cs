@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public GameObject PanelAnimacion;
 
     private string level;
+    
 
    // public string SgteEscena;
 
@@ -23,6 +24,11 @@ public class UIManager : MonoBehaviour
     public GameObject Camara;
 
     public GameObject PanelTotal;
+
+    public GameObject PanelPreguntasLlave;
+    public GameObject PanelPreguntasPuerta;
+
+
    
 
 
@@ -30,6 +36,8 @@ public class UIManager : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         level =scene.name;
+
+     
 
 
         if ( (level.Contains("Nivel")  || level.Contains("Jefe")) && !level.Contains("Boss") )
@@ -42,20 +50,34 @@ public class UIManager : MonoBehaviour
 
         }
 
+        Invoke("DesactivarPanel",3f);
+
        
        
         
         
     }
 
+    void DesactivarPanel(){
+
+        PanelAnimacion.SetActive(false);
+
+    }
+
     void Update(){
 
-        if(Input.GetKey(KeyCode.Escape ) && !PanelTotal.activeSelf)
+        if(Input.GetKey(KeyCode.Escape ) && !PanelTotal.activeSelf && !PanelPreguntasLlave.activeSelf && !PanelPreguntasPuerta.activeSelf && !PanelAnimacion.activeSelf && !TransicionCambioEscena.activeSelf )
         {  
-
+         
            OptionsPanel();
-
+           
         }
+
+        
+        
+      
+
+       
 
     }
 
@@ -83,14 +105,21 @@ public class UIManager : MonoBehaviour
     public void OptionsPanel()
     {
         Time.timeScale=0;
+        
         optionsPanel.SetActive(true);
+       
     
     }
+
+   
+    
 
     public void Return()
     {
         Time.timeScale=1;
+        
         optionsPanel.SetActive(false);
+       
 
 
     }
