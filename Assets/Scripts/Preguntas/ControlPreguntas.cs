@@ -6,7 +6,7 @@ using UnityEngine;
 public class ControlPreguntas : MonoBehaviour
 {
 
-    string[] PreguntasFaciles={"----- you eat?", "Are you ----- home?", "----- you like the ice cream", "otra pregunta 1", "otra pregunta 2", 
+    string[] PreguntasFaciles={"---- you eat?", "Are you ----- home?", "----- you like the ice cream", "otra pregunta 1", "otra pregunta 2", 
                                "otra pregunta 3", "otra pregunta 4","otra pregunta 5","otra pregunta 6", "otra pregunta 7"};
 
     string[] RespuestasPreguntasFaciles={"Did", "at", "Do","respuesta 1" , "respuesta 2", "respuesta 3", "respuesta 4" , "respuesta 5", "respuesta 6", "respuesta 7"};

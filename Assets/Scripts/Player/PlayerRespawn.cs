@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerRespawn : MonoBehaviour{
 
-
- 
     public Animator animator;
     public GameObject[] Corazones;
     private int Vida;
@@ -56,6 +54,22 @@ public class PlayerRespawn : MonoBehaviour{
         VerificarCorazones();
        
        
+
+   }
+
+   public void PlayerDead()
+   {
+
+       Vida=0;
+       QuitarCorazones();
+
+
+   }
+
+   public void QuitarCorazones(){
+
+       
+       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
    }
 
