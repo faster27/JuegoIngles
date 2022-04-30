@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 
 
@@ -27,10 +28,46 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
     public GameObject[] Toggles3;
     public GameObject[] Toggles4;
 
+    
+
+    public Button BtnAlegriaRepeticion;
+    public Button BtnTristezaRepeticion;
+    public Button BtnIraRepeticion;
+    public Button BtnMiedoRepeticion;
+
     List<float> EmocionNumerica = new List<float>();
     List<string> EmocionNombre = new List<string>();
-   
 
+    // Listas que sirven para l solucion de las emociones con puntajes iguales
+    List<float> listaPuntajesRepetidos = new List<float>();
+    List<string> listaNombresRepetidos = new List<string>();
+   
+    public GameObject PanelEmocionesEmpatadas;
+
+    public GameObject Jugador;
+    public GameObject Calavera;
+
+    string level;
+
+    void Start () {
+	    //BtnRepeticionAlegria = BtnAlegriaRepeticion.GetComponent<Button>();
+		BtnAlegriaRepeticion.onClick.AddListener(() => ResultadoEmocionParaRepeticion(1));
+
+       // BtnRepeticionTristeza = BtnTristezaRepeticion.GetComponent<Button>();
+		BtnTristezaRepeticion.onClick.AddListener(() => ResultadoEmocionParaRepeticion(2));
+
+       // BtnRepeticionIra = BtnIraRepeticion.GetComponent<Button>();
+		BtnIraRepeticion.onClick.AddListener(() => ResultadoEmocionParaRepeticion(3));
+
+       // BtnRepeticionMiedo = BtnMiedoRepeticion.GetComponent<Button>();
+		BtnMiedoRepeticion.onClick.AddListener(() => ResultadoEmocionParaRepeticion(4));
+
+        Scene scene2 = SceneManager.GetActiveScene();
+        level =scene2.name;
+
+         
+
+	}
     
     public void CalcularPuntuacionAlegria(){
            
@@ -148,6 +185,61 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
 
         return ValorResultado;
     }
+
+
+    public void ResultadoEmocionParaRepeticion(int señal){
+
+        
+        if(señal==1){
+
+            int posicion=listaNombresRepetidos.IndexOf("Alegria");
+
+            float ValorMayor=listaPuntajesRepetidos[posicion];
+
+            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,listaNombresRepetidos, posicion);
+
+        }
+
+        if(señal==2){
+
+            int posicion=listaNombresRepetidos.IndexOf("Tristeza");
+
+            float ValorMayor=listaPuntajesRepetidos[posicion];
+
+            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,listaNombresRepetidos, posicion);
+
+        }
+
+        if(señal==3){
+
+            int posicion=listaNombresRepetidos.IndexOf("Ira");
+
+            float ValorMayor=listaPuntajesRepetidos[posicion];
+
+            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,listaNombresRepetidos, posicion);
+
+        }
+
+        if(señal==4){
+
+            int posicion=listaNombresRepetidos.IndexOf("Miedo");
+
+            float ValorMayor=listaPuntajesRepetidos[posicion];
+
+            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,listaNombresRepetidos, posicion);
+
+        }
+        
+        
+        
+       
+
+        
+                
+        Debug.Log("La emocion ganadora es: " + EmocionResultante);
+
+
+    }
      
     public void ElegirMayor()
     {   
@@ -166,23 +258,45 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
         ListaNombres.Add("Miedo");
         ListaNombres.Add("Ira");
 
-        bool Repeticion= HayRepetidos(Lista);
+        bool Repeticion= HayRepetidos(Lista,ListaNombres);
 
         if(Repeticion){
 
             //Se entra en este if si el array que contiene los valores numericos de las emociones
             //viene con al menos dos valores iguales
             
-            MezclarListas(Lista,ListaNombres);
+            //nueva propuesta, si hay repeticion se le debe preguntar al estduiante cual de las eociones empatadas prefiere 
+            
+            PanelEmocionesEmpatadas.SetActive(true);
+            Jugador.SetActive(false);
 
-            ValorMayor=EmocionNumerica.Max();
+            if(level=="Nivel4Mundo3"){
 
-            Posicion=EmocionNumerica.IndexOf(ValorMayor);
+                Calavera.SetActive(false);
 
-            //Las emociones se dividen en Alta y Baja para asi despues encontrar la dificultad
-            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,EmocionNombre, Posicion);
+            }
 
-            Debug.Log("La emocion ganadora es: " + EmocionResultante);
+            if(!listaNombresRepetidos.Contains("Alegria")){
+
+                BtnAlegriaRepeticion.interactable=false;
+
+            }
+            if(!listaNombresRepetidos.Contains("Tristeza")){
+
+                 BtnTristezaRepeticion.interactable=false;
+                
+            }
+            if(!listaNombresRepetidos.Contains("Ira")){
+
+                 BtnIraRepeticion.interactable=false;
+                
+            }
+            if(!listaNombresRepetidos.Contains("Miedo")){
+
+                 BtnMiedoRepeticion.interactable=false;
+                
+            }
+            
 
         }else{
             
@@ -263,23 +377,132 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
     }
 
 
-    public bool HayRepetidos(List<float> lista){
+
+    public bool HayRepetidos(List<float> lista, List<string> listaNombres){
 
         bool EstaRepetido=false;
 
-        // Creas la nueva
-        List<float> listaNueva = new List<float>();
-
+        List<int> index=new List<int>();
+       
+        int contador=0;
         for (int i = 0; i < lista.Count; i++)
         {
-            if (!(listaNueva.Contains(lista[i])))
+            float num= lista[i];
+            
+            for (int j = 0; j < lista.Count; j++)
             {
-                listaNueva.Add(lista[i]);
-            }else{
+                
+                if(lista[j]==num){
+                  // listaPuntajesRepetidos.Add(lista[j]);
+                    index.Add(j);
+                    contador+=1;
+                }      
+            }
+
+            contador-=1;
+
+            if(contador==0){
+
+                index.RemoveAt(0);
+            }
+
+           
+
+            if(contador==1 && !listaPuntajesRepetidos.Contains(num)){
+                listaPuntajesRepetidos.Add(num);
+                listaPuntajesRepetidos.Add(num);
+
+                float maximo=lista.Max();
+                if(maximo>listaPuntajesRepetidos[0] &&  maximo>listaPuntajesRepetidos[1]  ){
+
+                     EstaRepetido=false;
+                 }else{
+
+                     EstaRepetido=true;
+                 }
+
+                listaNombresRepetidos.Add(listaNombres[index[0]]);
+                listaNombresRepetidos.Add(listaNombres[index[1]]);
+
+                index.RemoveAt(0);
+                index.RemoveAt(0);
+
+               
+
+            }
+
+            if(contador==2 && !listaPuntajesRepetidos.Contains(num)){
+
+               
+
+                listaPuntajesRepetidos.Add(num);
+                listaPuntajesRepetidos.Add(num);
+                listaPuntajesRepetidos.Add(num);
+
+                float maximo=lista.Max();
+
+                 if(maximo>listaPuntajesRepetidos[0] &&  maximo>listaPuntajesRepetidos[1] && maximo>listaPuntajesRepetidos[2] ){
+
+                     EstaRepetido=false;
+                 }else{
+
+                     EstaRepetido=true;
+                 }
+
+                
+                listaNombresRepetidos.Add(listaNombres[index[0]]);
+                listaNombresRepetidos.Add(listaNombres[index[1]]);
+                listaNombresRepetidos.Add(listaNombres[index[2]]);
+
+                
+
+               
+
+               
+
+            }
+            
+            if(contador==3 && !listaPuntajesRepetidos.Contains(num)){
+                listaPuntajesRepetidos.Add(num);
+                listaPuntajesRepetidos.Add(num);
+                listaPuntajesRepetidos.Add(num);
+                listaPuntajesRepetidos.Add(num);
+
+                listaNombresRepetidos.Add(listaNombres[index[0]]);
+                listaNombresRepetidos.Add(listaNombres[index[1]]);
+                listaNombresRepetidos.Add(listaNombres[index[2]]);
+                listaNombresRepetidos.Add(listaNombres[index[3]]);
 
                 EstaRepetido=true;
 
+                
+
             }
+
+
+            if(listaPuntajesRepetidos.Count==4){   
+
+                float max = listaPuntajesRepetidos.Max();
+                float min = listaPuntajesRepetidos.Min();
+
+                if(!(max==min)){
+
+                    int index1= listaPuntajesRepetidos.IndexOf(min);
+                    listaPuntajesRepetidos.RemoveAt(index1);
+                    listaNombresRepetidos.RemoveAt(index1);
+
+                    int index2=listaPuntajesRepetidos.IndexOf(min);
+                    listaPuntajesRepetidos.RemoveAt(index2);
+                    listaNombresRepetidos.RemoveAt(index2);
+
+                    
+
+                }
+
+            }
+   
+            contador=0;
+  
         }
 
         return EstaRepetido;

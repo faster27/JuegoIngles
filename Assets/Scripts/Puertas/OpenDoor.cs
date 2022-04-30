@@ -73,7 +73,7 @@ public class OpenDoor : MonoBehaviour
             PuertaImagen.SetActive(false);
         }
 
-        if(InDoor && Input.GetKey("e")){
+        if(InDoor && Input.GetKey("e") && !PanelPreguntasPuerta.activeSelf){
 
             transition.SetActive(true);
             FruitManager.TodasLasFrutasCogidas=false;
