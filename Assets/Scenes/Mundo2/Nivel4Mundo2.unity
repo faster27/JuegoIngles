@@ -16235,6 +16235,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &494646370 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 23150349, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 458491310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &518465593
 GameObject:
   m_ObjectHideFlags: 0
@@ -16381,6 +16392,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04c197cd4a521a34f8f71b24d4e4f644, type: 3}
+--- !u!114 &558215439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1221810219, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 458491310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &559454935
 GameObject:
   m_ObjectHideFlags: 0
@@ -18903,6 +18925,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 601041704688010213, guid: 2e8772193f9701d45aec64c8c699bec3, type: 3}
   m_PrefabInstance: {fileID: 247284875}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &940464342 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1008221750, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 458491310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &947722085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114139,6 +114172,12 @@ MonoBehaviour:
   Toggles2: []
   Toggles3: []
   Toggles4: []
+  BtnAlegriaRepeticion: {fileID: 1635619894}
+  BtnTristezaRepeticion: {fileID: 558215439}
+  BtnIraRepeticion: {fileID: 940464342}
+  BtnMiedoRepeticion: {fileID: 494646370}
+  PanelEmocionesEmpatadas: {fileID: 1832330271}
+  Jugador: {fileID: 278305088}
 --- !u!1001 &1582887884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114461,6 +114500,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5564d87b937b2354d986d5f74f9da73a, type: 3}
+--- !u!114 &1635619894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 69902854, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 458491310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1641160316
 GameObject:
   m_ObjectHideFlags: 0
@@ -115728,6 +115778,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1040550651439817267, guid: 3a49b0d9b31972a4db952f285990fdd5, type: 3}
   m_PrefabInstance: {fileID: 1828107200}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1832330271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 150519264, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 458491310}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1844834911
 GameObject:

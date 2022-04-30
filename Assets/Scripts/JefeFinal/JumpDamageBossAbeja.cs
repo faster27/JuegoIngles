@@ -48,6 +48,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
 
     public GameObject TeleportAnimation;
     public GameObject Rana;
+    public GameObject TituloAunNoTermina;
 
    
 
@@ -109,7 +110,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
             spriteRenderer.enabled=false;
            
             
-            
+            TituloAunNoTermina.SetActive(true);
             Invoke("AnimacionExplosion",5.0f);
             
            
@@ -193,6 +194,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
 
         
         Explosion.SetActive(true);
+        TituloAunNoTermina.SetActive(false);
         
         Invoke("Mago",0.05f);
        
