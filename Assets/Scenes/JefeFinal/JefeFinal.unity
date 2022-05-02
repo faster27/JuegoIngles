@@ -5919,7 +5919,7 @@ MonoBehaviour:
   Btn2: {fileID: 837743865}
   Btn3: {fileID: 252339305}
   BtnJugar: {fileID: 242984022}
-  FinalBossMago: {fileID: 0}
+  FinalBossMago: {fileID: 989509865}
   FinalBossAbeja: {fileID: 1623603083}
   TextoPregunta: {fileID: 308254510}
   TextoRespuesta: {fileID: 1636660591}
