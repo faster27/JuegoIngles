@@ -105,7 +105,17 @@ public class KeyCollected : MonoBehaviour
             Btn2.interactable=false;
             Btn3.interactable=false;  
 
-            TextoRespuesta.SetText("La respuesta correcta es: " + RespuestaCorrecta);
+            if(respuestaDeJugador != RespuestaCorrecta){
+
+                TextoRespuesta.SetText("La respuesta correcta es: " + RespuestaCorrecta);
+
+            }else{
+
+                TextoRespuesta.SetText("La respuesta es correcta");
+
+            }
+
+            
             BtnSgtePregunta.interactable=true;        
 
     }

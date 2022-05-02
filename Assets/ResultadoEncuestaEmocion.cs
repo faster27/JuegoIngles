@@ -38,6 +38,8 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
     List<float> EmocionNumerica = new List<float>();
     List<string> EmocionNombre = new List<string>();
 
+    List<float> ListaValoresEmociones = new List<float>();
+
     // Listas que sirven para l solucion de las emociones con puntajes iguales
     List<float> listaPuntajesRepetidos = new List<float>();
     List<string> listaNombresRepetidos = new List<string>();
@@ -196,7 +198,7 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
 
             float ValorMayor=listaPuntajesRepetidos[posicion];
 
-            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,listaNombresRepetidos, posicion);
+            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,listaNombresRepetidos, posicion,ListaValoresEmociones);
 
         }
 
@@ -206,7 +208,7 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
 
             float ValorMayor=listaPuntajesRepetidos[posicion];
 
-            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,listaNombresRepetidos, posicion);
+            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,listaNombresRepetidos, posicion, ListaValoresEmociones);
 
         }
 
@@ -216,7 +218,7 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
 
             float ValorMayor=listaPuntajesRepetidos[posicion];
 
-            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,listaNombresRepetidos, posicion);
+            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,listaNombresRepetidos, posicion, ListaValoresEmociones);
 
         }
 
@@ -226,7 +228,7 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
 
             float ValorMayor=listaPuntajesRepetidos[posicion];
 
-            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,listaNombresRepetidos, posicion);
+            EmocionResultante=ClasificarEmocionAlta_Baja(ValorMayor,listaNombresRepetidos, posicion, ListaValoresEmociones);
 
         }
         
@@ -245,20 +247,22 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
     {   
         float ValorMayor;
         int Posicion;
-        List<float> Lista = new List<float>();
+
+        
+        
         List<string> ListaNombres = new List<string>();
 
-        Lista.Add(ValorAlegria);
-        Lista.Add(ValorTristeza);
-        Lista.Add(ValorMiedo);
-        Lista.Add(ValorIra);
+        ListaValoresEmociones.Add(ValorAlegria);
+        ListaValoresEmociones.Add(ValorTristeza);
+        ListaValoresEmociones.Add(ValorMiedo);
+        ListaValoresEmociones.Add(ValorIra);
 
         ListaNombres.Add("Alegria");
         ListaNombres.Add("Tristeza");
         ListaNombres.Add("Miedo");
         ListaNombres.Add("Ira");
 
-        bool Repeticion= HayRepetidos(Lista,ListaNombres);
+        bool Repeticion= HayRepetidos(ListaValoresEmociones,ListaNombres);
 
         if(Repeticion){
 
@@ -303,11 +307,11 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
             //Si el array no tiene iguales lo que hace es sacar el numero mayor
             //y clasificar en emocion alta o baja 
 
-            ValorMayor=Lista.Max();
+            ValorMayor=ListaValoresEmociones.Max();
 
-            Posicion=Lista.IndexOf(ValorMayor);
+            Posicion=ListaValoresEmociones.IndexOf(ValorMayor);
 
-            ResultadoEmocion=ClasificarEmocionAlta_Baja(ValorMayor,ListaNombres, Posicion);
+            ResultadoEmocion=ClasificarEmocionAlta_Baja(ValorMayor,ListaNombres, Posicion, ListaValoresEmociones);
                 
             Debug.Log("La emocion ganadora es: " + ResultadoEmocion);
 
@@ -316,14 +320,14 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
         }
     }
 
-    public string ClasificarEmocionAlta_Baja(float ValorMayor, List<string> EmocionNombre, int Posicion){
+    public string ClasificarEmocionAlta_Baja(float ValorMayor, List<string> EmocionNombre, int Posicion, List<float> ListaValoresEmociones){
 
        Debug.Log("ValorMayor: " + ValorMayor + ", "+ "Emocion: " + EmocionNombre[Posicion]);
        
        
         if(EmocionNombre[Posicion]== "Alegria"){
 
-            if(ValorMayor<=5.1f){
+            if(ValorMayor<=5.0f){
 
                 EmocionResultante="Alegria-Baja";
 
@@ -336,7 +340,7 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
 
         if(EmocionNombre[Posicion]== "Tristeza"){
 
-            if(ValorMayor<=5.1f){
+            if(ValorMayor<=5.0f){
 
                 EmocionResultante="Tristeza-Baja";
 
@@ -349,26 +353,56 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
 
         if(EmocionNombre[Posicion]== "Ira"){
 
-            if(ValorMayor<=5.1f){
+            float PuntuacionAlegria= ListaValoresEmociones[0]; //lista valores en 0 me trae la puntuacion de alegria
+            float Puntuaciontristeza= ListaValoresEmociones[1]; //lista valores en 1 me trae la puntuacion de tristeza
 
+            if(Puntuaciontristeza>PuntuacionAlegria){
+  
                 EmocionResultante="Ira-Baja";
+
+            }else if(PuntuacionAlegria>Puntuaciontristeza){
+
+                EmocionResultante="Ira-Alta";
 
             }else{
 
-                EmocionResultante="Ira-Alta";
+                int random=Random.Range(1,3);
+
+                if(random==1){
+                    EmocionResultante="Ira-Baja";
+
+                }else{
+                    EmocionResultante="Ira-Alta";
+                }
+
 
             }
         }
 
-          if(EmocionNombre[Posicion]== "Miedo"){
+        if(EmocionNombre[Posicion]== "Miedo"){
 
-            if(ValorMayor<=5.1f){
+            float PuntuacionAlegria= ListaValoresEmociones[0]; //lista valores en 0 me trae la puntuacion de alegria
+            float Puntuaciontristeza= ListaValoresEmociones[1]; //lista valores en 1 me trae la puntuacion de tristeza
 
+            if(Puntuaciontristeza>PuntuacionAlegria){
+  
                 EmocionResultante="Miedo-Baja";
+
+            }else if(PuntuacionAlegria>Puntuaciontristeza){
+
+                EmocionResultante="Miedo-Alta";
 
             }else{
 
-                EmocionResultante="Miedo-Alta";
+                int random=Random.Range(1,3);
+
+                if(random==1){
+                    EmocionResultante="Miedo-Baja";
+
+                }else{
+                    EmocionResultante="Miedo-Alta";
+                }
+
 
             }
         }
@@ -393,13 +427,19 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
             {
                 
                 if(lista[j]==num){
-                  // listaPuntajesRepetidos.Add(lista[j]);
-                    index.Add(j);
-                    contador+=1;
+                  
+                    if(!index.Contains(j)){
+                        index.Add(j);
+                        contador+=1;
+
+                    }
+                    
+                    
                 }      
             }
 
             contador-=1;
+
 
             if(contador==0){
 
@@ -409,25 +449,82 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
            
 
             if(contador==1 && !listaPuntajesRepetidos.Contains(num)){
-                listaPuntajesRepetidos.Add(num);
-                listaPuntajesRepetidos.Add(num);
 
+
+                if(index.Count==2){
+                    if(!listaNombresRepetidos.Contains(listaNombres[index[0]])  ){
+                    
+                    listaNombresRepetidos.Add(listaNombres[index[0]]);
+                    listaPuntajesRepetidos.Add(num);
+
+                    }
+                    
+                    if(!listaNombresRepetidos.Contains(listaNombres[index[1]])){
+                    
+                    listaNombresRepetidos.Add(listaNombres[index[1]]);
+                    listaPuntajesRepetidos.Add(num);
+
+                    }
+                }
+                
+                if(index.Count==4){
+
+                    if(!listaNombresRepetidos.Contains(listaNombres[index[2]])  ){
+                    
+                    listaNombresRepetidos.Add(listaNombres[index[2]]);
+                    listaPuntajesRepetidos.Add(num);
+
+                    }
+                    
+                    if(!listaNombresRepetidos.Contains(listaNombres[index[3]])){
+                    
+                    listaNombresRepetidos.Add(listaNombres[index[3]]);
+                    listaPuntajesRepetidos.Add(num);
+
+                    }
+                }
+ 
                 float maximo=lista.Max();
-                if(maximo>listaPuntajesRepetidos[0] &&  maximo>listaPuntajesRepetidos[1]  ){
 
-                     EstaRepetido=false;
-                 }else{
 
-                     EstaRepetido=true;
-                 }
+                if(listaPuntajesRepetidos.Count==4){
+                    
+                    Debug.Log(listaNombresRepetidos[0] + listaNombresRepetidos[1] + listaNombresRepetidos[2] + listaNombresRepetidos[3]);
+                    Debug.Log("tamaño puntaje: " + listaPuntajesRepetidos.Count + " Tamaño nombres: " + listaNombresRepetidos.Count);
 
-                listaNombresRepetidos.Add(listaNombres[index[0]]);
-                listaNombresRepetidos.Add(listaNombres[index[1]]);
+                    float maximoPuntaje=listaPuntajesRepetidos.Max();
+                    float minimoPuntaje=listaPuntajesRepetidos.Min();
 
-                index.RemoveAt(0);
-                index.RemoveAt(0);
+                    int index2=listaPuntajesRepetidos.IndexOf(minimoPuntaje);
+                    listaPuntajesRepetidos.RemoveAt(index2);
+                    listaNombresRepetidos.RemoveAt(index2);
 
-               
+                    Debug.Log("tamaño puntaje: " + listaPuntajesRepetidos.Count + " Tamaño nombres: " + listaNombresRepetidos.Count);
+
+                    int index3=listaPuntajesRepetidos.IndexOf(minimoPuntaje);
+                    listaPuntajesRepetidos.RemoveAt(index3);
+                    listaNombresRepetidos.RemoveAt(index3);
+
+                    Debug.Log("tamaño puntaje: " + listaPuntajesRepetidos.Count + " Tamaño nombres: " + listaNombresRepetidos.Count);
+
+                    EstaRepetido=true;
+
+                    Debug.Log(listaNombresRepetidos[0] + "     " + listaNombresRepetidos[1]);
+
+
+                }else{
+
+                    
+                    
+                    if(maximo>listaPuntajesRepetidos[0] &&  maximo>listaPuntajesRepetidos[1]  ){
+
+                        EstaRepetido=false;
+                    }else{
+
+                        EstaRepetido=true;
+                    }
+
+                }
 
             }
 
@@ -480,62 +577,20 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
             }
 
 
-            if(listaPuntajesRepetidos.Count==4){   
-
-                float max = listaPuntajesRepetidos.Max();
-                float min = listaPuntajesRepetidos.Min();
-
-                if(!(max==min)){
-
-                    int index1= listaPuntajesRepetidos.IndexOf(min);
-                    listaPuntajesRepetidos.RemoveAt(index1);
-                    listaNombresRepetidos.RemoveAt(index1);
-
-                    int index2=listaPuntajesRepetidos.IndexOf(min);
-                    listaPuntajesRepetidos.RemoveAt(index2);
-                    listaNombresRepetidos.RemoveAt(index2);
-
-                    
-
-                }
-
-            }
+            
    
             contador=0;
   
         }
+
+        //Debug.Log("Lista[0]  " + listaPuntajesRepetidos[0] + "---" + "Lista[1]  " + listaPuntajesRepetidos[1]);
+       // Debug.Log("Tamaño de lista nombres  " + listaNombresRepetidos.Count);
+       // Debug.Log("Nombre[0]  " + listaNombresRepetidos[0] + "---" + "Nombre[1]  " + listaNombresRepetidos[1]);
 
         return EstaRepetido;
 
     }
 
 
-    public void MezclarListas(List<float> ListaNumeros, List<string> ListaNombres){
-
-        int n = ListaNumeros.Count;
-        int ValorRandom;
-        float TempNumerico;
-        string TempNombre;
-
-        for( int i=0; i <n; i++){
-
-            ValorRandom=Random.Range(0,n);
-
-            TempNumerico= ListaNumeros[ValorRandom];
-            TempNombre=ListaNombres[ValorRandom];
-
-            ListaNumeros[ValorRandom]=ListaNumeros[i];
-            ListaNombres[ValorRandom]=ListaNombres[i];
-
-            ListaNumeros[i]= TempNumerico;
-            ListaNombres[i]=TempNombre;
-
-        }
-
-        EmocionNumerica=ListaNumeros;
-        EmocionNombre=ListaNombres;
-
-        
-
-    }
+    
 }
