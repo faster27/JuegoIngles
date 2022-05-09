@@ -35,6 +35,11 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
     public Button BtnIraRepeticion;
     public Button BtnMiedoRepeticion;
 
+    public GameObject BtnContinuar;
+    public GameObject PanelPergamino;
+
+   
+
     List<float> EmocionNumerica = new List<float>();
     List<string> EmocionNombre = new List<string>();
 
@@ -51,18 +56,20 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
 
     string level;
 
+    int ContadorEmocionesElegidas=0;
+
     void Start () {
-	    //BtnRepeticionAlegria = BtnAlegriaRepeticion.GetComponent<Button>();
-		BtnAlegriaRepeticion.onClick.AddListener(() => ResultadoEmocionParaRepeticion(1));
-
-       // BtnRepeticionTristeza = BtnTristezaRepeticion.GetComponent<Button>();
+	    
+		//Estos botones son los que aparecen en el panel cuando las emociones estan empatadas
+        BtnAlegriaRepeticion.onClick.AddListener(() => ResultadoEmocionParaRepeticion(1));
 		BtnTristezaRepeticion.onClick.AddListener(() => ResultadoEmocionParaRepeticion(2));
-
-       // BtnRepeticionIra = BtnIraRepeticion.GetComponent<Button>();
 		BtnIraRepeticion.onClick.AddListener(() => ResultadoEmocionParaRepeticion(3));
-
-       // BtnRepeticionMiedo = BtnMiedoRepeticion.GetComponent<Button>();
 		BtnMiedoRepeticion.onClick.AddListener(() => ResultadoEmocionParaRepeticion(4));
+        /////////////////////////////////////////////////////////////////////////////////////////
+
+     
+     
+
 
         Scene scene2 = SceneManager.GetActiveScene();
         level =scene2.name;
@@ -70,6 +77,30 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
          
 
 	}
+
+    public void ContadorCantidadEmocionesElegidas(){
+
+        ContadorEmocionesElegidas+=1;
+
+    }
+
+    public void ActivarBotonContinuar(){
+
+        if(ContadorEmocionesElegidas>=2){
+
+            Debug.Log("aqui estoy");
+            BtnContinuar.SetActive(true);
+
+        }
+
+        if(ContadorEmocionesElegidas==2){
+
+            PanelPergamino.SetActive(true);
+        }
+
+    }
+
+  
     
     public void CalcularPuntuacionAlegria(){
            
