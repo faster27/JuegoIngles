@@ -1171,8 +1171,11 @@ MonoBehaviour:
   BtnTristezaRepeticion: {fileID: 521370114}
   BtnIraRepeticion: {fileID: 528949244}
   BtnMiedoRepeticion: {fileID: 801867382}
+  BtnContinuar: {fileID: 649278738}
+  PanelPergamino: {fileID: 649278737}
   PanelEmocionesEmpatadas: {fileID: 1487431343}
   Jugador: {fileID: 172631789}
+  Calavera: {fileID: 0}
 --- !u!1 &282145155
 GameObject:
   m_ObjectHideFlags: 0
@@ -10551,6 +10554,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b75484549065a342b7cafb8e5e961b6, type: 3}
+--- !u!1 &649278737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 143399551, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2100230613}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &649278738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 615554837, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2100230613}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &667513849
 GameObject:
   m_ObjectHideFlags: 1
@@ -15139,6 +15152,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: IsCorrect
       objectReference: {fileID: 0}
+    - target: {fileID: 384347060, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 279409970}
+    - target: {fileID: 384347060, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ContadorCantidadEmocionesElegidas
+      objectReference: {fileID: 0}
     - target: {fileID: 390298811, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -15202,6 +15223,22 @@ PrefabInstance:
     - target: {fileID: 829848251, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SgtePregunta
+      objectReference: {fileID: 0}
+    - target: {fileID: 912355901, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 279409970}
+    - target: {fileID: 912355901, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ContadorCantidadEmocionesElegidas
+      objectReference: {fileID: 0}
+    - target: {fileID: 954745445, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 279409970}
+    - target: {fileID: 954745445, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ContadorCantidadEmocionesElegidas
       objectReference: {fileID: 0}
     - target: {fileID: 1008221750, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -15283,6 +15320,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1260206836, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 279409970}
+    - target: {fileID: 1260206836, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ContadorCantidadEmocionesElegidas
+      objectReference: {fileID: 0}
     - target: {fileID: 1373645199, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -15300,16 +15345,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 279409970}
     - target: {fileID: 271828186719260892, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 279409970}
+    - target: {fileID: 271828186719260892, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CalcularPuntuacionTristeza
+      objectReference: {fileID: 0}
+    - target: {fileID: 271828186719260892, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: ActivarBotonContinuar
       objectReference: {fileID: 0}
     - target: {fileID: 566193979005022785, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 279409970}
     - target: {fileID: 566193979005022785, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 279409970}
+    - target: {fileID: 566193979005022785, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CalcularPuntuacionIra
+      objectReference: {fileID: 0}
+    - target: {fileID: 566193979005022785, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: ActivarBotonContinuar
       objectReference: {fileID: 0}
     - target: {fileID: 838540937758835963, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -15444,8 +15505,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 279409970}
     - target: {fileID: 3865792822143228919, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 279409970}
+    - target: {fileID: 3865792822143228919, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CalcularPuntuacionMiedo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3865792822143228919, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: ActivarBotonContinuar
       objectReference: {fileID: 0}
     - target: {fileID: 4121363627647360990, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_Color.b
@@ -15476,8 +15545,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 279409970}
     - target: {fileID: 4624395275526783117, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 279409970}
+    - target: {fileID: 4624395275526783117, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CalcularPuntuacionAlegria
+      objectReference: {fileID: 0}
+    - target: {fileID: 4624395275526783117, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: ActivarBotonContinuar
       objectReference: {fileID: 0}
     - target: {fileID: 4883126725513206481, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target

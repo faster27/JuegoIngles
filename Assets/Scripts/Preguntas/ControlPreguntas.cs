@@ -28,6 +28,13 @@ public class ControlPreguntas : MonoBehaviour
                                         "last night","last night","every night","on saturdays","everyday","got up","all the year","last week","last night",
                                         "yesterday","today","last year","from - to","last month"};
 
+    string[] PreguntasFacilesAlto={};
+
+    string[] RespuestasPreguntasFacilesAlto={};
+
+
+    
+    
     int PosicionPregunta;
 
     public static string RespuestaCorrectaPregunta;
