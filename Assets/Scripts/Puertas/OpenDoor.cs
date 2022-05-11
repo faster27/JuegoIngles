@@ -102,7 +102,7 @@ public class OpenDoor : MonoBehaviour
             InDoor=true;
             SenalPuerta=1;
 
-            //Aqui se debe llamar la funcion la cual tare las preguntas de la bD par setear los botones
+            
 
             SetearTextoPregunta_Botones();
 
@@ -143,19 +143,19 @@ public class OpenDoor : MonoBehaviour
                 DoorManager.PuertaMundo3=true;
             }
 
-             if(level=="JefeFinal"){
-
-                DoorManager.PuertaMundo1=true;
-                DoorManager.PuertaMundo2=false;
-                DoorManager.PuertaMundo3=false;
-             if(level=="NivelBossMundo3"){
+            if(level=="NivelBossMundo3"){
 
                 DoorManager.PuertaMundo1=false;
                 DoorManager.PuertaMundo2=false;
                 DoorManager.PuertaMundo3=true;
-                }
-            
-            
+            }
+
+            if(level=="JefeFinal"){
+
+                DoorManager.PuertaMundo1=true;
+                DoorManager.PuertaMundo2=false;
+                DoorManager.PuertaMundo3=false;
+             
             }
 
         }    
