@@ -39,13 +39,16 @@ public class ControlPreguntas : MonoBehaviour
 
     public static string RespuestaCorrectaPregunta;
 
+ 
+
 
     public string TraerPregunta(string emocion){
 
         string Pregunta="";
 
-       
-        PosicionPregunta= Random.Range(0,PreguntasFacilesBajo.Length+1);
+        
+
+        PosicionPregunta= Random.Range(0,PreguntasFacilesBajo.Length);
 
         if(emocion=="Alegria-Alta" || emocion=="Alegria-Baja"){
 
@@ -88,9 +91,9 @@ public class ControlPreguntas : MonoBehaviour
 
             string RespuestaCorrecta=RespuestasPreguntasFacilesBajo[PosicionPregunta];
 
-            string RespuestaIncorrecta1=RespuestasPreguntasFacilesBajo[Random.Range(0,RespuestasPreguntasFacilesBajo.Length+1)];
+            string RespuestaIncorrecta1=RespuestasPreguntasFacilesBajo[Random.Range(0,RespuestasPreguntasFacilesBajo.Length)];
 
-            string RespuestaIncorrecta2=RespuestasPreguntasFacilesBajo[Random.Range(0,RespuestasPreguntasFacilesBajo.Length+1)];
+            string RespuestaIncorrecta2=RespuestasPreguntasFacilesBajo[Random.Range(0,RespuestasPreguntasFacilesBajo.Length)];
 
 
             respuestas[0]=RespuestaCorrecta;

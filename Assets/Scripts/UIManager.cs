@@ -177,11 +177,7 @@ public class UIManager : MonoBehaviour
 
     }
 
-   // public void PasarALaEscena(){
-        
-    //    SceneManager.LoadScene(SgteEscena);
-
-   // }
+   
 
     void ChangeSceneIntro(){
         
