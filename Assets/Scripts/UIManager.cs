@@ -143,7 +143,7 @@ public class UIManager : MonoBehaviour
         
         
         Time.timeScale=1;
-        SceneManager.LoadScene("Mundos");
+        SceneManager.LoadScene("MenuInicial");
         
 
     }
