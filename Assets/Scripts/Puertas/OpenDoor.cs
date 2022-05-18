@@ -214,7 +214,17 @@ public class OpenDoor : MonoBehaviour
         Panel2Btn2.interactable=false;
         Panel2Btn3.interactable=false;  
 
-        TextoRespuesta.SetText("La respuesta correcta es: " + RespuestaCorrecta);
+        if(respuestaDeJugador != RespuestaCorrecta){
+
+            TextoRespuesta.SetText("La respuesta correcta es: " + RespuestaCorrecta);
+
+        }else{
+
+                TextoRespuesta.SetText("La respuesta es correcta");
+
+        }
+
+        
 
         BtnJugar.interactable=true;
                 
