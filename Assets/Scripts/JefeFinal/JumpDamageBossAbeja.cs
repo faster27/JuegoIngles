@@ -32,11 +32,30 @@ public class JumpDamageBossAbeja : MonoBehaviour
 
     public  GameObject[] Corazones;
 
+    public GameObject SignosPreguntas;
+
+    
+    public static bool SignoPreguntaIsActive=false;
+
     public GameObject Explosion;
 
   
 
     public GameObject Hechicero;
+
+    public GameObject Signo1;
+    public GameObject Signo2;
+    public GameObject Signo3;
+    public GameObject Signo4;
+    public GameObject Signo5;
+    public GameObject Signo6;
+    
+    public GameObject posInicial1;
+    public GameObject posInicial2;
+    public GameObject posInicial3;
+    public GameObject posInicial4;
+    public GameObject posInicial5;
+    public GameObject posInicial6;
 
     //Referencia a los textos de pregunta y respuesta del panel
 
@@ -120,7 +139,12 @@ public class JumpDamageBossAbeja : MonoBehaviour
         }
         else if(Lifes<2)
         {
-             Corazones[1].gameObject.SetActive(false);
+            Corazones[1].gameObject.SetActive(false);
+            gameObject.SetActive(false);
+            SignosPreguntas.SetActive(true);
+          
+
+            Invoke("DesactivarSignosPregunta",5f);
            
 
 
@@ -151,7 +175,13 @@ public class JumpDamageBossAbeja : MonoBehaviour
          else if(Lifes<5)
         {
 
-          Corazones[4].gameObject.SetActive(false);
+            Corazones[4].gameObject.SetActive(false);
+
+            gameObject.SetActive(false);
+            SignosPreguntas.SetActive(true);
+          
+
+            Invoke("DesactivarSignosPregunta",5f);
        
             
         }else if(Lifes<6)
@@ -176,6 +206,12 @@ public class JumpDamageBossAbeja : MonoBehaviour
         {
 
             Corazones[7].gameObject.SetActive(false);
+           
+            gameObject.SetActive(false);
+            SignosPreguntas.SetActive(true);
+          
+
+            Invoke("DesactivarSignosPregunta",8f);
        
             
         }else if(Lifes<9)
@@ -187,6 +223,26 @@ public class JumpDamageBossAbeja : MonoBehaviour
         }
     
 
+        
+    }
+
+    public void DesactivarSignosPregunta(){
+       
+        Signo1.transform.position=posInicial1.transform.position;
+        Signo2.transform.position=posInicial2.transform.position;
+        Signo3.transform.position=posInicial3.transform.position;
+        Signo4.transform.position=posInicial4.transform.position;
+        Signo5.transform.position=posInicial5.transform.position;
+        Signo6.transform.position=posInicial6.transform.position;
+        
+        SignosPreguntas.SetActive(false);
+
+        if(!PanelPreguntas.activeSelf){
+
+            gameObject.SetActive(true);
+
+        }
+        
         
     }
 
@@ -206,6 +262,18 @@ public class JumpDamageBossAbeja : MonoBehaviour
        
         Hechicero.SetActive(true); 
 
+    }
+
+    public void ActivarAbeja(){
+
+        Debug.Log(SignoPreguntaIsActive);
+
+        if(SignoPreguntaIsActive){
+
+            Debug.Log("estoy aajajajaja");
+            gameObject.SetActive(true);
+            SignoPreguntaIsActive=false;
+        }
     }
 
     public  void RegenerarCorazones()

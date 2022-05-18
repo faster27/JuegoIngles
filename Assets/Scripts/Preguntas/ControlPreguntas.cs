@@ -1,38 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 
 public class ControlPreguntas : MonoBehaviour
 {
 
-    string[] PreguntasFacilesBajo={"I ..... to watch movies", "I ..... to go hiking", "I ..... to relax at home", "When I have free time, I ..... to travel", "In my free time, I ..... to study English", 
-                               "I ..... to paint when I have time", "Two boys played with a ball ......","We need to speak ......","She woke up early in the ......", "The movie ended five ......",
-                               "The plane landed two ......","My son was born six ......","Her husband died ten ......","I took that photo many ......","I came to this city a ......",
-                               "I saw a game on TV ......","Michael arrived in Mexico ......","..... I got a lot of presents","..... Jake and Jill got married","We got up early ..... in the morning",
-                               "..... evening Joel called me","I went shopping three ......","I bought a pair of shoes ......","I went on a date ......","I played football ......",
-                               "They went to the office ......","What did you do .....?","I ..... my hair every nigth","I pack my things .....","I ..... my teeth everyday",
-                               "I saw my books ..... the school","I ..... my hands before to eat","I run to school .....","They lived in Spain for five ......","He smoked a cigarette ......",
-                               "..... I did exercise.","I met him .....","I saw him two .....","I worked there for 4 .....","We ..... play tennis",
-                               "She came back ......","He bought a new house ......","I missed the class ......","They were students ......","Joe lived in Boston for ten ......",
-                               "He doesn't play soccer .....","They did not run .....","Did they run .....?","Where did you go .....?","What did you do .....?",
-                               "I dream of you ......","I wash my car .....","I must go to the work .....","I ..... at 5 am every day","Michael studied hard ......",
-                               "Did he play soccer .....?","Did you cook dinner .....?","What exercises did you do .....?","This bus leaves at 10 o'clock .....","She came to visit me .....",
-                               "I played soccer ..... May ..... June","Did I go to the store .....?"};
-
-    string[] RespuestasPreguntasFacilesBajo={"like", "love", "like","love" , "like", "like", "yesterday" , "now", "morning", "minutes ago", 
-                                        "hours ago","months ago","years ago","years ago","long time ago","last night","last January","Last Christmas",
-                                        "Last year","yesterday","Yesterday","month ago","last year","last month","yesterday","early","last week","brush",
-                                        "every moorning","clean","after","wash","everyday","years","every weekend","Yesterday","yesterday","weeks ago",
-                                        "weeks","usually","last Thursday","last month","last week","last year","years","every day","yesterday","yesterday",
-                                        "last night","last night","every night","on saturdays","everyday","got up","all the year","last week","last night",
-                                        "yesterday","today","last year","from - to","last month"};
+    //Cada array de strings contiene 62 elementos
+    
+    string[] PreguntasFacilesBajo={};
+    string[] RespuestasPreguntasFacilesBajo={};
 
     string[] PreguntasFacilesAlto={};
-
     string[] RespuestasPreguntasFacilesAlto={};
+    
+    string[] PreguntasMedioBajo={};
+    string[] RespuestasPreguntasMedioBajo={};
 
+    string[] PreguntasMedioAlto={};
+    string[] RespuestasPreguntasMedioAlto={};
 
+    string[] PreguntasDificilBajo={};
+    string[] RespuestasPreguntasDificilBajo={};
+
+    string[] PreguntasDificilAlto={};
+    string[] RespuestasPreguntasDificilAlto={};
     
     
     int PosicionPregunta;
@@ -40,7 +33,70 @@ public class ControlPreguntas : MonoBehaviour
     public static string RespuestaCorrectaPregunta;
 
  
+    void Start(){
 
+        //Aqui se lee los archivos para las preguntas y respuestas de la dificultad Facil Bajo
+        string FileToReadPreguntasFacilesBajo = "ArchivosPreguntas/PreguntasFacilesBajo.txt";
+
+        PreguntasFacilesBajo=File.ReadAllLines(FileToReadPreguntasFacilesBajo);
+
+        string FileToReadRespuestasFacilesBajo = "ArchivosPreguntas/RespuestasPreguntasFacilesBajo.txt";
+
+        RespuestasPreguntasFacilesBajo=File.ReadAllLines(FileToReadRespuestasFacilesBajo);
+
+        //Aqui se lee los archivos para las preguntas y respuestas de la dificultad Facil Alto
+
+        string FileToReadPreguntasFacilesAlto = "ArchivosPreguntas/PreguntasFacilesAlto.txt";
+
+        PreguntasFacilesAlto=File.ReadAllLines(FileToReadPreguntasFacilesAlto);
+
+        string FileToReadRespuestasFacilesAlto = "ArchivosPreguntas/RespuestasPreguntasFacilesAlto.txt";
+
+        RespuestasPreguntasFacilesAlto=File.ReadAllLines(FileToReadRespuestasFacilesAlto);
+
+        //Aqui se lee los archivos para las preguntas y respuestas de la dificultad Media Baja
+
+        string FileToReadPreguntasMedioBajo = "ArchivosPreguntas/PreguntasMedioBajo.txt";
+
+        PreguntasMedioBajo=File.ReadAllLines(FileToReadPreguntasMedioBajo);
+
+        string FileToReadRespuestasMedioBajo = "ArchivosPreguntas/RespuestasPreguntasMedioBajo.txt";
+
+        RespuestasPreguntasMedioBajo=File.ReadAllLines(FileToReadRespuestasMedioBajo);
+
+        //Aqui se lee los archivos para las preguntas y respuestas de la dificultad Media Alta
+
+        string FileToReadPreguntasMedioAlta = "ArchivosPreguntas/PreguntasMedioAlto.txt";
+
+        PreguntasMedioAlto=File.ReadAllLines(FileToReadPreguntasMedioAlta);
+
+        string FileToReadRespuestasPreguntasMedioAlta = "ArchivosPreguntas/RespuestasPreguntasMedioAlto.txt";
+
+        RespuestasPreguntasMedioAlto=File.ReadAllLines(FileToReadRespuestasPreguntasMedioAlta);
+
+        //Aqui se lee los archivos para las preguntas y respuestas de la dificultad Dificil Baja
+
+        string FileToReadPreguntasDificilBajo = "ArchivosPreguntas/PreguntasDificilBajo.txt";
+
+        PreguntasDificilBajo=File.ReadAllLines(FileToReadPreguntasDificilBajo);
+
+        string FileToReadRespuestasPreguntasDificilBajo = "ArchivosPreguntas/RespuestasPreguntasDificilBajo.txt";
+
+        RespuestasPreguntasDificilBajo=File.ReadAllLines(FileToReadRespuestasPreguntasDificilBajo);
+
+        //Aqui se lee los archivos para las preguntas y respuestas de la dificultad Dificil Alta
+
+        string FileToReadPreguntasDificilAlto = "ArchivosPreguntas/PreguntasDificilAlto.txt";
+
+        PreguntasDificilAlto=File.ReadAllLines(FileToReadPreguntasDificilAlto);
+
+        string FileToReadRespuestasPreguntasDificilAlto = "ArchivosPreguntas/RespuestasPreguntasDificilAlto.txt";
+
+        RespuestasPreguntasDificilAlto=File.ReadAllLines(FileToReadRespuestasPreguntasDificilAlto);
+
+        
+
+    }
 
     public string TraerPregunta(string emocion){
 
@@ -50,27 +106,39 @@ public class ControlPreguntas : MonoBehaviour
 
         PosicionPregunta= Random.Range(0,PreguntasFacilesBajo.Length);
 
-        if(emocion=="Alegria-Alta" || emocion=="Alegria-Baja"){
+        if(emocion=="Alegria-Baja"){
+
+            Pregunta=PreguntasDificilBajo[PosicionPregunta];
+
+        }
+
+         if(emocion=="Alegria-Alta"){
+
+            Pregunta=PreguntasDificilAlto[PosicionPregunta];
+
+        }
+
+        if(emocion=="Tristeza-Baja"){
 
             Pregunta=PreguntasFacilesBajo[PosicionPregunta];
 
         }
 
-        if(emocion=="Tristeza-Alta" || emocion=="Tristeza-Baja"){
+        if(emocion=="Tristeza-Alta"){
 
-            Pregunta=PreguntasFacilesBajo[PosicionPregunta];
-
-        }
-
-        if(emocion=="Ira-Alta" || emocion=="Ira-Baja"){
-
-            Pregunta=PreguntasFacilesBajo[PosicionPregunta];
+            Pregunta=PreguntasFacilesAlto[PosicionPregunta];
 
         }
 
-        if(emocion=="Miedo-Alta" || emocion=="Miedo-Baja"){
+        if(emocion=="Ira-Baja" || emocion=="Miedo-Baja"){
 
-            Pregunta=PreguntasFacilesBajo[PosicionPregunta];
+            Pregunta=PreguntasMedioBajo[PosicionPregunta];
+
+        }
+
+        if(emocion=="Ira-Alta" || emocion=="Miedo-Alta"){
+
+            Pregunta=PreguntasMedioAlto[PosicionPregunta];
 
         }
 
@@ -84,16 +152,94 @@ public class ControlPreguntas : MonoBehaviour
 
         string[] respuestas=new string[3];
 
-        if(emocion=="Alegria-Alta" || emocion=="Alegria-Baja" || 
-            emocion=="Tristeza-Alta" || emocion=="Tristeza-Baja" ||
-            emocion=="Miedo-Alta" || emocion=="Miedo-Baja" || 
-            emocion=="Ira-Alta" || emocion=="Ira-Baja"){
-
+        if(emocion=="Tristeza-Baja"){
             string RespuestaCorrecta=RespuestasPreguntasFacilesBajo[PosicionPregunta];
 
             string RespuestaIncorrecta1=RespuestasPreguntasFacilesBajo[Random.Range(0,RespuestasPreguntasFacilesBajo.Length)];
 
             string RespuestaIncorrecta2=RespuestasPreguntasFacilesBajo[Random.Range(0,RespuestasPreguntasFacilesBajo.Length)];
+
+
+            respuestas[0]=RespuestaCorrecta;
+            respuestas[1]=RespuestaIncorrecta1;
+            respuestas[2]=RespuestaIncorrecta2;
+
+            
+
+            
+            RespuestaCorrectaPregunta=RespuestaCorrecta;
+        }
+
+        if(emocion=="Tristeza-Alta"){
+
+            string RespuestaCorrecta=RespuestasPreguntasFacilesAlto[PosicionPregunta];
+
+            string RespuestaIncorrecta1=RespuestasPreguntasFacilesAlto[Random.Range(0,RespuestasPreguntasFacilesAlto.Length)];
+
+            string RespuestaIncorrecta2=RespuestasPreguntasFacilesAlto[Random.Range(0,RespuestasPreguntasFacilesAlto.Length)];
+
+            respuestas[0]=RespuestaCorrecta;
+            respuestas[1]=RespuestaIncorrecta1;
+            respuestas[2]=RespuestaIncorrecta2;
+            
+            RespuestaCorrectaPregunta=RespuestaCorrecta;
+
+        }
+
+        if(emocion=="Miedo-Baja" || emocion=="Ira-Baja"){
+
+            string RespuestaCorrecta=RespuestasPreguntasMedioBajo[PosicionPregunta];
+
+            string RespuestaIncorrecta1=RespuestasPreguntasMedioBajo[Random.Range(0,RespuestasPreguntasMedioBajo.Length)];
+
+            string RespuestaIncorrecta2=RespuestasPreguntasMedioBajo[Random.Range(0,RespuestasPreguntasMedioBajo.Length)];
+
+            respuestas[0]=RespuestaCorrecta;
+            respuestas[1]=RespuestaIncorrecta1;
+            respuestas[2]=RespuestaIncorrecta2;
+            
+            RespuestaCorrectaPregunta=RespuestaCorrecta;
+        }
+
+        if(emocion=="Miedo-Alta" || emocion=="Ira-Alta"){
+            string RespuestaCorrecta=RespuestasPreguntasMedioAlto[PosicionPregunta];
+
+            string RespuestaIncorrecta1=RespuestasPreguntasMedioAlto[Random.Range(0,RespuestasPreguntasMedioAlto.Length)];
+
+            string RespuestaIncorrecta2=RespuestasPreguntasMedioAlto[Random.Range(0,RespuestasPreguntasMedioAlto.Length)];
+
+            respuestas[0]=RespuestaCorrecta;
+            respuestas[1]=RespuestaIncorrecta1;
+            respuestas[2]=RespuestaIncorrecta2;
+            
+            RespuestaCorrectaPregunta=RespuestaCorrecta;
+        }
+
+        if(emocion=="Alegria-Baja"){
+
+            string RespuestaCorrecta=RespuestasPreguntasDificilBajo[PosicionPregunta];
+
+            string RespuestaIncorrecta1=RespuestasPreguntasDificilBajo[Random.Range(0,RespuestasPreguntasDificilBajo.Length)];
+
+            string RespuestaIncorrecta2=RespuestasPreguntasDificilBajo[Random.Range(0,RespuestasPreguntasDificilBajo.Length)];
+
+
+            respuestas[0]=RespuestaCorrecta;
+            respuestas[1]=RespuestaIncorrecta1;
+            respuestas[2]=RespuestaIncorrecta2;
+            
+            RespuestaCorrectaPregunta=RespuestaCorrecta;
+
+
+        }
+
+         if(emocion=="Alegria-Alta"){
+
+            string RespuestaCorrecta=RespuestasPreguntasDificilAlto[PosicionPregunta];
+
+            string RespuestaIncorrecta1=RespuestasPreguntasDificilAlto[Random.Range(0,RespuestasPreguntasDificilAlto.Length)];
+
+            string RespuestaIncorrecta2=RespuestasPreguntasDificilAlto[Random.Range(0,RespuestasPreguntasDificilAlto.Length)];
 
 
             respuestas[0]=RespuestaCorrecta;
@@ -111,6 +257,9 @@ public class ControlPreguntas : MonoBehaviour
 
 
     }
+
+   
+
 
 
     

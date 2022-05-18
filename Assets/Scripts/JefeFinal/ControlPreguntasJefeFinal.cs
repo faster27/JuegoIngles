@@ -22,8 +22,12 @@ public class ControlPreguntasJefeFinal : MonoBehaviour
 
     private ControlPreguntas ControlPreguntas; 
 
+    public PlayerRespawn ScriptJugador; 
+
     public TextMeshProUGUI TextoPregunta;
     public TextMeshProUGUI TextoRespuesta;
+
+    public static bool SignoPreguntaMeToco;
     
 
     void Start () {
@@ -39,6 +43,9 @@ public class ControlPreguntasJefeFinal : MonoBehaviour
         ControlPreguntas = new ControlPreguntas();
 
         ControlPreguntas=FindObjectOfType<ControlPreguntas>();
+
+
+        
 
 	}
 
@@ -78,6 +85,12 @@ public class ControlPreguntasJefeFinal : MonoBehaviour
         string RespuestaCorrecta= ControlPreguntas.RespuestaCorrectaPregunta;
 
         if(respuestaDeJugador!=RespuestaCorrecta){
+
+            if(SignoPreguntaMeToco){
+
+                ScriptJugador.PlayerDamaged();
+                SignoPreguntaMeToco=false;
+            }
 
             FinalBossAbeja.RegenerarCorazones();
             FinalBossMago.RegenerarCorazones();

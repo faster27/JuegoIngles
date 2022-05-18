@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 
 
@@ -28,6 +29,8 @@ public class UIManager : MonoBehaviour
     public GameObject PanelPreguntasLlave;
     public GameObject PanelPreguntasPuerta;
 
+    public Toggle TogglePantallaCompleta;
+
 
    
 
@@ -37,7 +40,7 @@ public class UIManager : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         level =scene.name;
 
-     
+    
 
 
         if ( (level.Contains("Nivel")  || level.Contains("Jefe")) && !level.Contains("Boss") )
@@ -57,6 +60,8 @@ public class UIManager : MonoBehaviour
         
         
     }
+
+   
 
     void DesactivarPanel(){
 
@@ -191,5 +196,9 @@ public class UIManager : MonoBehaviour
         Invoke("ChangeSceneIntro",4);
 
     }
+
+
+
+
 
 }

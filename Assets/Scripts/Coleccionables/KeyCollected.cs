@@ -96,11 +96,6 @@ public class KeyCollected : MonoBehaviour
         string RespuestaCorrecta= ControlPreguntas.RespuestaCorrectaPregunta;
 
 
-        Debug.Log("respuesta Jugador: " + respuestaDeJugador);   
-        Debug.Log("respuesta Correcta: " + RespuestaCorrecta);           
-        
-        
-
             Btn1.interactable=false;
             Btn2.interactable=false;
             Btn3.interactable=false;  
