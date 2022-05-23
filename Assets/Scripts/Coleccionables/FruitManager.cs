@@ -27,7 +27,7 @@ public class FruitManager : MonoBehaviour
 
         AllFruitsCollected();
         totalFruits.text=totalFruitsInLevel.ToString();
-        FruitsCollected.text=transform.childCount.ToString();
+        FruitsCollected.text=(totalFruitsInLevel - transform.childCount).ToString();
 
     }
 
@@ -49,12 +49,7 @@ public class FruitManager : MonoBehaviour
     }
 
 
-    void ChangeScene(){
-
-
-         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-
-    }
+   
 
 
 }

@@ -95,13 +95,18 @@ public class ControlPreguntasJefeFinal : MonoBehaviour
             FinalBossAbeja.RegenerarCorazones();
             FinalBossMago.RegenerarCorazones();
 
+            TextoRespuesta.SetText("La respuesta correcta es: " + RespuestaCorrecta);
+
+        }else{
+
+            TextoRespuesta.SetText("La respuesta es correcta");
         }
         
             Btn1.interactable=false;
             Btn2.interactable=false;
             Btn3.interactable=false;  
 
-            TextoRespuesta.SetText("La respuesta correcta es: " + RespuestaCorrecta);
+            
             BtnJugar.interactable=true;        
 
     }

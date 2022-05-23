@@ -207,6 +207,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
 
             Corazones[7].gameObject.SetActive(false);
            
+       
             gameObject.SetActive(false);
             SignosPreguntas.SetActive(true);
           

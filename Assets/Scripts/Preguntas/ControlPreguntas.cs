@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Linq;
+
 
 
 public class ControlPreguntas : MonoBehaviour
@@ -250,6 +252,10 @@ public class ControlPreguntas : MonoBehaviour
 
 
         }
+
+        System.Random random = new System.Random();
+        respuestas = respuestas.OrderBy(x => random.Next()).ToArray();
+
 
         return respuestas;
 
