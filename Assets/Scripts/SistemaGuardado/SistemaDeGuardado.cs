@@ -12,11 +12,18 @@ public class SistemaDeGuardado : MonoBehaviour
     string NombreNivel;
     
     // Start is called before the first frame update
+    
+    void Awake(){
+
+
+        
+    }
     void Start()
     {
         Scene scene2 = SceneManager.GetActiveScene();
         NivelGuardar =scene2.name;
 
+        NombreNivel=PlayerPrefs.GetString("NombreDeNivelGuardado");
 
         if(NivelGuardar=="MenuInicial" && NombreNivel!="" ){
 
@@ -32,7 +39,7 @@ public class SistemaDeGuardado : MonoBehaviour
 
     public void Cargar(){
 
-        NombreNivel=PlayerPrefs.GetString("NombreDeNivelGuardado");
+        
         SceneManager.LoadScene(NombreNivel);
 
     }

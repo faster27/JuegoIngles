@@ -18465,7 +18465,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ControlPreguntasJefeFinal, Assembly-CSharp
-        m_MethodName: Jugar
+        m_MethodName: SgtePregunta
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -62476,7 +62476,6 @@ MonoBehaviour:
   PanelTotal: {fileID: 5656326746864418934}
   PanelPreguntasLlave: {fileID: 1490366514}
   PanelPreguntasPuerta: {fileID: 1961138279}
-  TogglePantallaCompleta: {fileID: 0}
 --- !u!82 &-8251164085111326349
 AudioSource:
   m_ObjectHideFlags: 0

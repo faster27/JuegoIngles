@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class UIManagerMenuPrincipal : MonoBehaviour
 {
-     public GameObject TransicionCambioEscena;
+    public GameObject TransicionCambioEscena;
     public AudioSource clip;
     public GameObject optionsPanel;
 
-    public Toggle TogglePantallaCompleta;
+    
    
    
 
@@ -23,7 +23,7 @@ public class UIManagerMenuPrincipal : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         level =scene.name;
-        Screen.SetResolution (Screen.currentResolution.width, Screen.currentResolution.height, true);
+       
         
        
         

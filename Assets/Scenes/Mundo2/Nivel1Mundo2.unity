@@ -10094,7 +10094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66cdc05c13272d64fa8bac393a82069b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BotonContinuarCampana: {fileID: 0}
+  BotonContinuarCampana: {fileID: 1277915580}
 --- !u!114 &500919624 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 69902854, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
@@ -11292,6 +11292,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247792254}
   m_CullTransparentMesh: 1
+--- !u!114 &1277915580 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1635954817, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2100230613}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1326154896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12790,6 +12801,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 69902854, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 69902854, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 384347060, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -12817,6 +12836,10 @@ PrefabInstance:
     - target: {fileID: 1130432224, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130432225, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -207.7
       objectReference: {fileID: 0}
     - target: {fileID: 1260206836, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
