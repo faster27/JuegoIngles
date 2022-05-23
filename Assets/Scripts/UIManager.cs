@@ -29,12 +29,6 @@ public class UIManager : MonoBehaviour
     public GameObject PanelPreguntasLlave;
     public GameObject PanelPreguntasPuerta;
 
-    public Toggle TogglePantallaCompleta;
-
-
-   
-
-
     void Start()
     {
         Scene scene = SceneManager.GetActiveScene();

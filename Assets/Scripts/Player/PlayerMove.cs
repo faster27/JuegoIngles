@@ -74,7 +74,7 @@ public class PlayerMove : MonoBehaviour
             
         }
 
-        if(rb2D.velocity.y<0)
+        if(rb2D.velocity.y<=-0.1)
         {
 
             animator.SetBool("Falling",true);
@@ -82,7 +82,7 @@ public class PlayerMove : MonoBehaviour
 
         }
         
-        else if(rb2D.velocity.y>0 ){
+        else if(rb2D.velocity.y>=0 ){
 
             animator.SetBool("Falling",false);
 

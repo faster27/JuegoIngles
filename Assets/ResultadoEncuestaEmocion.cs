@@ -53,6 +53,7 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
 
     public GameObject Jugador;
     public GameObject Calavera;
+    
 
     string level;
 
@@ -88,7 +89,7 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
 
         if(ContadorEmocionesElegidas>=2){
 
-            Debug.Log("aqui estoy");
+           
             BtnContinuar.SetActive(true);
 
         }
@@ -303,6 +304,7 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
             //nueva propuesta, si hay repeticion se le debe preguntar al estduiante cual de las eociones empatadas prefiere 
             
             PanelEmocionesEmpatadas.SetActive(true);
+           
             Jugador.SetActive(false);
 
             if(level=="Nivel4Mundo3"){
