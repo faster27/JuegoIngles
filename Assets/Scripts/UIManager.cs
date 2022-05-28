@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public GameObject TransicionCambioEscena;
     public AudioSource clip;
     public GameObject optionsPanel;
+    public GameObject PanelMasOpciones;
+    public GameObject PanelControles;
    
     public GameObject PanelAnimacion;
 
@@ -28,6 +30,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject PanelPreguntasLlave;
     public GameObject PanelPreguntasPuerta;
+
+   
 
     void Start()
     {
@@ -65,20 +69,48 @@ public class UIManager : MonoBehaviour
 
     void Update(){
 
-        if(Input.GetKey(KeyCode.Escape ) && !PanelTotal.activeSelf && !PanelPreguntasLlave.activeSelf && !PanelPreguntasPuerta.activeSelf && !PanelAnimacion.activeSelf && !TransicionCambioEscena.activeSelf )
+        if(Input.GetKeyDown(KeyCode.Escape ) && !PanelTotal.activeSelf && !PanelPreguntasLlave.activeSelf && !PanelPreguntasPuerta.activeSelf && !PanelAnimacion.activeSelf && !TransicionCambioEscena.activeSelf )
         {  
          
-           OptionsPanel();
+           
+
+         
+
+            optionsPanel.gameObject.SetActive(!optionsPanel.gameObject.activeSelf);
+          
+
+          if(PanelMasOpciones.activeSelf){
+
+              PanelMasOpciones.gameObject.SetActive(!PanelMasOpciones.gameObject.activeSelf);
+              optionsPanel.gameObject.SetActive(false);
+          }
+
+          if(PanelControles.activeSelf){
+
+              PanelControles.gameObject.SetActive(!PanelControles.gameObject.activeSelf);
+              optionsPanel.gameObject.SetActive(false);
+          }
+          
+           
+
+           if(Time.timeScale==1){
+               Time.timeScale=0;
+
+           }else{
+
+               Time.timeScale=1;
+           }
            
         }
 
-        
-        
-      
-
        
 
+        
+    
+
     }
+
+   
 
     public void PanelEncuesta()
     {
@@ -104,7 +136,6 @@ public class UIManager : MonoBehaviour
     public void OptionsPanel()
     {
         Time.timeScale=0;
-        
         optionsPanel.SetActive(true);
        
     
