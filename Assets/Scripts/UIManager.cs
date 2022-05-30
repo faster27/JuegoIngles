@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     public GameObject PanelControles;
     public GameObject PanelSlots;
     public GameObject PanelPedirNombre;
+
+    public GameObject TituloGuardadoExitosoPanelSlots;
    
     public GameObject PanelAnimacion;
 
@@ -101,7 +103,7 @@ public class UIManager : MonoBehaviour
               optionsPanel.gameObject.SetActive(false);
           }
           
-           
+         TituloGuardadoExitosoPanelSlots.SetActive(false);  
 
            if(Time.timeScale==1){
                Time.timeScale=0;

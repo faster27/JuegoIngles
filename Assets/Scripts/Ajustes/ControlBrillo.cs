@@ -8,6 +8,7 @@ public class ControlBrillo : MonoBehaviour
 
     public Slider SliderBrillo;
     public float SliderValue;
+    
     public Image PanelBrillo;
     public GameObject[] PanelesBrillo;
     // Start is called before the first frame update
@@ -15,8 +16,9 @@ public class ControlBrillo : MonoBehaviour
     {
         PanelesBrillo=GameObject.FindGameObjectsWithTag("PanelBrillo");
 
+   
         
-        SliderBrillo.value=PlayerPrefs.GetFloat("Brillo",0f);
+        SliderBrillo.value=PlayerPrefs.GetFloat("Brillo");
 
        
         
@@ -30,7 +32,7 @@ public class ControlBrillo : MonoBehaviour
         {
 
 
-            Panel_Brillo.GetComponent<Image>().color= new Color(PanelBrillo.color.r,PanelBrillo.color.g,PanelBrillo.color.b,SliderBrillo.value);
+            Panel_Brillo.GetComponent<Image>().color= new Color(PanelBrillo.color.r,PanelBrillo.color.g,PanelBrillo.color.b,-1*SliderBrillo.value);
 
 
 
@@ -42,6 +44,6 @@ public class ControlBrillo : MonoBehaviour
         
         PlayerPrefs.SetFloat("Brillo",SliderBrillo.value);
         
-
+        
     }
 }

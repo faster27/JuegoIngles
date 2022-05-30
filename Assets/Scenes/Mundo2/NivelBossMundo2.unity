@@ -429,6 +429,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51436731}
   m_CullTransparentMesh: 1
+--- !u!1 &62523654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1517376691, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 869489126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &62523655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1993335303, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 869489126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &66819701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6080,9 +6096,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BotonContinuarCampana: {fileID: 601921349}
+  BtnCerrarPanelSlots: {fileID: 62523655}
   NombreSlot1: {fileID: 679403989}
   NombreSlot2: {fileID: 679403988}
   NombreSlot3: {fileID: 679403987}
+  TituloGuardadoConExito: {fileID: 62523654}
   NombrePartida: {fileID: 679403986}
   PanelPedirNombre: {fileID: 679403985}
   PanelGuardar: {fileID: 679403983}

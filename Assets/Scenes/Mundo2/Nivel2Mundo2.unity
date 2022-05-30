@@ -18296,6 +18296,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fac7b93bde04e84cba76cee234786a5, type: 3}
+--- !u!1 &1189834258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1517376691, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 740913374}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1189834259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1993335303, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 740913374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1193852357
 GameObject:
   m_ObjectHideFlags: 0
@@ -65639,9 +65655,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BotonContinuarCampana: {fileID: 569981766}
+  BtnCerrarPanelSlots: {fileID: 1189834259}
   NombreSlot1: {fileID: 335821893}
   NombreSlot2: {fileID: 335821892}
   NombreSlot3: {fileID: 335821891}
+  TituloGuardadoConExito: {fileID: 1189834258}
   NombrePartida: {fileID: 335821890}
   PanelPedirNombre: {fileID: 335821889}
   PanelGuardar: {fileID: 335821888}

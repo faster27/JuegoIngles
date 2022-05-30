@@ -10368,6 +10368,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a49b0d9b31972a4db952f285990fdd5, type: 3}
+--- !u!1 &240507339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1517376691, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 458491310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &240507340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1993335303, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 458491310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &241512505
 GameObject:
   m_ObjectHideFlags: 0
@@ -12673,7 +12689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450458935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7478523, y: -0.0015300512, z: -10}
+  m_LocalPosition: {x: 1.7503197, y: -0.0015300512, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14486,7 +14502,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7765957, y: 1}
+    m_SensorSize: {x: 1.7783018, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -46500,9 +46516,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BotonContinuarCampana: {fileID: 1242138460}
+  BtnCerrarPanelSlots: {fileID: 240507340}
   NombreSlot1: {fileID: 2124699247}
   NombreSlot2: {fileID: 2124699246}
   NombreSlot3: {fileID: 2124699245}
+  TituloGuardadoConExito: {fileID: 240507339}
   NombrePartida: {fileID: 2124699244}
   PanelPedirNombre: {fileID: 2124699248}
   PanelGuardar: {fileID: 2124699249}
