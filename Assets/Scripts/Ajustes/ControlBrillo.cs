@@ -16,7 +16,7 @@ public class ControlBrillo : MonoBehaviour
         PanelesBrillo=GameObject.FindGameObjectsWithTag("PanelBrillo");
 
         
-        SliderBrillo.value=PlayerPrefs.GetFloat("Brillo",0.5f);
+        SliderBrillo.value=PlayerPrefs.GetFloat("Brillo",0f);
 
        
         

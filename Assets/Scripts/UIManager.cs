@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     public GameObject optionsPanel;
     public GameObject PanelMasOpciones;
     public GameObject PanelControles;
+    public GameObject PanelSlots;
+    public GameObject PanelPedirNombre;
    
     public GameObject PanelAnimacion;
 
@@ -69,13 +71,11 @@ public class UIManager : MonoBehaviour
 
     void Update(){
 
-        if(Input.GetKeyDown(KeyCode.Escape ) && !PanelTotal.activeSelf && !PanelPreguntasLlave.activeSelf && !PanelPreguntasPuerta.activeSelf && !PanelAnimacion.activeSelf && !TransicionCambioEscena.activeSelf )
+        if(Input.GetKeyDown(KeyCode.Escape ) && !PanelTotal.activeSelf 
+        && !PanelPreguntasLlave.activeSelf && !PanelPreguntasPuerta.activeSelf 
+        && !PanelAnimacion.activeSelf && !TransicionCambioEscena.activeSelf )
         {  
-         
-           
-
-         
-
+          
             optionsPanel.gameObject.SetActive(!optionsPanel.gameObject.activeSelf);
           
 
@@ -88,6 +88,16 @@ public class UIManager : MonoBehaviour
           if(PanelControles.activeSelf){
 
               PanelControles.gameObject.SetActive(!PanelControles.gameObject.activeSelf);
+              optionsPanel.gameObject.SetActive(false);
+          }
+          if(PanelSlots.activeSelf){
+
+              PanelSlots.gameObject.SetActive(!PanelSlots.gameObject.activeSelf);
+              optionsPanel.gameObject.SetActive(false);
+          }
+          if(PanelPedirNombre.activeSelf){
+
+              PanelPedirNombre.gameObject.SetActive(!PanelPedirNombre.gameObject.activeSelf);
               optionsPanel.gameObject.SetActive(false);
           }
           
