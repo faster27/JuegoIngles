@@ -13,7 +13,7 @@ public class ControlVolumen : MonoBehaviour
     void Start()
     {
         Sonidos=GameObject.FindGameObjectsWithTag("Sonidos");
-        sliderVolumen.value= PlayerPrefs.GetFloat("VolumenAGuardar",1f);
+        sliderVolumen.value= PlayerPrefs.GetFloat("VolumenAGuardar",0.5f);
 
     }
 
