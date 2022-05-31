@@ -1775,6 +1775,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalFruits: {fileID: 1081789036}
   FruitsCollected: {fileID: 1214462823}
+--- !u!1 &784440335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1517376691, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2079743675399684533}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &828088427
 GameObject:
   m_ObjectHideFlags: 0
@@ -7257,9 +7262,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BotonContinuarCampana: {fileID: 2079743675399684534}
+  BtnCerrarPanelSlots: {fileID: 2108721698}
   NombreSlot1: {fileID: 2079743675399684540}
   NombreSlot2: {fileID: 2079743675399684539}
   NombreSlot3: {fileID: 2079743675399684538}
+  TituloGuardadoConExito: {fileID: 784440335}
   NombrePartida: {fileID: 2079743675399684537}
   PanelPedirNombre: {fileID: 2079743675399684536}
   PanelGuardar: {fileID: 2079743675399684535}
@@ -7645,6 +7652,17 @@ Transform:
   m_Father: {fileID: 521936224}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2108721698 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1993335303, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2079743675399684533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2136363778 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 829848251, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}

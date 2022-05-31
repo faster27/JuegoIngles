@@ -906,9 +906,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BotonContinuarCampana: {fileID: 1176481607}
+  BtnCerrarPanelSlots: {fileID: 1993335303}
   NombreSlot1: {fileID: 1008482374}
   NombreSlot2: {fileID: 190074378}
   NombreSlot3: {fileID: 892576075}
+  TituloGuardadoConExito: {fileID: 1517376691}
   NombrePartida: {fileID: 1454245521}
   PanelPedirNombre: {fileID: 1744135802}
   PanelGuardar: {fileID: 602068932}
@@ -2009,6 +2011,7 @@ MonoBehaviour:
   PanelControles: {fileID: 0}
   PanelSlots: {fileID: 0}
   PanelPedirNombre: {fileID: 0}
+  TituloGuardadoExitosoPanelSlots: {fileID: 0}
   PanelAnimacion: {fileID: 0}
   Personaje: {fileID: 0}
   Camara: {fileID: 0}
@@ -2678,6 +2681,11 @@ PrefabInstance:
       objectReference: {fileID: 1036367325}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+--- !u!1 &1517376691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1517376691, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 1506401869}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1590477556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6835,6 +6843,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4446266598201974, guid: d10cbe6b249ddc34db2eae14d2ae9f3d, type: 3}
   m_PrefabInstance: {fileID: 1732063211}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1993335303 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1993335303, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 1506401869}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2010374843 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1961138279, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}

@@ -1175,6 +1175,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 601041704688010213, guid: 2e8772193f9701d45aec64c8c699bec3, type: 3}
   m_PrefabInstance: {fileID: 1377072990}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &746202514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1517376691, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 1592066482}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &746202515 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1993335303, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 1592066482}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &811447982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,9 +1236,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BotonContinuarCampana: {fileID: 658807977}
+  BtnCerrarPanelSlots: {fileID: 746202515}
   NombreSlot1: {fileID: 1747711338}
   NombreSlot2: {fileID: 1747711337}
   NombreSlot3: {fileID: 1747711336}
+  TituloGuardadoConExito: {fileID: 746202514}
   NombrePartida: {fileID: 1747711335}
   PanelPedirNombre: {fileID: 1747711339}
   PanelGuardar: {fileID: 1747711340}

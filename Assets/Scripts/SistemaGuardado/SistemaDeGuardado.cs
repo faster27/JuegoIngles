@@ -10,9 +10,13 @@ public class SistemaDeGuardado : MonoBehaviour
     
     public Button BotonContinuarCampana;
 
+    public Button BtnCerrarPanelSlots;
+
     public TextMeshProUGUI NombreSlot1;
     public TextMeshProUGUI NombreSlot2;
     public TextMeshProUGUI NombreSlot3;
+
+    public GameObject TituloGuardadoConExito;
 
     public TMP_InputField NombrePartida;
 
@@ -69,9 +73,11 @@ public class SistemaDeGuardado : MonoBehaviour
         if(NivelGuardadoBoton1 != ""){
 
             PlayerPrefs.SetString("NivelGuardadoBoton1",NivelGuardar);
-            PanelGuardar.SetActive(false);
+           // PanelGuardar.SetActive(false);
+            TituloGuardadoConExito.SetActive(true);
         }else{
             PanelPedirNombre.SetActive(true);
+            BtnCerrarPanelSlots.interactable=false;
         }
     }
 
@@ -84,9 +90,11 @@ public class SistemaDeGuardado : MonoBehaviour
         if(NivelGuardadoBoton2 != ""){
             
             PlayerPrefs.SetString("NivelGuardadoBoton2",NivelGuardar);
-            PanelGuardar.SetActive(false);
+            //PanelGuardar.SetActive(false);
+            TituloGuardadoConExito.SetActive(true);
         }else{
             PanelPedirNombre.SetActive(true);
+            BtnCerrarPanelSlots.interactable=false;
         }
     }
 
@@ -99,9 +107,11 @@ public class SistemaDeGuardado : MonoBehaviour
         if(NivelGuardadoBoton3 != ""){
             
             PlayerPrefs.SetString("NivelGuardadoBoton3",NivelGuardar);
-            PanelGuardar.SetActive(false);
+            //PanelGuardar.SetActive(false);
+            TituloGuardadoConExito.SetActive(true);
         }else{
             PanelPedirNombre.SetActive(true);
+            BtnCerrarPanelSlots.interactable=false;
         }
     }
     
