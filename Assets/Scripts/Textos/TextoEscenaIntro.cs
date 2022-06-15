@@ -11,22 +11,38 @@ public class TextoEscenaIntro : MonoBehaviour
 {
     //Historia del Intro
     
-    string frase = "En medio de un bosque existía un pequeño pueblo con un castillo,\n en el cual habitaba una princesa, un día de repente todo se oscureció, \n en medio de la espesa niebla el hechicero supremo apareció, \n capturando a la princesa y llevándola a una lejana torre donde la encerró, \n pero antes de irse hizo que todos olvidaran \n cómo hablar inglés  dejando un mensaje de polvo tras desaparecer.";
-    string frase2="\"A la princesa deberán salvar si su idioma quieren recuperar,\n y para ello deberán enviar a su mejor guerrero, el cual los retos deberá superar.\"";
+    string frase = "En medio de un bosque existía un pequeño reino llamado Cortor,\n"+
+                    "en el cual habitaba la princesa Freyja, un día de repente todo se oscureció,\n"+
+                    "en medio de la espesa niebla el hechicero supremo Khorne apareció,\n"+
+                    "capturando a la princesa y llevándola a una lejana torre donde la encerró,\n"+
+                    "pero antes de irse hizo que todos olvidaran\n"+
+                    "cómo hablar inglés  dejando un mensaje de polvo tras desaparecer.";
+    
+    string frase2="\"A la princesa deberán salvar si su idioma quieren recuperar,\n"+
+                    "y para ello deberán enviar a su mejor guerrero, el cual los retos deberá superar.\"";
 
     
     //Historia antes del mundo 3
 
-    string frase5="Guerrero has tenido un largo viaje hasta aquí, \n las canciones hablan de que has atravesado selvas, pantanos e incluso desiertos para rescatar a la princesa,\n estás a un solo paso de hacerlo, pero primero debes entrar al castillo y llegar hasta la torre.\n Dentro encontrarás criaturas nunca antes vistas, pero toda tu aldea te apoya,\n las derrotarás con tu sabiduría  y traerás gloria y felicidad a tu pueblo, adelante.";
+    string frase5= "Guerrero has tenido un largo viaje hasta aquí,\n"+
+                    "las canciones hablan de que has atravesado selvas, pantanos e incluso desiertos para rescatar a la princesa,\n"+
+                    "estás a un solo paso de hacerlo, pero primero debes entrar al castillo y llegar hasta la torre.\n"+
+                    "Dentro encontrarás criaturas nunca antes vistas, pero toda tu aldea te apoya,\n"+
+                    "las derrotarás con tu sabiduría  y traerás gloria y felicidad a tu pueblo, adelante.";
     
     
     //Historia antes de pelear con el jefe final
 
-    string frase3="Guerrero has pasado pruebas que ningún otro ser viviente ha podido superar y has llegado hasta aquí, \n pero aún falta la prueba más importante, derrotar al hechicero supremo, \n el cual tiene secuestrada a tu princesa y a tu pueblo sin poder hablar inglés \n juntos lo derrotaremos ¡AU AU AU!.";
+    string frase3= "Guerrero has pasado pruebas que ningún otro ser viviente ha podido superar y has llegado hasta aquí,\n"+
+                    "pero aún falta la prueba más importante, derrotar al hechicero supremo,\n"+
+                    "el cual tiene secuestrada a tu princesa y a tu pueblo sin poder hablar inglés\n"+
+                    "juntos lo derrotaremos ¡AU AU AU!.";
     
     //Historia despues de la pelea con el jefe
 
-    string frase4="Felicitaciones guerrero, lo has logrado, has liberado a tu princesa \n y le has devuelto a tu pueblo el poder de hablar inglés \n ve y disfruta tu victoria con tu gente.";
+    string frase4= "Felicitaciones guerrero, lo has logrado, has liberado a tu princesa\n"+
+                    "y le has devuelto a tu pueblo el poder de hablar inglés\n"+
+                    "ve y disfruta tu victoria con tu gente.";
     
     
     

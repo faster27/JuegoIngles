@@ -63,11 +63,6 @@ public class JumpDamageFinalBosses : MonoBehaviour
 
         Lifes--;
         animator.Play("Hit");
-       
-        
-
-
-
     }
 
     public void CheckLife(){
