@@ -64,6 +64,8 @@ public class JumpDamageBossAbeja : MonoBehaviour
     private Rigidbody2D rb;
 
     private ControlPreguntasJefeFinal ControlPreguntas; 
+    public GameObject[] ControlMovimientosSignos;
+   
 
     public GameObject TeleportAnimation;
     public GameObject Rana;
@@ -110,6 +112,10 @@ public class JumpDamageBossAbeja : MonoBehaviour
 
         ControlPreguntas=FindObjectOfType<ControlPreguntasJefeFinal>();
 
+      //  ControlMovimientosSignos = new MovimientoSigno();
+
+       // ControlMovimientosSignos=FindObjectOfType<MovimientoSigno>();
+
     }
 
     public void LosseLifeAndHit(){
@@ -142,9 +148,14 @@ public class JumpDamageBossAbeja : MonoBehaviour
             Corazones[1].gameObject.SetActive(false);
             gameObject.SetActive(false);
             SignosPreguntas.SetActive(true);
-          
 
             Invoke("DesactivarSignosPregunta",5f);
+            ControlMovimientosSignos[0].GetComponent<MovimientoSigno>().AnadirFuerza();
+            ControlMovimientosSignos[1].GetComponent<MovimientoSigno>().AnadirFuerza();
+            ControlMovimientosSignos[2].GetComponent<MovimientoSigno>().AnadirFuerza();
+            ControlMovimientosSignos[3].GetComponent<MovimientoSigno>().AnadirFuerza();
+            ControlMovimientosSignos[4].GetComponent<MovimientoSigno>().AnadirFuerza();
+            ControlMovimientosSignos[5].GetComponent<MovimientoSigno>().AnadirFuerza();
            
 
 
@@ -179,9 +190,15 @@ public class JumpDamageBossAbeja : MonoBehaviour
 
             gameObject.SetActive(false);
             SignosPreguntas.SetActive(true);
-          
-
+            
             Invoke("DesactivarSignosPregunta",5f);
+           // ControlMovimientosSignos.AnadirFuerza();
+            ControlMovimientosSignos[0].GetComponent<MovimientoSigno>().AnadirFuerza();
+            ControlMovimientosSignos[1].GetComponent<MovimientoSigno>().AnadirFuerza();
+            ControlMovimientosSignos[2].GetComponent<MovimientoSigno>().AnadirFuerza();
+            ControlMovimientosSignos[3].GetComponent<MovimientoSigno>().AnadirFuerza();
+            ControlMovimientosSignos[4].GetComponent<MovimientoSigno>().AnadirFuerza();
+            ControlMovimientosSignos[5].GetComponent<MovimientoSigno>().AnadirFuerza();
        
             
         }else if(Lifes<6)
@@ -210,9 +227,17 @@ public class JumpDamageBossAbeja : MonoBehaviour
        
             gameObject.SetActive(false);
             SignosPreguntas.SetActive(true);
-          
+            
 
-            Invoke("DesactivarSignosPregunta",8f);
+
+            Invoke("DesactivarSignosPregunta",5f);
+           // ControlMovimientosSignos.AnadirFuerza();
+           //ControlMovimientosSignos[0].GetComponent<MovimientoSigno>().AnadirFuerza();
+           // ControlMovimientosSignos[1].GetComponent<MovimientoSigno>().AnadirFuerza();
+           // ControlMovimientosSignos[2].GetComponent<MovimientoSigno>().AnadirFuerza();
+           // ControlMovimientosSignos[3].GetComponent<MovimientoSigno>().AnadirFuerza();
+           // ControlMovimientosSignos[4].GetComponent<MovimientoSigno>().AnadirFuerza();
+           // ControlMovimientosSignos[5].GetComponent<MovimientoSigno>().AnadirFuerza();
        
             
         }else if(Lifes<9)
@@ -235,6 +260,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
         Signo4.transform.position=posInicial4.transform.position;
         Signo5.transform.position=posInicial5.transform.position;
         Signo6.transform.position=posInicial6.transform.position;
+       // ControlMovimientosSignos.AnadirFuerza();
         
         SignosPreguntas.SetActive(false);
 

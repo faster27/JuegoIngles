@@ -280,8 +280,6 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
         float ValorMayor;
         int Posicion;
 
-        
-        
         List<string> ListaNombres = new List<string>();
 
         ListaValoresEmociones.Add(ValorAlegria);
@@ -295,6 +293,11 @@ public class ResultadoEncuestaEmocion : MonoBehaviour
         ListaNombres.Add("Ira");
 
         bool Repeticion= HayRepetidos(ListaValoresEmociones,ListaNombres);
+
+        Debug.Log(ListaValoresEmociones[0]);
+        Debug.Log(ListaValoresEmociones[1]);
+        Debug.Log(ListaValoresEmociones[2]);
+        Debug.Log(ListaValoresEmociones[3]);
 
         if(Repeticion){
 

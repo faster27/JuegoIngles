@@ -15177,7 +15177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450458935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9301529, y: 0.81791, z: -10}
+  m_LocalPosition: {x: -1.9304764, y: 0.81791, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15336,6 +15336,14 @@ PrefabInstance:
     - target: {fileID: 10730689, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: EliminarGuardadoBoton2
+      objectReference: {fileID: 0}
+    - target: {fileID: 60221079, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1240695101}
+    - target: {fileID: 60221079, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GuardarConfirmado
       objectReference: {fileID: 0}
     - target: {fileID: 285388760, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -15907,7 +15915,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783018, y: 1}
+    m_SensorSize: {x: 1.7785234, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -17126,6 +17134,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &708462433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1873642404, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 458491310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &708462434 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1095343735, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 458491310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &708462435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 107201161, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 458491310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &708462436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 611557817, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 458491310}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &708462437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1098296299, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 458491310}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &713755243 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5554037419913264581, guid: 1683a50b05c40924d90d3fd4e79710e6, type: 3}
@@ -111066,13 +111123,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BotonContinuarCampana: {fileID: 904575134}
   BtnCerrarPanelSlots: {fileID: 1596267546}
+  ImagenBtnSlot1: {fileID: 708462436}
+  ImagenBtnSlot2: {fileID: 708462435}
+  ImagenBtnSlot3: {fileID: 708462434}
   NombreSlot1: {fileID: 28001088}
   NombreSlot2: {fileID: 28001087}
   NombreSlot3: {fileID: 28001086}
+  TextoPanelConfirmacion: {fileID: 708462433}
+  ImagenSlotOcupado: {fileID: 21300000, guid: a894a1b49fe30b94fba85fa7027d2dbe, type: 3}
+  ImagenSlotDesocupado: {fileID: 21300000, guid: 8d37df6d4a9f690439825a8448b03ed9, type: 3}
   TituloGuardadoConExito: {fileID: 1596267545}
   NombrePartida: {fileID: 28001085}
   PanelPedirNombre: {fileID: 28001089}
   PanelGuardar: {fileID: 28001090}
+  PanelConfirmacionSobrescribir: {fileID: 708462437}
+  TextoGuardadoConExito: {fileID: 1596267545}
 --- !u!1 &1253201114
 GameObject:
   m_ObjectHideFlags: 0

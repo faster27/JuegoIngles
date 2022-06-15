@@ -2523,6 +2523,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &803824655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1098296299, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 869489126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &803824656 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1873642404, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 869489126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &803824657 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1095343735, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 869489126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &803824658 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 107201161, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 869489126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &803824659 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 611557817, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 869489126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &810755688
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,6 +2694,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: EliminarGuardadoBoton2
       objectReference: {fileID: 0}
+    - target: {fileID: 60221079, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1598606812}
+    - target: {fileID: 60221079, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GuardarConfirmado
+      objectReference: {fileID: 0}
     - target: {fileID: 353437123, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2684,6 +2741,10 @@ PrefabInstance:
     - target: {fileID: 591761348, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GuardarBoton2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098296300, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.411957
       objectReference: {fileID: 0}
     - target: {fileID: 1173406380, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -6097,13 +6158,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BotonContinuarCampana: {fileID: 601921349}
   BtnCerrarPanelSlots: {fileID: 62523655}
+  ImagenBtnSlot1: {fileID: 803824659}
+  ImagenBtnSlot2: {fileID: 803824658}
+  ImagenBtnSlot3: {fileID: 803824657}
   NombreSlot1: {fileID: 679403989}
   NombreSlot2: {fileID: 679403988}
   NombreSlot3: {fileID: 679403987}
+  TextoPanelConfirmacion: {fileID: 803824656}
+  ImagenSlotOcupado: {fileID: 21300000, guid: a894a1b49fe30b94fba85fa7027d2dbe, type: 3}
+  ImagenSlotDesocupado: {fileID: 21300000, guid: 8d37df6d4a9f690439825a8448b03ed9, type: 3}
   TituloGuardadoConExito: {fileID: 62523654}
   NombrePartida: {fileID: 679403986}
   PanelPedirNombre: {fileID: 679403985}
   PanelGuardar: {fileID: 679403983}
+  PanelConfirmacionSobrescribir: {fileID: 803824655}
+  TextoGuardadoConExito: {fileID: 62523654}
 --- !u!1 &1610220543
 GameObject:
   m_ObjectHideFlags: 0

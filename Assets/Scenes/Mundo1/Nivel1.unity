@@ -1294,6 +1294,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &382805998 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1873642404, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2079743675399684533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &382805999 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1095343735, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2079743675399684533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &382806000 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 107201161, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2079743675399684533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &382806001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 611557817, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2079743675399684533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &397909146 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 397909146, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
@@ -6290,6 +6334,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8807301591702743326, guid: b9666d147f9b012428a3e9a8fb6272bc, type: 3}
   m_PrefabInstance: {fileID: 8807301590339872477}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1407815503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1098296299, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+  m_PrefabInstance: {fileID: 2079743675399684533}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1429908545 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 390298811, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
@@ -7263,13 +7312,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BotonContinuarCampana: {fileID: 2079743675399684534}
   BtnCerrarPanelSlots: {fileID: 2108721698}
+  ImagenBtnSlot1: {fileID: 382806001}
+  ImagenBtnSlot2: {fileID: 382806000}
+  ImagenBtnSlot3: {fileID: 382805999}
   NombreSlot1: {fileID: 2079743675399684540}
   NombreSlot2: {fileID: 2079743675399684539}
   NombreSlot3: {fileID: 2079743675399684538}
+  TextoPanelConfirmacion: {fileID: 382805998}
+  ImagenSlotOcupado: {fileID: 21300000, guid: a894a1b49fe30b94fba85fa7027d2dbe, type: 3}
+  ImagenSlotDesocupado: {fileID: 21300000, guid: 8d37df6d4a9f690439825a8448b03ed9, type: 3}
   TituloGuardadoConExito: {fileID: 784440335}
   NombrePartida: {fileID: 2079743675399684537}
   PanelPedirNombre: {fileID: 2079743675399684536}
   PanelGuardar: {fileID: 2079743675399684535}
+  PanelConfirmacionSobrescribir: {fileID: 1407815503}
+  TextoGuardadoConExito: {fileID: 784440335}
 --- !u!1001 &2024358815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7796,6 +7853,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 10730689, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2005894556}
+    - target: {fileID: 60221079, guid: 92d2d3a1b9ca06145b64cdb1c0032172, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2005894556}

@@ -85,13 +85,14 @@ public class IAMago : MonoBehaviour
 
        
         ActualPos=transform.position;
+       
 
         yield return new WaitForSeconds(0.5f);
 
 
         if ( transform.position.x>=ActualPos.x)
         {
-
+           
             spriteRenderer.flipX=false;
             animator.SetBool("Idle",false);
             BulletFire.left=false;
@@ -102,6 +103,8 @@ public class IAMago : MonoBehaviour
 
         }
         else if (transform.position.x<=ActualPos.x){
+            
+            
             spriteRenderer.flipX=true;
             animator.SetBool("Idle",false);
             BulletFire.left=true;
