@@ -70,6 +70,7 @@ public class JumpDamageBossAbeja : MonoBehaviour
     public GameObject TeleportAnimation;
     public GameObject Rana;
     public GameObject TituloAunNoTermina;
+    public GameObject Abeja;
 
    
 
@@ -82,12 +83,13 @@ public class JumpDamageBossAbeja : MonoBehaviour
             Teleport.Play();
 
 
-            //Aqui se leda una nueva coordenada aleatoria al jugador para generar el efecto de teletransporte
-            rb=collision.gameObject.GetComponent<Rigidbody2D>();
+            //Aqui se le da una nueva coordenada aleatoria al jugador para generar el efecto de teletransporte
+            //rb=collision.gameObject.GetComponent<Rigidbody2D>();
+            
             Vector2 posicion=new Vector2();
+            posicion.x=Random.Range(-3.754858f,3.1045f);
             Rana.SetActive(false);
             TeleportAnimation.SetActive(true);
-            posicion.x=Random.Range(-3.754858f,3.1045f);
             posicion.y=-0.2f;
             collision.transform.position=posicion;
             Rana.SetActive(true);
